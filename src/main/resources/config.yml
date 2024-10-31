@@ -4,10 +4,7 @@
 language: "de" #(de or en possible)
 prefix: "&bSimple&fCore &8» "
 
-
-
-
-
+modules:
 
 messages:
   de:
@@ -18,7 +15,21 @@ messages:
       weather-thunder: "&7Das Wetter wurde nun auf &eGewitter&7 umgestellt."
       weather-sun: "&7Das Wetter wurde nun auf &eSonne&7 umgestellt."
       weather-rain: "&7Das Wetter wurde nun auf &eRegen&7 umgestellt."
+    workbench:
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      workbench-open: "&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!"
   en:
+    weather:
+      only-players: "Only players can execute this command!"
+      usage: "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7."
+      wrong-usage: "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7, your input was &cnot&7 recognized."
+      weather-thunder: "&7The weather has been set to &ethunder&7."
+      weather-sun: "&7The weather has been set to &esunny&7."
+      weather-rain: "&7The weather has been set to &erainy&7."
+    workbench:
+      only-players: "Only players can execute this command!"
+      workbench-open: "&7The &eworkbench&7 has been &asuccessfully&7 opened!"
+
 
 
 

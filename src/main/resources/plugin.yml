@@ -1,3 +1,7 @@
 name: SimpleCore
 version: '${project.version}'
 main: de.ruben.simplecore.SimpleCore
+commands:
+  weather:
+    aliases: ["wetter"]
+    permission: simplecore.weather

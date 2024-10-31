@@ -17,17 +17,42 @@ public class WeatherCommand implements CommandExecutor {
     public WeatherCommand(JavaPlugin plugin) {
         this.plugin = plugin;
         this.config = plugin.getConfig();
+        initializeDefaultConfig();
+    }
+
+    private void initializeDefaultConfig() {
+        config.addDefault("language", "de");
+        config.addDefault("prefix", "&bSimple&fCore &8» ");
+
+        // Deutsche Nachrichten
+        config.addDefault("messages.de.weather.only-players", "Diesen Befehl dürfen nur Spieler ausführen!");
+        config.addDefault("messages.de.weather.usage", "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7.");
+        config.addDefault("messages.de.weather.wrong-usage", "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7, deine Angabe wurde &cnicht&7 erkannt.");
+        config.addDefault("messages.de.weather.weather-thunder", "&7Das Wetter wurde nun auf &eGewitter&7 umgestellt.");
+        config.addDefault("messages.de.weather.weather-sun", "&7Das Wetter wurde nun auf &eSonne&7 umgestellt.");
+        config.addDefault("messages.de.weather.weather-rain", "&7Das Wetter wurde nun auf &eRegen&7 umgestellt.");
+
+        // Englische Nachrichten
+        config.addDefault("messages.en.weather.only-players", "Only players can execute this command!");
+        config.addDefault("messages.en.weather.usage", "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7.");
+        config.addDefault("messages.en.weather.wrong-usage", "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7, your input was &cnot&7 recognized.");
+        config.addDefault("messages.en.weather.weather-thunder", "&7The weather has been set to &ethunder&7.");
+        config.addDefault("messages.en.weather.weather-sun", "&7The weather has been set to &esunny&7.");
+        config.addDefault("messages.en.weather.weather-rain", "&7The weather has been set to &erainy&7.");
+
+        config.options().copyDefaults(true);
+        plugin.saveConfig();
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weater.only-players"));
+            sender.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weather.only-players"));
             return true;
         }
 
         if (args.length != 1) {
-            sender.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weater.usage"));
+            sender.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weather.usage"));
             return false;
         }
 
@@ -36,51 +61,35 @@ public class WeatherCommand implements CommandExecutor {
 
         switch (weatherType) {
             case "sun":
-                player.getWorld().setStorm(false);
-                player.getWorld().setThundering(false);
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weater.weather-sun"));
-                break;
-
             case "sonne":
                 player.getWorld().setStorm(false);
                 player.getWorld().setThundering(false);
-                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weater.weather-sun"));
+                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.weather-sun"));
                 break;
 
             case "rain":
-                player.getWorld().setStorm(true);
-                player.getWorld().setThundering(false);
-                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weater.weather-rain"));
-                break;
-
             case "regen":
                 player.getWorld().setStorm(true);
                 player.getWorld().setThundering(false);
-                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weater.weather-rain"));
+                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.weather-rain"));
                 break;
 
             case "thunder":
-                player.getWorld().setStorm(true);
-                player.getWorld().setThundering(true);
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weater.weather-thunder"));
-                break;
-
             case "gewitter":
                 player.getWorld().setStorm(true);
                 player.getWorld().setThundering(true);
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weater.weather-thunder"));
+                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.weather-thunder"));
                 break;
 
             default:
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weater.wrong-usage"));
+                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weather.wrong-usage"));
                 return false;
         }
 
         return true;
     }
 
-    // Methode zum Abrufen von Nachrichten aus der Config-Datei
     private String getConfigMessage(String path) {
-        return ChatColor.translateAlternateColorCodes('&', config.getString(path, "&7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7:" + path));
+        return ChatColor.translateAlternateColorCodes('&', config.getString(path, "&7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
     }
 }
