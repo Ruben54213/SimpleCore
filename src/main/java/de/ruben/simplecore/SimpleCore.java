@@ -1,5 +1,7 @@
 package de.ruben.simplecore;
 
+import de.ruben.simplecore.Commands.WeatherCommand;
+import de.ruben.simplecore.Commands.WorkBenchCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SimpleCore extends JavaPlugin {
@@ -8,6 +10,11 @@ public final class SimpleCore extends JavaPlugin {
     public void onEnable() {
         // Konfigurationsdatei erstellen, falls sie noch nicht existiert
         saveDefaultConfig();
+        //Command Integration
+        getCommand("weather").setExecutor(new WeatherCommand(this));
+        getCommand("workbench").setExecutor(new WorkBenchCommand(this));
+
+        //Listener Integration
     }
 
     @Override

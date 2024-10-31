@@ -5,3 +5,6 @@ commands:
   weather:
     aliases: ["wetter"]
     permission: simplecore.weather
+  workbench:
+    aliases: ["wb"]
+    permission: simplecore.workbench
