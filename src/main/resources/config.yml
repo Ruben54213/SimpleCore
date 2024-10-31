@@ -1,0 +1,24 @@
+###############################################################################################################################
+# Plugin coded by Ruben & Felix with Love!                                                                                    #
+###############################################################################################################################
+language: "de" #(de or en possible)
+prefix: "&bSimple&fCore &8» "
+
+
+
+
+
+
+messages:
+  de:
+    weather:
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      usage: "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7."
+      wrong-usage: "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7, deine Angabe wurde &cnicht&7 erkannt."
+      weather-thunder: "&7Das Wetter wurde nun auf &eGewitter&7 umgestellt."
+      weather-sun: "&7Das Wetter wurde nun auf &eSonne&7 umgestellt."
+      weather-rain: "&7Das Wetter wurde nun auf &eRegen&7 umgestellt."
+  en:
+
+
+
