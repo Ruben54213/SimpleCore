@@ -23,6 +23,8 @@ modules:
     active: true
   joinleave:
     active: true
+  anvil:
+    active: true
 messages:
   de:
     modules:
@@ -66,6 +68,13 @@ messages:
       wrong-language: "&7Diese Sprache wird momentan &cnicht&7 Unterstützt!"
       no-language: "&7Du &cmusst&7 eine Sprache angeben! (&ede&7/&een&7)"
       success: "&7Die &eSprache&7 wurde nun &aErfolgreich&7 geändert!"
+    anvil:
+      open: "&7Dein &eAmboss&7 wird nun &ageöffnet&7.."
+      title: "&fAmboss"
+      not-online: "&7Der Spieler &e{name}&7 ist &cnicht&7 online."
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      usage: "&cFalsche&7 Verwendung: Benutze &e/anvil &7(&eSpieler&7)."
+      open-other: "&7Du hast das &eAmboss&7 für &e{name}&7 geöffnet."
   en:
     modules:
       inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
@@ -107,6 +116,13 @@ messages:
       wrong-language: "&7This language is currently &cnot&7 supported!"
       no-language: "&7You &cmust&7 specify a language! (&ede&7/&een&7)"
       success: "&7The &elanguage&7 has been &asuccessfully&7 changed!"
+    anvil:
+      open: "&7Your &eAnvil&7 is now &aopening&7.."
+      title: "&fAnvil"
+      not-online: "&7The player &e{name}&7 is &cnot&7 online."
+      no-permission: "&7You do not have &cpermission&7 for that."
+      usage: "&cWrong&7 usage: Use &e/anvil &7(&ePlayer&7)."
+      open-other: "&7You opened the &eAnvil&7 for &e{name}&7." #Placeholder: {name}
 
 
 

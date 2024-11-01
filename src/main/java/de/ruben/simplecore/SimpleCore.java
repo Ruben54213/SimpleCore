@@ -1,8 +1,10 @@
 package de.ruben.simplecore;
 
 import de.ruben.simplecore.Commands.*;
+import de.ruben.simplecore.Listeners.AnvilCommand;
 import de.ruben.simplecore.Listeners.JoinLeaveMessages;
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,6 +30,11 @@ public final class SimpleCore extends JavaPlugin {
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new JoinLeaveMessages(this), this);
+        //Anvil Command
+        new AnvilCommand(this);
+
+        // Registriere den Befehl
+        this.getCommand("anvil").setExecutor(new AnvilCommand(this));
     }
 
     @Override

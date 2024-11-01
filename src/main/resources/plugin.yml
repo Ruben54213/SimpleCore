@@ -26,3 +26,6 @@ commands:
   language:
     aliases: ["lang", "sprache"]
     permission: simplecore.language
+  anvil:
+    aliases: ["amboss"]
+    permission: simplecore.anvil
