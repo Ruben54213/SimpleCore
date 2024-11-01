@@ -28,8 +28,10 @@ public class WeatherCommand implements CommandExecutor, TabCompleter {
     private void initializeDefaultConfig() {
         config.addDefault("language", "de");
         config.addDefault("prefix", "&bSimple&fCore &8» ");
+        config.addDefault("modules.weather.active", true);  // Aktivierungs-Flag für das Modul
 
-        // Deutsche Nachrichten
+        // Nachrichten für das Modul
+        config.addDefault("messages.de.weather.module-disabled", "&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in der &eConfig&7.");
         config.addDefault("messages.de.weather.only-players", "Diesen Befehl dürfen nur Spieler ausführen!");
         config.addDefault("messages.de.weather.usage", "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7.");
         config.addDefault("messages.de.weather.wrong-usage", "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7, deine Angabe wurde &cnicht&7 erkannt.");
@@ -37,20 +39,18 @@ public class WeatherCommand implements CommandExecutor, TabCompleter {
         config.addDefault("messages.de.weather.weather-sun", "&7Das Wetter wurde nun auf &eSonne&7 umgestellt.");
         config.addDefault("messages.de.weather.weather-rain", "&7Das Wetter wurde nun auf &eRegen&7 umgestellt.");
 
-        // Englische Nachrichten
-        config.addDefault("messages.en.weather.only-players", "Only players can execute this command!");
-        config.addDefault("messages.en.weather.usage", "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7.");
-        config.addDefault("messages.en.weather.wrong-usage", "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7, your input was &cnot&7 recognized.");
-        config.addDefault("messages.en.weather.weather-thunder", "&7The weather has been set to &ethunder&7.");
-        config.addDefault("messages.en.weather.weather-sun", "&7The weather has been set to &esunny&7.");
-        config.addDefault("messages.en.weather.weather-rain", "&7The weather has been set to &erainy&7.");
-
         config.options().copyDefaults(true);
         plugin.saveConfig();
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // Prüfen, ob das Modul aktiviert ist
+        if (!config.getBoolean("modules.weather.active", true)) {
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".modules.inactive")));
+            return true;
+        }
+
         if (!(sender instanceof Player)) {
             sender.sendMessage(getConfigMessage(getConfigMessage("prefix") + "messages." + getConfigMessage("language") + ".weather.only-players"));
             return true;

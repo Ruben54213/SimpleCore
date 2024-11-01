@@ -20,9 +20,14 @@ public class WorkBenchCommand implements CommandExecutor {
         setupDefaultConfig();
     }
 
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // Prüfen, ob das Modul aktiviert ist
+        if (!config.getBoolean("modules.workbench.active", true)) {
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getMessage("prefix") + getMessage("messages." + getMessage("language") + ".modules.inactive")));
+            return true;
+        }
+
         if (!(sender instanceof Player)) {
             sender.sendMessage(getMessage("prefix") + getMessage("messages." + getMessage("language") + ".only-players"));
             return true;
@@ -41,7 +46,10 @@ public class WorkBenchCommand implements CommandExecutor {
     // Methode zum Überprüfen und Hinzufügen von Standardwerten in der Konfiguration
     private void setupDefaultConfig() {
         if (!config.contains("language")) {
-            config.set("language", "en");
+            config.set("language", "de");
+        }
+        if (!config.contains("modules.workbench.active")) {
+            config.set("modules.workbench.active", true);  // Aktivierungs-Flag für das Modul
         }
         if (!config.contains("messages.en.only-players")) {
             config.set("messages.en.only-players", "Only players can execute this command!");
@@ -55,6 +63,7 @@ public class WorkBenchCommand implements CommandExecutor {
         if (!config.contains("messages.de.workbench-open")) {
             config.set("messages.de.workbench-open", "&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!");
         }
+        config.addDefault("messages.de.module-disabled", "&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in der &eConfig&7."); // Nachricht für deaktiviertes Modul
         plugin.saveConfig(); // Konfigurationsdatei speichern, falls neue Werte hinzugefügt wurden
     }
 }

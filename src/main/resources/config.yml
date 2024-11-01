@@ -7,14 +7,19 @@ broadcastprefix: "&b&lSimple&f&lCore &8» &f"
 
 modules:
   weather:
+    active: true
   workbench:
+    active: true
   broadcast:
+    active: true
     addlines: true
     sound: "ENTITY_PLAYER_LEVELUP" #(In 1.9+ its called "ENTITY_PLAYER_LEVELUP" if "LEVEL_UP" is not working, you can also choose an other sound."
     sound_volume: 1.0
     sound_pitch: 1.0
 messages:
   de:
+    modules:
+      inactive: "&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in der &eConfig&7."
     weather:
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       usage: "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7."
@@ -27,7 +32,10 @@ messages:
       workbench-open: "&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!"
     broadcast:
       usage: "&7Du &cmusst&7 eine Nachricht angeben!"
+      sound-error: "&7Der &eSound&7 konnte &cnicht&7 abgespielt werden! Bitte passe ihn in der &eConfig&7 an."
   en:
+    modules:
+      inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
     weather:
       only-players: "Only players can execute this command!"
       usage: "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7."

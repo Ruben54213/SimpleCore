@@ -29,6 +29,11 @@ public class BroadcastCommand implements CommandExecutor {
             configUpdated = true;
         }
 
+        if (!config.contains("modules.broadcast.active")) {
+            config.set("modules.broadcast.active", true);
+            configUpdated = true;
+        }
+
         if (!config.contains("modules.broadcast.addlines")) {
             config.set("modules.broadcast.addlines", true);
             configUpdated = true;
@@ -62,6 +67,12 @@ public class BroadcastCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // Überprüfen, ob der Broadcast-Befehl aktiviert ist
+        if (!config.getBoolean("modules.broadcast.active", true)) {
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("prefix") + config.getString("messages." + config.getString("language") + ".modules.inactive")));
+            return true;
+        }
+
         if (args.length == 0) {
             String usageMessage = config.getString("messages." + config.getString("language") + ".broadcast.usage");
             sender.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("prefix") + usageMessage));
@@ -98,6 +109,7 @@ public class BroadcastCommand implements CommandExecutor {
             }
         } catch (IllegalArgumentException e) {
             Bukkit.getLogger().warning("Config-Error with Broadcast-Sounds: " + soundName);
+            sender.sendMessage(config.getString("messages." + config.getString("language") + ".broadcast.sound-error"));
         }
 
         return true;
