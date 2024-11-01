@@ -1,0 +1,16 @@
+name: SimpleCore
+version: '1.0'
+main: de.ruben.simplecore.SimpleCore
+commands:
+  weather:
+    aliases: ["wetter"]
+    permission: simplecore.weather
+  workbench:
+    aliases: ["wb"]
+    permission: simplecore.workbench
+  broadcast:
+    aliases: ["bc", "benachrichtigung", "announcement", "announce"]
+    permission: simplecore.broadcast
+  rename:
+    aliases: ["itemrename"]
+    permission: simplecore.itemrename

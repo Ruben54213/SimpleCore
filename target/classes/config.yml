@@ -1,0 +1,67 @@
+###############################################################################################################################
+# Plugin coded by Ruben & Felix with Love!                                                                                    #
+###############################################################################################################################
+language: "de" #(de or en possible)
+prefix: "&bSimple&fCore &8» "
+broadcastprefix: "&b&lSimple&f&lCore &8» &f"
+
+modules:
+  weather:
+    active: true
+  workbench:
+    active: true
+  broadcast:
+    active: true
+    addlines: true
+    sound: "ENTITY_PLAYER_LEVELUP" #(In 1.9+ its called "ENTITY_PLAYER_LEVELUP" if "LEVEL_UP" is not working. You can also choose any other sound."
+    sound_volume: 1.0
+    sound_pitch: 1.0
+    sound_active: true
+  itemrename:
+    active: true
+messages:
+  de:
+    modules:
+      inactive: "&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in der &eConfig&7."
+    weather:
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      usage: "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7."
+      wrong-usage: "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7, deine Angabe wurde &cnicht&7 erkannt."
+      weather-thunder: "&7Das Wetter wurde nun auf &eGewitter&7 umgestellt."
+      weather-sun: "&7Das Wetter wurde nun auf &eSonne&7 umgestellt."
+      weather-rain: "&7Das Wetter wurde nun auf &eRegen&7 umgestellt."
+    workbench:
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      workbench-open: "&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!"
+    broadcast:
+      usage: "&7Du &cmusst&7 eine Nachricht angeben!"
+      sound-error: "&7Der &eSound&7 konnte &cnicht&7 abgespielt werden! Bitte passe ihn in der &eConfig&7 an."
+    itemrename:
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-item: "&7Du hast &ckein&7 Item in der &eHand&7."
+      success: "&7Das &eItem&7 wurde &aErfolgreich&7 umbenannt!"
+      usage: "&7Du &cmusst&7 einen Namen angeben!"
+  en:
+    modules:
+      inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
+    weather:
+      only-players: "Only players can execute this command!"
+      usage: "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7."
+      wrong-usage: "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7, your input was &cnot&7 recognized."
+      weather-thunder: "&7The weather has been set to &ethunder&7."
+      weather-sun: "&7The weather has been set to &esunny&7."
+      weather-rain: "&7The weather has been set to &erainy&7."
+    workbench:
+      only-players: "Only players can execute this command!"
+      workbench-open: "&7The &eworkbench&7 has been &asuccessfully&7 opened!"
+    broadcast:
+      usage: "&7You &cmust&7 provide a message!"
+    itemrename:
+      only-players: "Only players can execute this command!"
+      no-item: "&7You have &cno&7 item in your &ehand&7."
+      success: "&7The &eitem&7 has been &asuccessfully&7 renamed!"
+      usage: "&7You &cmust&7 specify a name!"
+
+
+
+
