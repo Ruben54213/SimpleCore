@@ -24,7 +24,10 @@ public class HealCommand implements Listener, CommandExecutor {
     }
 
     private void setupDefaultConfig() {
-        if (!config.contains("modules.heal.active")) {
+        if (!config.contains("modules.de.heal.active")) {
+            config.set("modules.heal.active", true);
+        }
+        if (!config.contains("modules.en.heal.active")) {
             config.set("modules.heal.active", true);
         }
         setDefaultMessages();

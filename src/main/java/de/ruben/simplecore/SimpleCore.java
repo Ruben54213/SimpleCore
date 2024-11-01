@@ -30,10 +30,13 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("gamemode").setTabCompleter(new GamemodeCommand(this));
         getCommand("heal").setExecutor(new HealCommand(this));
         getCommand("feed").setExecutor(new FeedCommand(this));
+        getCommand("chatclear").setExecutor(new ChatClearCommand(this));
+
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new JoinLeaveMessages(this), this);
+        pluginManager.registerEvents(new ChatClearCommand(this), this);
         //Anvil Command
         new AnvilCommand(this);
 

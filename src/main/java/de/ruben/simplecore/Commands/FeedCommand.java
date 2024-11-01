@@ -24,7 +24,10 @@ public class FeedCommand implements Listener, CommandExecutor {
     }
 
     private void setupDefaultConfig() {
-        if (!config.contains("modules.feed.active")) {
+        if (!config.contains("modules.de.feed.active")) {
+            config.set("modules.feed.active", true);
+        }
+        if (!config.contains("modules.en.feed.active")) {
             config.set("modules.feed.active", true);
         }
         setDefaultMessages();

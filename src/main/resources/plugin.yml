@@ -38,3 +38,6 @@ commands:
   feed:
     aliases: ["food", "essen", "eat"]
     permission: simplecore.feed
+  chatclear:
+    permission: simplecore.chatclear
+    aliases: ["cc"]

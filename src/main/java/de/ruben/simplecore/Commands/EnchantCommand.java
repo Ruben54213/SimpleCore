@@ -26,8 +26,11 @@ public class EnchantCommand implements CommandExecutor, TabCompleter {
     }
 
     private void setupDefaultConfig() {
-        if (!config.contains("modules.custom-enchant.active")) {
-            config.set("modules.custom-enchant.active", true);
+        if (!config.contains("modules.de.custom-enchant.active")) {
+            config.set("modules.de.custom-enchant.active", true);
+        }
+        if (!config.contains("modules.en.custom-enchant.active")) {
+            config.set("modules.en.custom-enchant.active", true);
         }
         if (!config.contains("messages.de.custom-enchant.success")) {
             config.set("messages.de.custom-enchant.success", "&7Das &eItem&7 wurde &aerfolgreich&7 mit &e{enchantment}&7 auf Level &e{level} &7verzaubert!");

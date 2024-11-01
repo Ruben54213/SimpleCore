@@ -27,6 +27,14 @@ modules:
     active: true
   gamemode:
     active: true
+  heal:
+    active: true
+  feed:
+    active: true
+  chatclear:
+    active: true
+  custom-enchant:
+    active: true
 messages:
   de:
     modules:
@@ -97,6 +105,9 @@ messages:
       usage: "&cFalsche&7 Benutzung: Benutze &e/feed &7<&eSpieler&7>."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+    chatclear:
+      sender-info: "&7Du hast nun &aerfolgreich&7 den &eChat&7 gecleart."
+      info: "&7Der Chat wurde von &e{user}&7 geleert." #Placeholder: {user}
 ##############################################################################################################
       #ENGLISCH MESSAGES:
   en:
@@ -167,6 +178,9 @@ messages:
       only-players: "Only players can execute this command!"
       no-permission: "&7You do not have &cpermission&7 for that."
       no-player: "&7This &eplayer&7 was &cnot&7 found!"
+    chatclear:
+      sender-info: "&7You have &asuccessfully&7 cleared the &echat&7."
+      info: "&7The chat has been cleared by &e{user}&7."
 
 
 
