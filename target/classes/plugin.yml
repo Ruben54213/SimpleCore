@@ -14,3 +14,9 @@ commands:
   rename:
     aliases: ["itemrename"]
     permission: simplecore.itemrename
+  msg:
+    aliases: ["pm", "nachricht", "message", "dm"]
+    permission: simplecore.message
+  r:
+    aliases: ["reply", "antworten", "antwort"]
+    permission: simplecore.reply

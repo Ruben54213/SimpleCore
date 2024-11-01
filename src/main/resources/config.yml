@@ -41,6 +41,14 @@ messages:
       no-item: "&7Du hast &ckein&7 Item in der &eHand&7."
       success: "&7Das &eItem&7 wurde &aErfolgreich&7 umbenannt!"
       usage: "&7Du &cmusst&7 einen Namen angeben!"
+    msg:
+      #Placeholders: {name}, {message}
+      no-player: "&7Der Spieler &e{name}&7 ist &cnicht&7 online."
+      self-message: "&7Du kannst dir &eselbst &ckeine &7Nachricht senden."
+      no-reply: "&7Es gibt &cniemanden&7, dem du antworten kannst."
+      usage: "&cFalsche&7 Verwendung! Verwende &e/msg &7(&eSpieler&7) (&eNachricht&7)."
+      sent: "&fDu &7» &f{name} &8| &f{message}"
+      received: "&e{name} &7» &eDir &8| &f{message}"
   en:
     modules:
       inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
@@ -61,6 +69,14 @@ messages:
       no-item: "&7You have &cno&7 item in your &ehand&7."
       success: "&7The &eitem&7 has been &asuccessfully&7 renamed!"
       usage: "&7You &cmust&7 specify a name!"
+    msg:
+      # Placeholders: {name}, {message}
+      no-player: "&7The player &e{name}&7 is &cnot&7 online."
+      self-message: "&7You &ccannot&7 send a message to &eyourself&7."
+      no-reply: "&7There is &cno one&7 to reply to."
+      usage: "&cIncorrect&7 usage! Use &e/msg &7(&eplayer&7) (&emessage&7)."
+      sent: "&fYou &7» &f{name} &8| &f{message}"
+      received: "&e{name} &7» &eYou &8| &f{message}"
 
 
 

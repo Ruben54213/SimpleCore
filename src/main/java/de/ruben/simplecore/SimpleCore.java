@@ -1,9 +1,6 @@
 package de.ruben.simplecore;
 
-import de.ruben.simplecore.Commands.BroadcastCommand;
-import de.ruben.simplecore.Commands.ItemRenameCommand;
-import de.ruben.simplecore.Commands.WeatherCommand;
-import de.ruben.simplecore.Commands.WorkBenchCommand;
+import de.ruben.simplecore.Commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SimpleCore extends JavaPlugin {
@@ -17,6 +14,9 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("workbench").setExecutor(new WorkBenchCommand(this));
         getCommand("broadcast").setExecutor(new BroadcastCommand(this));
         getCommand("rename").setExecutor(new ItemRenameCommand(this));
+        getCommand("msg").setExecutor(new MessageCommand(this));
+        getCommand("msg").setTabCompleter(new MessageCommand(this));
+        getCommand("r").setExecutor(new MessageCommand(this));
 
         //Listener Integration
     }
