@@ -65,10 +65,9 @@ public class LanguageCommand implements CommandExecutor, TabCompleter {
         config.set("language", language);
         plugin.saveConfig();
 
-        sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + language + ".language.success"));
-
         // Reload the plugin configuration
         plugin.reloadConfig();
+        sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + language + ".language.success"));
 
         return true;
     }

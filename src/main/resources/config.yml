@@ -83,6 +83,13 @@ messages:
       usage: "&cFalsche&7 Verwendung: Benutze &e/gm &7<&emode&7>."
       no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
       change-other: "&7Du hast den &eSpielmodus&7 von &e{user} &7auf &e{mode}&7 geändert." #Placeholders: {mode}, {user}
+    heal:
+      self: "&7Du hast dich selbst &egeheilt&7."
+      other: "&7Du hast &e{player}&7 geheilt." #Placeholder: {player}
+      no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
+      usage: "&cFalsche&7 Benutzung: Benutze &e/heal &7<&eSpieler&7>."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
   en:
     modules:
       inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
@@ -137,6 +144,13 @@ messages:
       usage: "&cWrong&7 usage: Use &e/gm &7<&emode&7>."
       change-other: "&7You changed {user}'s &egame mode&7 to &e{mode}&7." #Placeholders: {mode}, {user}
       no-player: "&7This &eplayer&7 was &cnot&7 found!"
+    heal:
+      self: "&7You have &ehealed&7 yourself."
+      other: "&7You have healed &e{player}&7." #Placeholder: {player}
+      no-player: "&7This &eplayer&7 was &cnot&7 found!"
+      only-players: "Only players can execute this command!"
+      usage: "&cWrong&7 usage: Use &e/heal &7<&eplayer&7>."
+      no-permission: "&7You do not have &cpermission&7 for that."
 
 
 

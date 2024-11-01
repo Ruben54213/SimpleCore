@@ -32,3 +32,6 @@ commands:
   gamemode:
     aliases: ["gm", "spielmodus"]
     permission: simplecore.gamemode
+  heal:
+    aliases: ["heilen"]
+    permission: simplecore.heal
