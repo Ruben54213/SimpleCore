@@ -2,16 +2,17 @@ package de.ruben.simplecore.Listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class AnvilCommand implements Listener, CommandExecutor {
@@ -24,10 +25,10 @@ public class AnvilCommand implements Listener, CommandExecutor {
         this.config = plugin.getConfig();
         setupDefaultConfig();
         Bukkit.getPluginManager().registerEvents(this, plugin);
+        plugin.getCommand("anvil").setExecutor(this);
     }
 
     private void setupDefaultConfig() {
-        // Default values for configuration
         if (!config.contains("modules.anvil.active")) {
             config.set("modules.anvil.active", true);
         }
@@ -39,8 +40,8 @@ public class AnvilCommand implements Listener, CommandExecutor {
         String[][] messages = {
                 {"messages.de.anvil.open", "&7Dein &eAmboss&7 wird nun &ageöffnet&7.."},
                 {"messages.en.anvil.open", "&7Your &eAnvil&7 is now &aopening&7.."},
-                {"messages.de.anvil.title", "&fAmboss"},
-                {"messages.en.anvil.title", "&fAnvil"},
+                {"messages.de.anvil.title", "Amboss"},
+                {"messages.en.anvil.title", "Anvil"},
                 {"messages.de.anvil.open-other", "&7Du hast das &eAmboss&7 für &e{name}&7 geöffnet."},
                 {"messages.en.anvil.open-other", "&7You opened the &eAnvil&7 for &e{name}&7."},
                 {"messages.de.anvil.not-online", "&7Der Spieler &e{name}&7 ist &cnicht&7 online."},
@@ -58,67 +59,97 @@ public class AnvilCommand implements Listener, CommandExecutor {
         }
     }
 
-    @EventHandler
-    public void onPlayerInteract(PlayerInteractEvent event) {
-        if (config.getBoolean("modules.anvil.active") &&
-                (event.getAction() == org.bukkit.event.block.Action.RIGHT_CLICK_AIR ||
-                        event.getAction() == org.bukkit.event.block.Action.RIGHT_CLICK_BLOCK) &&
-                event.getPlayer().hasPermission("anvil.open")) {
-
-            openAnvil(event.getPlayer());
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(config.getString("messages." + config.getString("language") + ".anvil.only-players"));
+            return true;
         }
-    }
 
-    @EventHandler
-    public void onPlayerCommand(PlayerCommandPreprocessEvent event) {
-        String[] args = event.getMessage().split(" ");
-        if (!args[0].equalsIgnoreCase("/anvil")) return; // Early exit if not our command
+        Player player = (Player) sender;
+        if (!config.getBoolean("modules.anvil.active")) {
+            player.sendMessage(getMessage("modules.anvil.disabled"));
+            return true;
+        }
 
-        Player sender = (Player) event.getPlayer();
-        if (args.length == 1) {
-            openAnvil(sender);
-        } else if (args.length == 2) {
-            handleOpenOtherAnvil(sender, args[1]);
+        if (args.length == 0) {
+            openAnvil(player);
+        } else if (args.length == 1) {
+            Player target = Bukkit.getPlayer(args[0]);
+            if (target != null && target.isOnline()) {
+                if (player.hasPermission("simplecore.anvil.other")) {
+                    openAnvil(target);
+                    sendMessage(player, "open-other", target.getName());
+                } else {
+                    sendMessage(player, "no-permission");
+                }
+            } else {
+                sendMessage(player, "not-online", args[0]);
+            }
         } else {
-            sendUsageMessage(sender);
+            sendMessage(player, "usage");
         }
-        event.setCancelled(true); // Prevent normal command execution
-    }
-
-    private void handleOpenOtherAnvil(Player sender, String targetName) {
-        Player target = Bukkit.getPlayer(targetName);
-        if (target == null || !target.isOnline()) {
-            sendMessage(sender, "not-online", targetName);
-            return;
-        }
-        if (!sender.hasPermission("simplecore.anvil.other")) {
-            sendMessage(sender, "no-permission");
-            return;
-        }
-        openAnvil(target);
-        sendMessage(sender, "open-other", target.getName());
-    }
-
-    private void sendUsageMessage(Player player) {
-        sendMessage(player, "usage");
-    }
-
-    private void sendMessage(Player player, String messageKey, String... placeholders) {
-        String message = config.getString("messages." + config.getString("language") + ".anvil." + messageKey);
-        for (String placeholder : placeholders) {
-            message = message.replace("{name}", placeholder);
-        }
-        player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("prefix") + message));
+        return true;
     }
 
     private void openAnvil(Player player) {
-        Inventory anvil = Bukkit.createInventory(null, 27, ChatColor.translateAlternateColorCodes('&', config.getString("prefix") + config.getString("messages." + config.getString("language") + ".anvil.title")));
+        String title = config.getString("messages." + config.getString("language") + ".anvil.title");
+
+        // Check for server version and create the appropriate inventory
+        Inventory anvil;
+        if (player.getServer().getVersion().contains("1.8")) {
+            // Create a custom anvil-like inventory for 1.8
+            anvil = Bukkit.createInventory(null, 27, ChatColor.translateAlternateColorCodes('&', title));
+
+            // Placeholder for the left input
+            ItemStack leftInput = new ItemStack(Material.ANVIL);
+            ItemMeta leftInputMeta = leftInput.getItemMeta();
+            if (leftInputMeta != null) {
+                leftInputMeta.setDisplayName(ChatColor.GOLD + "Input Item");
+                leftInput.setItemMeta(leftInputMeta);
+            }
+            anvil.setItem(0, leftInput); // Left input slot
+
+            // Placeholder for the right input
+            ItemStack rightInput = new ItemStack(Material.ANVIL);
+            ItemMeta rightInputMeta = rightInput.getItemMeta();
+            if (rightInputMeta != null) {
+                rightInputMeta.setDisplayName(ChatColor.GOLD + "Rename Item");
+                rightInput.setItemMeta(rightInputMeta);
+            }
+            anvil.setItem(1, rightInput); // Right input slot
+
+            // Placeholder for the output
+            ItemStack output = new ItemStack(Material.ANVIL);
+            ItemMeta outputMeta = output.getItemMeta();
+            if (outputMeta != null) {
+                outputMeta.setDisplayName(ChatColor.GOLD + "Output Item");
+                output.setItemMeta(outputMeta);
+            }
+            anvil.setItem(2, output); // Output slot
+        } else {
+            // For 1.9+ versions, use the built-in anvil inventory
+            anvil = Bukkit.createInventory(null, InventoryType.ANVIL, ChatColor.translateAlternateColorCodes('&', title));
+        }
+
+        // Open the appropriate anvil inventory for the player
         player.openInventory(anvil);
-        player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("prefix") + config.getString("messages." + config.getString("language") + ".anvil.open")));
+        sendMessage(player, "open");
     }
 
-    @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        return false;
+    private void sendMessage(Player player, String messageKey, String... placeholders) {
+        String message = getMessage(messageKey);
+        if (placeholders.length > 0) {
+            message = message.replace("{name}", placeholders[0]);
+        }
+        player.sendMessage(message);
+    }
+
+    private String getMessage(String key) {
+        String language = config.getString("language", "de");
+        String prefix = config.getString("prefix", "&bSimple&fCore &8» ");
+        String message = config.getString("messages." + language + ".anvil." + key, "Message not found");
+
+        return ChatColor.translateAlternateColorCodes('&', prefix + message);
     }
 }

@@ -70,11 +70,12 @@ messages:
       success: "&7Die &eSprache&7 wurde nun &aErfolgreich&7 geändert!"
     anvil:
       open: "&7Dein &eAmboss&7 wird nun &ageöffnet&7.."
-      title: "&fAmboss"
+      title: "Amboss"
       not-online: "&7Der Spieler &e{name}&7 ist &cnicht&7 online."
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
       usage: "&cFalsche&7 Verwendung: Benutze &e/anvil &7(&eSpieler&7)."
       open-other: "&7Du hast das &eAmboss&7 für &e{name}&7 geöffnet."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
   en:
     modules:
       inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
@@ -118,11 +119,12 @@ messages:
       success: "&7The &elanguage&7 has been &asuccessfully&7 changed!"
     anvil:
       open: "&7Your &eAnvil&7 is now &aopening&7.."
-      title: "&fAnvil"
+      title: "Anvil"
       not-online: "&7The player &e{name}&7 is &cnot&7 online."
       no-permission: "&7You do not have &cpermission&7 for that."
       usage: "&cWrong&7 usage: Use &e/anvil &7(&ePlayer&7)."
       open-other: "&7You opened the &eAnvil&7 for &e{name}&7." #Placeholder: {name}
+      only-players: "Only players may execute this command!"
 
 
 
