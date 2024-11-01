@@ -52,12 +52,12 @@ public class WeatherCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weather.only-players"));
+            sender.sendMessage(getConfigMessage(getConfigMessage("prefix") + "messages." + getConfigMessage("language") + ".weather.only-players"));
             return true;
         }
 
         if (args.length != 1) {
-            sender.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weather.usage"));
+            sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.usage"));
             return false;
         }
 
@@ -87,7 +87,7 @@ public class WeatherCommand implements CommandExecutor, TabCompleter {
                 break;
 
             default:
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".weather.wrong-usage"));
+                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.wrong-usage"));
                 return false;
         }
 
@@ -95,7 +95,7 @@ public class WeatherCommand implements CommandExecutor, TabCompleter {
     }
 
     private String getConfigMessage(String path) {
-        return ChatColor.translateAlternateColorCodes('&', config.getString(path, "&7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
+        return ChatColor.translateAlternateColorCodes('&', config.getString(path, "&bSimple&fCore &8» &7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
     }
 
     @Override

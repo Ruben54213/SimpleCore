@@ -3,8 +3,13 @@
 ###############################################################################################################################
 language: "de" #(de or en possible)
 prefix: "&bSimple&fCore &8» "
+broadcastprefix: "&b&lSimple&f&lCore &8» &f"
 
 modules:
+  weather:
+  workbench:
+  broadcast:
+    addlines: true
 
 messages:
   de:
@@ -18,6 +23,8 @@ messages:
     workbench:
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       workbench-open: "&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!"
+    broadcast:
+      usage: "&7Du &cmusst&7 eine Nachricht angeben!"
   en:
     weather:
       only-players: "Only players can execute this command!"
@@ -29,6 +36,8 @@ messages:
     workbench:
       only-players: "Only players can execute this command!"
       workbench-open: "&7The &eworkbench&7 has been &asuccessfully&7 opened!"
+    broadcast:
+      usage: "&7You &cmust&7 provide a message!"
 
 
 

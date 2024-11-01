@@ -24,18 +24,18 @@ public class WorkBenchCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(getMessage("messages." + getMessage("language") + ".only-players"));
+            sender.sendMessage(getMessage("prefix") + getMessage("messages." + getMessage("language") + ".only-players"));
             return true;
         }
 
         Player player = (Player) sender;
         player.openWorkbench(player.getLocation(), true);
-        player.sendMessage(getMessage("messages." + getMessage("language") + ".workbench-open"));
+        player.sendMessage(getMessage("prefix") + getMessage("messages." + getMessage("language") + ".workbench-open"));
         return true;
     }
 
     private String getMessage(String path) {
-        return ChatColor.translateAlternateColorCodes('&', config.getString(path, "&7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
+        return ChatColor.translateAlternateColorCodes('&', config.getString(path, "&bSimple&fCore &8» &7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
     }
 
     // Methode zum Überprüfen und Hinzufügen von Standardwerten in der Konfiguration
