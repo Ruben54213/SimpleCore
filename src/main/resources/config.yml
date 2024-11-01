@@ -10,7 +10,9 @@ modules:
   workbench:
   broadcast:
     addlines: true
-
+    sound: "ENTITY_PLAYER_LEVELUP" #(In 1.9+ its called "ENTITY_PLAYER_LEVELUP" if "LEVEL_UP" is not working, you can also choose an other sound."
+    sound_volume: 1.0
+    sound_pitch: 1.0
 messages:
   de:
     weather:
