@@ -29,6 +29,7 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("gamemode").setExecutor(new GamemodeCommand(this));
         getCommand("gamemode").setTabCompleter(new GamemodeCommand(this));
         getCommand("heal").setExecutor(new HealCommand(this));
+        getCommand("feed").setExecutor(new FeedCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();

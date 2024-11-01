@@ -90,6 +90,15 @@ messages:
       usage: "&cFalsche&7 Benutzung: Benutze &e/heal &7<&eSpieler&7>."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+    feed:
+      self: "&7Du hast deinen &eHunger &7gestillt."
+      other: "&7Du hast &e{player}&7 gefüttert." #Placeholder: {player}
+      no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
+      usage: "&cFalsche&7 Benutzung: Benutze &e/feed &7<&eSpieler&7>."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+##############################################################################################################
+      #ENGLISCH MESSAGES:
   en:
     modules:
       inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
@@ -151,6 +160,14 @@ messages:
       only-players: "Only players can execute this command!"
       usage: "&cWrong&7 usage: Use &e/heal &7<&eplayer&7>."
       no-permission: "&7You do not have &cpermission&7 for that."
+    feed:
+      self: "&7You have &erefreshed&7 yourself."
+      usage: "&cWrong&7 usage: Use &e/feed &7<&eplayer&7>."
+      other: "&7You have fed &e{player}&7."
+      only-players: "Only players can execute this command!"
+      no-permission: "&7You do not have &cpermission&7 for that."
+      no-player: "&7This &eplayer&7 was &cnot&7 found!"
+
 
 
 

@@ -35,3 +35,6 @@ commands:
   heal:
     aliases: ["heilen"]
     permission: simplecore.heal
+  feed:
+    aliases: ["food", "essen", "eat"]
+    permission: simplecore.feed
