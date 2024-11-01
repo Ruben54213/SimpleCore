@@ -17,6 +17,8 @@ modules:
     sound_volume: 1.0
     sound_pitch: 1.0
     sound_active: true
+  itemrename:
+    active: true
 messages:
   de:
     modules:
@@ -34,6 +36,11 @@ messages:
     broadcast:
       usage: "&7Du &cmusst&7 eine Nachricht angeben!"
       sound-error: "&7Der &eSound&7 konnte &cnicht&7 abgespielt werden! Bitte passe ihn in der &eConfig&7 an."
+    itemrename:
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-item: "&7Du hast &ckein&7 Item in der &eHand&7."
+      success: "&7Das &eItem&7 wurde &aErfolgreich&7 umbenannt!"
+      usage: "&7Du &cmusst&7 einen Namen angeben!"
   en:
     modules:
       inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
@@ -49,6 +56,11 @@ messages:
       workbench-open: "&7The &eworkbench&7 has been &asuccessfully&7 opened!"
     broadcast:
       usage: "&7You &cmust&7 provide a message!"
+    itemrename:
+      only-players: "Only players can execute this command!"
+      no-item: "&7You have &cno&7 item in your &ehand&7."
+      success: "&7The &eitem&7 has been &asuccessfully&7 renamed!"
+      usage: "&7You &cmust&7 specify a name!"
 
 
 

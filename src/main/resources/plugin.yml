@@ -11,3 +11,6 @@ commands:
   broadcast:
     aliases: ["bc", "benachrichtigung", "announcement", "announce"]
     permission: simplecore.broadcast
+  rename:
+    aliases: ["itemrename"]
+    permission: simplecore.itemrename
