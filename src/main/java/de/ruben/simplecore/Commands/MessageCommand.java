@@ -18,17 +18,26 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
     private final JavaPlugin plugin;
     private final FileConfiguration config;
     private final Map<Player, Player> lastMessageSender = new HashMap<>();
+    private boolean isEnabled;
 
     public MessageCommand(JavaPlugin plugin) {
         this.plugin = plugin;
         this.config = plugin.getConfig();
         setupDefaultConfig();
-        plugin.getCommand("msg").setExecutor(this);
-        plugin.getCommand("msg").setTabCompleter(this);
-        plugin.getCommand("r").setExecutor(this);
+        this.isEnabled = config.getBoolean("commands.msg.enabled", true);
+        if (isEnabled) {
+            plugin.getCommand("msg").setExecutor(this);
+            plugin.getCommand("msg").setTabCompleter(this);
+            plugin.getCommand("r").setExecutor(this);
+        }
     }
 
     private void setupDefaultConfig() {
+        // Einstellung zur Aktivierung/Deaktivierung des Commands
+        if (!config.contains("modules.message.active")) {
+            config.set("commands.msg.enabled", true);
+        }
+
         // Standardwerte für Nachrichten auf Deutsch
         if (!config.contains("messages.de.msg.no-player")) {
             config.set("messages.de.msg.no-player", "&7Der Spieler &e{name}&7 ist &cnicht&7 online.");
@@ -73,6 +82,11 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!isEnabled) {
+            sender.sendMessage(ChatColor.RED + "This command is currently disabled.");
+            return true;
+        }
+
         if (!(sender instanceof Player)) {
             sender.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".only-players"));
             return true;
@@ -98,7 +112,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
                 return true;
             }
 
-            String message = buildMessage(args, 1);  // Nachricht ab dem zweiten Argument
+            String message = buildMessage(args, 1);
             sendPrivateMessage(player, target, message);
             lastMessageSender.put(target, player);
             lastMessageSender.put(player, target);
@@ -119,7 +133,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
                 return false;
             }
 
-            String message = buildMessage(args, 0);  // Nachricht ab dem ersten Argument
+            String message = buildMessage(args, 0);
             sendPrivateMessage(player, lastSender, message);
             lastMessageSender.put(player, lastSender);
 

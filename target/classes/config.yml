@@ -19,6 +19,8 @@ modules:
     sound_active: true
   itemrename:
     active: true
+  msg:
+    active: true
 messages:
   de:
     modules:
