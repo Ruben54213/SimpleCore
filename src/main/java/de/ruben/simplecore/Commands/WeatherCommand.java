@@ -1,15 +1,18 @@
 package de.ruben.simplecore.Commands;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class WeatherCommand implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.List;
+
+public class WeatherCommand implements CommandExecutor, TabCompleter {
 
     private final JavaPlugin plugin;
     private final FileConfiguration config;
@@ -18,6 +21,8 @@ public class WeatherCommand implements CommandExecutor {
         this.plugin = plugin;
         this.config = plugin.getConfig();
         initializeDefaultConfig();
+        plugin.getCommand("weather").setExecutor(this);
+        plugin.getCommand("weather").setTabCompleter(this);
     }
 
     private void initializeDefaultConfig() {
@@ -91,5 +96,19 @@ public class WeatherCommand implements CommandExecutor {
 
     private String getConfigMessage(String path) {
         return ChatColor.translateAlternateColorCodes('&', config.getString(path, "&7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+        List<String> completions = new ArrayList<>();
+        if (args.length == 1) {
+            completions.add("sun");
+            completions.add("sonne");
+            completions.add("rain");
+            completions.add("regen");
+            completions.add("thunder");
+            completions.add("gewitter");
+        }
+        return completions;
     }
 }
