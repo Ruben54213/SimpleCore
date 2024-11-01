@@ -26,6 +26,8 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("enchant").setTabCompleter(new EnchantCommand(this));
         getCommand("language").setExecutor(new LanguageCommand(this));
         getCommand("language").setTabCompleter(new LanguageCommand(this));
+        getCommand("gamemode").setExecutor(new GamemodeCommand(this));
+        getCommand("gamemode").setTabCompleter(new GamemodeCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();

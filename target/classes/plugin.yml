@@ -29,3 +29,6 @@ commands:
   anvil:
     aliases: ["amboss"]
     permission: simplecore.anvil
+  gamemode:
+    aliases: ["gm", "spielmodus"]
+    permission: simplecore.gamemode

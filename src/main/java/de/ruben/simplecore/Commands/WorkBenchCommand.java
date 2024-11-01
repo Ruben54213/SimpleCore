@@ -29,13 +29,13 @@ public class WorkBenchCommand implements CommandExecutor {
         }
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(getMessage("prefix") + getMessage("messages." + getMessage("language") + ".only-players"));
+            sender.sendMessage(getMessage("prefix") + getMessage("messages." + getMessage("language") + ".workbench.only-players"));
             return true;
         }
 
         Player player = (Player) sender;
         player.openWorkbench(player.getLocation(), true);
-        player.sendMessage(getMessage("prefix") + getMessage("messages." + getMessage("language") + ".workbench-open"));
+        player.sendMessage(getMessage("prefix") + getMessage("messages." + getMessage("language") + ".workbench.workbench-open"));
         return true;
     }
 

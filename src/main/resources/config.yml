@@ -25,6 +25,8 @@ modules:
     active: true
   anvil:
     active: true
+  gamemode:
+    active: true
 messages:
   de:
     modules:
@@ -76,6 +78,11 @@ messages:
       usage: "&cFalsche&7 Verwendung: Benutze &e/anvil &7(&eSpieler&7)."
       open-other: "&7Du hast das &eAmboss&7 für &e{name}&7 geöffnet."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+    gamemode:
+      change: "&7Du hast deinen Spielmodus auf &e{mode}&7 geändert." #Placeholder: {mode}
+      usage: "&cFalsche&7 Verwendung: Benutze &e/gm &7<&emode&7>."
+      no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
+      change-other: "&7Du hast den &eSpielmodus&7 von &e{user} &7auf &e{mode}&7 geändert."
   en:
     modules:
       inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
@@ -125,6 +132,11 @@ messages:
       usage: "&cWrong&7 usage: Use &e/anvil &7(&ePlayer&7)."
       open-other: "&7You opened the &eAnvil&7 for &e{name}&7." #Placeholder: {name}
       only-players: "Only players may execute this command!"
+    gamemode:
+      change: "&7You changed your game mode to &e{mode}&7." #Placeholder: {mode}
+      usage: "&cWrong&7 usage: Use &e/gm &7<&emode&7>."
+      change-other: "&7You changed {user}'s &egame mode&7 to &e{mode}&7."
+      no-player: "&7This &eplayer&7 was &cnot&7 found!"
 
 
 
