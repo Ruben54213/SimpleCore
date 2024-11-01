@@ -21,6 +21,8 @@ modules:
     active: true
   msg:
     active: true
+  joinleave:
+    active: true
 messages:
   de:
     modules:
@@ -51,6 +53,10 @@ messages:
       usage: "&cFalsche&7 Verwendung! Verwende &e/msg &7(&eSpieler&7) (&eNachricht&7)."
       sent: "&fDu &7» &f{name} &8| &f{message}"
       received: "&e{name} &7» &eDir &8| &f{message}"
+    joinleave:
+      #Placeholder: {name}
+      join: "&7[&a»&7] &f{name}"
+      leave: "&7[&c«&7] &f{name}"
   en:
     modules:
       inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
@@ -79,6 +85,11 @@ messages:
       usage: "&cIncorrect&7 usage! Use &e/msg &7(&eplayer&7) (&emessage&7)."
       sent: "&fYou &7» &f{name} &8| &f{message}"
       received: "&e{name} &7» &eYou &8| &f{message}"
+    joinleave:
+      #Placeholder: {name}
+      join: "&7[&a»&7] &f{name}"
+      leave: "&7[&c«&7] &f{name}"
+
 
 
 
