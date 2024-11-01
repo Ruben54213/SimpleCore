@@ -13,9 +13,10 @@ modules:
   broadcast:
     active: true
     addlines: true
-    sound: "ENTITY_PLAYER_LEVELUP" #(In 1.9+ its called "ENTITY_PLAYER_LEVELUP" if "LEVEL_UP" is not working, you can also choose an other sound."
+    sound: "ENTITY_PLAYER_LEVELUP" #(In 1.9+ its called "ENTITY_PLAYER_LEVELUP" if "LEVEL_UP" is not working. You can also choose any other sound."
     sound_volume: 1.0
     sound_pitch: 1.0
+    sound_active: true
 messages:
   de:
     modules:

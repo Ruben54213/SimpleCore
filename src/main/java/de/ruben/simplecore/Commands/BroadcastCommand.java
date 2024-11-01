@@ -39,6 +39,11 @@ public class BroadcastCommand implements CommandExecutor {
             configUpdated = true;
         }
 
+        if (!config.contains("modules.broadcast.sound_active")) { // Neue Einstellung
+            config.set("modules.broadcast.sound_active", true);
+            configUpdated = true;
+        }
+
         if (!config.contains("messages." + config.getString("language") + ".broadcast.usage")) {
             config.set("messages." + config.getString("language") + ".broadcast.usage", "&7Du &cmusst&7 eine Nachricht angeben!");
             configUpdated = true;
@@ -97,19 +102,22 @@ public class BroadcastCommand implements CommandExecutor {
         }
 
         // Sound-Konfiguration auslesen
-        String soundName = config.getString("modules.broadcast.sound");
-        float volume = (float) config.getDouble("modules.broadcast.sound_volume", 1.0);
-        float pitch = (float) config.getDouble("modules.broadcast.sound_pitch", 1.0);
+        boolean soundActive = config.getBoolean("modules.broadcast.sound_active", true); // Neue Einstellung
+        if (soundActive) {
+            String soundName = config.getString("modules.broadcast.sound");
+            float volume = (float) config.getDouble("modules.broadcast.sound_volume", 1.0);
+            float pitch = (float) config.getDouble("modules.broadcast.sound_pitch", 1.0);
 
-        // Sound abspielen, falls dieser existiert
-        try {
-            Sound sound = Sound.valueOf(soundName);
-            for (Player player : Bukkit.getOnlinePlayers()) {
-                player.playSound(player.getLocation(), sound, volume, pitch);
+            // Sound abspielen, falls dieser existiert
+            try {
+                Sound sound = Sound.valueOf(soundName);
+                for (Player player : Bukkit.getOnlinePlayers()) {
+                    player.playSound(player.getLocation(), sound, volume, pitch);
+                }
+            } catch (IllegalArgumentException e) {
+                Bukkit.getLogger().warning("Config-Error with Broadcast-Sounds: " + soundName);
+                sender.sendMessage(config.getString("messages." + config.getString("language") + ".broadcast.sound-error"));
             }
-        } catch (IllegalArgumentException e) {
-            Bukkit.getLogger().warning("Config-Error with Broadcast-Sounds: " + soundName);
-            sender.sendMessage(config.getString("messages." + config.getString("language") + ".broadcast.sound-error"));
         }
 
         return true;
