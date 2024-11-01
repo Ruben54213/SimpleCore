@@ -20,3 +20,9 @@ commands:
   r:
     aliases: ["reply", "antworten", "antwort"]
     permission: simplecore.reply
+  enchant:
+    aliases: ["verzaubern", "zauber", "enc"]
+    permission: simplecore.enchant
+  language:
+    aliases: ["lang", "sprache"]
+    permission: simplecore.language

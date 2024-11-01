@@ -3,6 +3,8 @@ de\ruben\simplecore\SimpleCore.class
 de\ruben\simplecore\Commands\BroadcastCommand.class
 de\ruben\simplecore\Commands\ItemRenameCommand.class
 de\ruben\simplecore\Commands\MessageCommand.class
+de\ruben\simplecore\Commands\EnchantCommand.class
 de\ruben\simplecore\Commands\WorkBenchCommand.class
 de\ruben\simplecore\Utility\ItemBuilder.class
 de\ruben\simplecore\Commands\WeatherCommand.class
+de\ruben\simplecore\Commands\LanguageCommand.class

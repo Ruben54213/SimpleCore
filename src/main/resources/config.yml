@@ -57,6 +57,15 @@ messages:
       #Placeholder: {name}
       join: "&7[&a»&7] &f{name}"
       leave: "&7[&c«&7] &f{name}"
+    custom-enchant:
+      #Placeholders: {enchantment}, {level}
+      failure: "&cFehler&7 Aufgetreten: &7Du &cmusst&7 ein Item in der &eHand &7halten und eine &agültige&7 Verzauberung und &eLevel&7 angeben!"
+      success: "&7Das &eItem&7 wurde &aerfolgreich&7 mit &e{enchantment}&7 auf Level &e{level} &7verzaubert!"
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+    language:
+      wrong-language: "&7Diese Sprache wird momentan &cnicht&7 Unterstützt!"
+      no-language: "&7Du &cmusst&7 eine Sprache angeben! (&ede&7/&een&7)"
+      success: "&7Die &eSprache&7 wurde nun &aErfolgreich&7 geändert!"
   en:
     modules:
       inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
@@ -89,6 +98,15 @@ messages:
       #Placeholder: {name}
       join: "&7[&a»&7] &f{name}"
       leave: "&7[&c«&7] &f{name}"
+    custom-enchant:
+      #Placeholders: {enchantment}, {level}
+      failure: "&7An &cerror &7occurred: &7You &cmust&7 hold an item in your &ehand &7and specify a &avalid&7 enchantment and &elevel&7!"
+      success: "&7The &eitem&7 has been &asuccessfully&7 enchanted with &e{enchantment}&7 at level &e{level}&7!"
+      only-players: "Only players may execute this command!"
+    language:
+      wrong-language: "&7This language is currently &cnot&7 supported!"
+      no-language: "&7You &cmust&7 specify a language! (&ede&7/&een&7)"
+      success: "&7The &elanguage&7 has been &asuccessfully&7 changed!"
 
 
 

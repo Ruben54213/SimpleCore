@@ -20,6 +20,10 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("msg").setExecutor(new MessageCommand(this));
         getCommand("msg").setTabCompleter(new MessageCommand(this));
         getCommand("r").setExecutor(new MessageCommand(this));
+        getCommand("enchant").setExecutor(new EnchantCommand(this));
+        getCommand("enchant").setTabCompleter(new EnchantCommand(this));
+        getCommand("language").setExecutor(new LanguageCommand(this));
+        getCommand("language").setTabCompleter(new LanguageCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();

@@ -88,7 +88,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
         }
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".only-players"));
+            sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".only-players"));
             return true;
         }
 
@@ -97,18 +97,18 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
         // /msg Command
         if (command.getName().equalsIgnoreCase("msg")) {
             if (args.length < 2) {
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".msg.usage"));
+                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".msg.usage"));
                 return false;
             }
 
             Player target = plugin.getServer().getPlayerExact(args[0]);
             if (target == null) {
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".msg.no-player").replace("{name}", args[0]));
+                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".msg.no-player").replace("{name}", args[0]));
                 return true;
             }
 
             if (target.equals(player)) {
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".msg.self-message"));
+                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".msg.self-message"));
                 return true;
             }
 
@@ -124,12 +124,12 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
         if (command.getName().equalsIgnoreCase("r")) {
             Player lastSender = lastMessageSender.get(player);
             if (lastSender == null || !lastSender.isOnline()) {
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".msg.no-reply"));
+                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".msg.no-reply"));
                 return true;
             }
 
             if (args.length < 1) {
-                player.sendMessage(getConfigMessage("messages." + getConfigMessage("language") + ".msg.usage"));
+                player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".msg.usage"));
                 return false;
             }
 
