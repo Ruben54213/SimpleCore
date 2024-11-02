@@ -43,6 +43,8 @@ modules:
     active: true
   nearby:
     active: true
+  time:
+    active: true
 messages:
   de:
     modules:
@@ -144,7 +146,19 @@ messages:
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       distance-word: "&7, &cDistance&7:"
       block-word: "&eBlöcke&7"
-##############################################################################################################
+    time:
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      success: "&7Die Zeit wurde auf &e{time}&7 gesetzt."
+      only-players: "&cDiesen Befehl dürfen nur Spieler ausführen!"
+      usage: "&cFalsche&7 Verwendung: Benutze &e/time &7<&eday&7|&enight&7|&emidnight&7|&enoon&7>."
+    invclear:
+      self: "&7Dein &eInventar &7wurde geleert."
+      usage: "&cFalsche&7 Benutzung: Benutze &e/invclear &7<&eSpieler&7>."
+      other: "&7Das Inventar von &e{player}&7 wurde geleert."
+      only-players: "&cDiesen Befehl dürfen nur Spieler ausführen!"
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
+      ##############################################################################################################
       #ENGLISCH MESSAGES:
   en:
     modules:
@@ -245,6 +259,18 @@ messages:
       only-players: "Only players can execute this command!"
       distance-word: "&7, &cDistance&7:"
       block-word: "&eBlocks&7"
+    time:
+      no-permission: "&7You do not have &cpermission&7 for this."
+      success: "&7The time has been set to &e{time}&7."
+      only-players: "&cOnly players can execute this command!"
+      usage: "&cWrong&7 usage: Use &e/time &7<&eday&7|&enight&7|&emidnight&7|&enoon&7>."
+    invclear:
+      self: "&7Your inventory has been cleared."
+      usage: "&cWrong&7 usage: Use &e/invclear &7<&eplayer&7>."
+      other: "&7Cleared the inventory of &e{player}&7."
+      only-players: "&cOnly players can execute this command!"
+      no-permission: "&7You do not have &cpermission&7 for that."
+      no-player: "&7This &eplayer&7 was &cnot&7 found!"
 
 
 

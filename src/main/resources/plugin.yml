@@ -52,6 +52,16 @@ commands:
   nearby:
     permission: simplecore.nearby
     aliases: ["near"]
+  day:
+    permission: simplecore.time
+  night:
+    permission: simplecore.time
+  midnight:
+    permission: simplecore.time
+  noon:
+    permission: simplecore.time
+  time:
+    permission: simplecore.time
   invclear:
     permission: simplecore.invclear
     aliases: [ "clear" ]

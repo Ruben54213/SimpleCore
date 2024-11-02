@@ -27,10 +27,7 @@ public class InvClearCommand implements Listener, CommandExecutor {
     }
 
     private void setupDefaultConfig() {
-        if (!config.contains("modules.de.invclear.active")) {
-            config.set("modules.invclear.active", true);
-        }
-        if (!config.contains("modules.en.invclearactive")) {
+        if (!config.contains("modules.invclear.active")) {
             config.set("modules.invclear.active", true);
         }
         setDefaultMessages();
