@@ -49,3 +49,6 @@ commands:
     permission: simplecore.tpo
   kill:
     permission: simplecore.kill
+  nearby:
+    permission: simplecore.nearby
+    aliases: ["near"]

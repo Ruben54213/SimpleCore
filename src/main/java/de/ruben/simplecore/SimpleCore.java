@@ -33,6 +33,7 @@ public final class SimpleCore extends JavaPlugin {
             getCommand("tpo").setExecutor(new TeleportCommand(this));
         getCommand("kill").setExecutor(new KillCommand(this));
         getCommand("kill").setTabCompleter(new KillCommand(this));
+        getCommand("nearby").setExecutor(new NearbyCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();

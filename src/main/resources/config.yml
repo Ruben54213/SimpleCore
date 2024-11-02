@@ -39,6 +39,8 @@ modules:
     active: true
   teleport:
     active: true
+  nearby:
+    active: true
 messages:
   de:
     modules:
@@ -133,6 +135,12 @@ messages:
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       success: "&7Du hast &e{player}&a erfolgreich&7 getötet."
       all-success: "&7Alle Spieler wurden &aerfolgreich&7 getötet."
+    nearby:
+      nearby-players: "&7Folgende &cSpieler&7 befinden sich in der &eNähe&7:"
+      no-players: "&7Es befinden sich &ckeine&7 Spieler in deiner &eNähe&7."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      distance-word: "&7, &cDistance&7:"
+      block-word: "&eBlöcke&7"
 ##############################################################################################################
       #ENGLISCH MESSAGES:
   en:
@@ -227,6 +235,12 @@ messages:
       only-players: "Only players can execute this command!"
       success: "&7You have killed &e{player}&a successfully&7."
       all-success: "&7All players have been &asuccessfully&7 killed."
+    nearby:
+      nearby-players: "&7The following &cplayers&7 are in the &earea&7:"
+      no-players: "&7There are &cno&7 players in your &earea&7."
+      only-players: "Only players can execute this command!"
+      distance-word: "&7, &cDistance&7:"
+      block-word: "&eBlocks&7"
 
 
 

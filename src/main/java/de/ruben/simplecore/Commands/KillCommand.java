@@ -62,6 +62,10 @@ public class KillCommand implements CommandExecutor, TabCompleter {
         }
 
         Player player = (Player) sender;
+        if (!config.getBoolean("modules.kill.active")) {
+            player.sendMessage(getMessage("modules.inactive"));
+            return true;
+        }
 
         if (args.length == 0) {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&',config.getString("prefix") + getMessage("kill.usage")));

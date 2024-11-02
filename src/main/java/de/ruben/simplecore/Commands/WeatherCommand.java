@@ -26,20 +26,45 @@ public class WeatherCommand implements CommandExecutor, TabCompleter {
     }
 
     private void initializeDefaultConfig() {
-        config.addDefault("language", "de");
-        config.addDefault("prefix", "&bSimple&fCore &8» ");
-        config.addDefault("modules.weather.active", true);  // Aktivierungs-Flag für das Modul
+        // Überprüfen, ob die Sprache bereits gesetzt ist
+        if (!config.contains("language")) {
+            config.set("language", "de");
+        }
 
-        // Nachrichten für das Modul
-        config.addDefault("messages.de.weather.module-disabled", "&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in der &eConfig&7.");
-        config.addDefault("messages.de.weather.only-players", "Diesen Befehl dürfen nur Spieler ausführen!");
-        config.addDefault("messages.de.weather.usage", "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7.");
-        config.addDefault("messages.de.weather.wrong-usage", "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7, deine Angabe wurde &cnicht&7 erkannt.");
-        config.addDefault("messages.de.weather.weather-thunder", "&7Das Wetter wurde nun auf &eGewitter&7 umgestellt.");
-        config.addDefault("messages.de.weather.weather-sun", "&7Das Wetter wurde nun auf &eSonne&7 umgestellt.");
-        config.addDefault("messages.de.weather.weather-rain", "&7Das Wetter wurde nun auf &eRegen&7 umgestellt.");
+        // Überprüfen, ob der Prefix bereits gesetzt ist
+        if (!config.contains("prefix")) {
+            config.set("prefix", "&bSimple&fCore &8» ");
+        }
 
-        config.options().copyDefaults(true);
+        // Überprüfen, ob das Wetter-Modul aktiv ist
+        if (!config.contains("modules.weather.active")) {
+            config.set("modules.weather.active", true);  // Aktivierungs-Flag für das Modul
+        }
+
+        // Nachrichten für das Modul nur setzen, wenn sie nicht existieren
+        if (!config.contains("messages.de.weather.module-disabled")) {
+            config.set("messages.de.weather.module-disabled", "&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in der &eConfig&7.");
+        }
+        if (!config.contains("messages.de.weather.only-players")) {
+            config.set("messages.de.weather.only-players", "Diesen Befehl dürfen nur Spieler ausführen!");
+        }
+        if (!config.contains("messages.de.weather.usage")) {
+            config.set("messages.de.weather.usage", "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7.");
+        }
+        if (!config.contains("messages.de.weather.wrong-usage")) {
+            config.set("messages.de.weather.wrong-usage", "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7, deine Angabe wurde &cnicht&7 erkannt.");
+        }
+        if (!config.contains("messages.de.weather.weather-thunder")) {
+            config.set("messages.de.weather.weather-thunder", "&7Das Wetter wurde nun auf &eGewitter&7 umgestellt.");
+        }
+        if (!config.contains("messages.de.weather.weather-sun")) {
+            config.set("messages.de.weather.weather-sun", "&7Das Wetter wurde nun auf &eSonne&7 umgestellt.");
+        }
+        if (!config.contains("messages.de.weather.weather-rain")) {
+            config.set("messages.de.weather.weather-rain", "&7Das Wetter wurde nun auf &eRegen&7 umgestellt.");
+        }
+
+        // Speichert die Konfiguration, wenn Änderungen vorgenommen wurden
         plugin.saveConfig();
     }
 
