@@ -14,15 +14,16 @@ import java.util.List;
 public class LanguageCommand implements CommandExecutor, TabCompleter {
 
     private final JavaPlugin plugin;
-    private final FileConfiguration config;
+    private FileConfiguration config;
 
     public LanguageCommand(JavaPlugin plugin) {
         this.plugin = plugin;
-        this.config = plugin.getConfig();
-        setupDefaultConfig(); // Set up default config values
+        setupDefaultConfig(); // Standardwerte einrichten und config laden
     }
 
     private void setupDefaultConfig() {
+        this.config = plugin.getConfig();
+
         if (!config.contains("messages.de.language.success")) {
             config.set("messages.de.language.success", "&7Die &eSprache&7 wurde nun &aErfolgreich&7 geändert!");
         }
@@ -43,30 +44,38 @@ public class LanguageCommand implements CommandExecutor, TabCompleter {
             config.set("messages.en.language.no-language", "&7You &cmust&7 specify a language! (&ede&7/&een&7)");
         }
 
-        // Save the default values to the config
+        // Speichern und Laden der Konfiguration
         plugin.saveConfig();
+        plugin.reloadConfig();
+        this.config = plugin.getConfig(); // Konfigurationsinstanz aktualisieren
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // Überprüfen der Argumentanzahl
         if (args.length != 1) {
-            sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".language.no-language"));
+            sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + config.getString("language") + ".language.no-language"));
             return true;
         }
 
         String language = args[0].toLowerCase();
 
+        // Überprüfen, ob die eingegebene Sprache unterstützt wird
         if (!language.equals("de") && !language.equals("en")) {
-            sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".language.wrong-language"));
+            sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + config.getString("language") + ".language.wrong-language"));
             return true;
         }
 
-        // Update the language in the config
+        // Sprache setzen und speichern
         config.set("language", language);
         plugin.saveConfig();
 
-        // Reload the plugin configuration
+        // Konfiguration neu laden und aktualisieren
         plugin.reloadConfig();
+        this.config = plugin.getConfig();
+        plugin.reloadConfig();
+
+        // Erfolgsnachricht senden
         sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + language + ".language.success"));
 
         return true;
@@ -76,7 +85,7 @@ public class LanguageCommand implements CommandExecutor, TabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
         List<String> completions = new ArrayList<>();
 
-        // Check if the player is trying to complete the language argument
+        // Tab-Vervollständigung für Sprachoptionen
         if (args.length == 1) {
             completions.add("de");
             completions.add("en");
@@ -86,6 +95,7 @@ public class LanguageCommand implements CommandExecutor, TabCompleter {
     }
 
     private String getConfigMessage(String path) {
+        // Nachricht aus der Konfiguration abrufen
         return ChatColor.translateAlternateColorCodes('&',
                 config.getString(path, "&bSimple&fCore &8» &7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
     }

@@ -31,6 +31,7 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("heal").setExecutor(new HealCommand(this));
         getCommand("feed").setExecutor(new FeedCommand(this));
         getCommand("chatclear").setExecutor(new ChatClearCommand(this));
+        getCommand("lore").setExecutor(new ItemLoreCommand(this));
 
 
         //Listener Integration

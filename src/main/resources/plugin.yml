@@ -23,9 +23,6 @@ commands:
   enchant:
     aliases: ["verzaubern", "zauber", "enc"]
     permission: simplecore.enchant
-  language:
-    aliases: ["lang", "sprache"]
-    permission: simplecore.language
   anvil:
     aliases: ["amboss"]
     permission: simplecore.anvil
@@ -41,3 +38,6 @@ commands:
   chatclear:
     permission: simplecore.chatclear
     aliases: ["cc"]
+  lore:
+    permission: simplecore.lore
+    aliases: ["itemlore", "itembeschreibung"]

@@ -4,6 +4,7 @@ de\ruben\simplecore\Commands\MessageCommand.class
 de\ruben\simplecore\Utility\ItemBuilder.class
 de\ruben\simplecore\Commands\FeedCommand.class
 de\ruben\simplecore\Commands\LanguageCommand.class
+de\ruben\simplecore\Commands\ItemLoreCommand.class
 de\ruben\simplecore\Commands\GamemodeCommand.class
 de\ruben\simplecore\Commands\HealCommand.class
 de\ruben\simplecore\Listeners\JoinLeaveMessages.class

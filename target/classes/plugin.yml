@@ -41,3 +41,6 @@ commands:
   chatclear:
     permission: simplecore.chatclear
     aliases: ["cc"]
+  lore:
+    permission: simplecore.lore
+    aliases: ["itemlore", "itembeschreibung"]

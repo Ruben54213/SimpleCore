@@ -35,6 +35,8 @@ modules:
     active: true
   custom-enchant:
     active: true
+  lore:
+    active: true
 messages:
   de:
     modules:
@@ -108,6 +110,13 @@ messages:
     chatclear:
       sender-info: "&7Du hast nun &aerfolgreich&7 den &eChat&7 gecleart."
       info: "&7Der Chat wurde von &e{user}&7 geleert." #Placeholder: {user}
+    lore:
+      usage: "&cFalsche&7 Benutzung: &e/lore add &7<&etext&7> oder &e/lore set &7<&ezeile&7> <&etext&7>."
+      not-held: "&7Du hältst &ckein&7 Item in der &eHand&7."
+      added: "&7Lore wurde &aerfolgreich&7 hinzugefügt: &e{text}" #Placeholder: {text}
+      set: "&7Lore auf Zeile &e{line}&7 gesetzt: &e{text}" #Placeholders: {text}, {line}
+      invalid-line: "&cFehler&7 aufgetreten: &cUngültige&7 Zeilennummer."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
 ##############################################################################################################
       #ENGLISCH MESSAGES:
   en:
@@ -181,6 +190,13 @@ messages:
     chatclear:
       sender-info: "&7You have &asuccessfully&7 cleared the &echat&7."
       info: "&7The chat has been cleared by &e{user}&7."
+    lore:
+      usage: "&cWrong&7 usage: &e/lore add &7<&etext&7> or &e/lore set &7<&eline&7> <&etext&7>."
+      not-held: "&7You are &cnot&7 holding an &eitem&7."
+      added: "&7Lore was &asuccessfully&7 added: &e{text}" #Placeholder: {text}
+      set: "&7Lore set at line &e{line}&7: &e{text}" #Placeholders: {text}, {line}
+      invalid-line: "&cError&7 occurred: &cInvalid&7 line number."
+      only-players: "Only players can execute this command!"
 
 
 
