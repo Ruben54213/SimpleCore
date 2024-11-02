@@ -71,3 +71,6 @@ commands:
   repair:
     permission: simplecore.repair
     aliases: ["fix", "reparieren"]
+  more:
+    permission: simplecore.more
+    aliases: ["moreitem", "fullstack"]

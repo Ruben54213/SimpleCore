@@ -107,6 +107,8 @@ public class RepairCommand implements CommandExecutor, TabCompleter {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', getMessage("repair.no-item")));
             return true;
         }
+
+        // Repariere das Item, setze die Haltbarkeit zurück
         itemInHand.setDurability((short) 0);
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', getMessage("repair.success")));
         return true;

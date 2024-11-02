@@ -81,13 +81,15 @@ public class MoreCommand implements CommandExecutor {
         }
 
         // Setze das Item in der Hand auf einen 64er Stack
-        itemInHand.setAmount(64);
+        // Überprüfe den aktuellen Stack-Wert
+        int maxStackSize = itemInHand.getMaxStackSize();
+        itemInHand.setAmount(Math.min(maxStackSize, 64)); // Maximal auf 64 setzen
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', getMessage("more.success")));
         return true;
     }
 
     private String getMessage(String path) {
         String lang = config.getString("language", "en");
-        return ChatColor.translateAlternateColorCodes('&', config.getString("messages." + lang + "." + path, "&bSimple&fCore &8» &7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
+        return ChatColor.translateAlternateColorCodes('&', config.getString("prefix") + config.getString("messages." + lang + "." + path, "&bSimple&fCore &8» &7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
     }
 }

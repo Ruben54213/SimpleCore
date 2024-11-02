@@ -49,6 +49,8 @@ modules:
     active: true
   repair:
     active: true
+  more:
+    active: true
 messages:
   de:
     modules:
@@ -173,6 +175,11 @@ messages:
       success: "&7Dein &eItem &7wurde &aerfolgreich&7 repariert."
       success-all: "&7Alle &eItems &7in deinem Inventar wurden &arepariert&7."
       no-item: "&7Du hast &ckein &7Item in der &eHand&7, das &arepariert&7 werden kann."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+    more:
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      success: "&7Das Item wurde auf einen &e64er Stack &7gesetzt."
+      no-item: "&7Du hast &ckein &7Item in der &eHand&7."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
 
       ##############################################################################################################
@@ -299,6 +306,11 @@ messages:
       success: "&7Your &eitem &7has been &asuccessfully&7 &arepaired&7."
       success-all: "&7All &eitems &7in your inventory have been &arepaired&7."
       no-item: "&7You have &cno&7 item in your &ehand&7 to repair."
+      only-players: "Only players can execute this command!"
+    more:
+      no-permission: "&7You do not have &cpermission&7 to do that."
+      success: "&7The item has been set to a &e64 stack&7."
+      no-item: "&7You have &cno&7 item in your &ehand&7."
       only-players: "Only players can execute this command!"
 
 

@@ -45,6 +45,7 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("enderchest").setExecutor(new EnderChestCommand(this));
         getCommand("repair").setExecutor(new RepairCommand(this));
         getCommand("repair").setTabCompleter(new RepairCommand(this));
+        getCommand("more").setExecutor(new MoreCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
