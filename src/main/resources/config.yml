@@ -55,6 +55,8 @@ modules:
     active: true
   sign:
     active: true
+  removeblock:
+    active: true
 messages:
   de:
     modules:
@@ -196,6 +198,10 @@ messages:
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       lore:
         sign: "&7Das Item wurde von &e{player}&7 am &e{date}&7 signiert." #Placeholders: {player}, {date}
+    removeblock:
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      no-target: "&7Du schaust auf &ckeinen&7 &eBlock&7."
+      success: "&7Der Block wurde &aerfolgreich&7 entfernt."
 ###################################################################################################################
 #     ENGLISCH MESSAGES:                                                                                          #
 ###################################################################################################################
@@ -338,6 +344,10 @@ messages:
       only-players: "Only players can execute this command!"
       lore:
         sign: "&7The item was signed by &e{player}&7 on &e{date}&7." #Placeholders: {player}, {date}
+    removeblock:
+      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
+      no-target: "&7You are &cnot&7 looking at any &eblock&7."
+      success: "&7The block has been &asuccessfully&7 removed."
 
 
 

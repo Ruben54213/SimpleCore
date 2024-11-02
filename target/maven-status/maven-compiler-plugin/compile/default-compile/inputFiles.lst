@@ -10,6 +10,7 @@ C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simpl
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Listeners\JoinLeaveMessages.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\EnchantCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\MessageCommand.java
+C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\SignCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\SimpleCore.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\InvClearCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\WorkBenchCommand.java
@@ -21,6 +22,8 @@ C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simpl
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\KillCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\LanguageCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\RepairCommand.java
+C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\StackCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Listeners\SignChangeListener.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\EnderChestCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\TeleportCommand.java
+C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\BreakCommand.java

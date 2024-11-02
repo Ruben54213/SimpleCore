@@ -80,3 +80,6 @@ commands:
   sign:
     permission: simplecore.sign
     aliases: ["signitem", "itemsign"]
+  removeblock:
+    permission: simplecore.break
+    aliases: ["break", "breakblock", "blockbreak"]

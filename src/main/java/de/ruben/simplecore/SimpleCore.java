@@ -48,6 +48,7 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("more").setExecutor(new MoreCommand(this));
         getCommand("stack").setExecutor(new StackCommand(this));
         getCommand("sign").setExecutor(new SignCommand(this));
+        getCommand("removeblock").setExecutor(new BreakCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();

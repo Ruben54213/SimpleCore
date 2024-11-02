@@ -2,6 +2,7 @@ de\ruben\simplecore\Commands\EnderChestCommand.class
 de\ruben\simplecore\Commands\MoreCommand.class
 de\ruben\simplecore\Commands\ChatClearCommand.class
 de\ruben\simplecore\Commands\TeleportCommand.class
+de\ruben\simplecore\Commands\BreakCommand.class
 de\ruben\simplecore\Commands\MessageCommand.class
 de\ruben\simplecore\Utility\ItemBuilder.class
 de\ruben\simplecore\Commands\NearbyCommand.class
