@@ -29,6 +29,9 @@ public class KillCommand implements CommandExecutor, TabCompleter {
         if (!config.contains("messages.de.kill.success")) {
             config.set("messages.de.kill.success", "&7Du hast &e{player}&a erfolgreich&7 getötet.");
         }
+        if (!config.contains("modules.kill.active")) {
+            config.set("modules.kill.active", true);
+        }
         if (!config.contains("messages.de.kill.all-success")) {
             config.set("messages.de.kill.all-success", "&7Alle Spieler wurden &aerfolgreich&7 getötet.");
         }
