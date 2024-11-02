@@ -2,6 +2,7 @@ package de.ruben.simplecore.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -45,7 +46,11 @@ public class GamemodeCommand implements Listener, CommandExecutor, TabCompleter 
                 {"messages.de.gamemode.change-other", "&7Du hast den &eSpielmodus&7 von &e{user} &7auf &e{mode}&7 geändert."},
                 {"messages.en.gamemode.no-player", "&cWrong&7 usage: Use &e/gamemode <player> <mode>&7."},
                 {"messages.de.gamemode.no-player", "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"},
-                {"messages.en.gamemode.change-other", "&7You changed {user}'s &egame mode&7 to &e{mode}&7."}
+                {"messages.en.gamemode.change-other", "&7You changed {user}'s &egame mode&7 to &e{mode}&7."},
+                {"messages.de.gamemode.already-in-mode", "&7Du bist bereits im Spielmodus &e{mode}&7."},
+                {"messages.en.gamemode.already-in-mode", "&7You are already in &e{mode}&7 mode."},
+                {"messages.de.gamemode.already-in-mode-other", "&7{user} ist bereits im Spielmodus &e{mode}&7."},
+                {"messages.en.gamemode.already-in-mode-other", "&7{user} is already in &e{mode}&7 mode."},
         };
 
         for (String[] message : messages) {
@@ -84,23 +89,39 @@ public class GamemodeCommand implements Listener, CommandExecutor, TabCompleter 
         switch (mode.toLowerCase()) {
             case "creative":
             case "1":
+                if (player.getGameMode() == org.bukkit.GameMode.CREATIVE) {
+                    sendMessage(player, "already-in-mode", null, "Creative");
+                    return true;
+                }
                 player.setGameMode(org.bukkit.GameMode.CREATIVE);
-                sendMessage(player, "change", "Creative");
+                sendMessage(player, "change", null, "Creative");
                 break;
             case "survival":
             case "0":
+                if (player.getGameMode() == org.bukkit.GameMode.SURVIVAL) {
+                    sendMessage(player, "already-in-mode", null, "Survival");
+                    return true;
+                }
                 player.setGameMode(org.bukkit.GameMode.SURVIVAL);
-                sendMessage(player, "change", "Survival");
+                sendMessage(player, "change", null, "Survival");
                 break;
             case "spectator":
             case "3":
+                if (player.getGameMode() == org.bukkit.GameMode.SPECTATOR) {
+                    sendMessage(player, "already-in-mode", null, "Spectator");
+                    return true;
+                }
                 player.setGameMode(org.bukkit.GameMode.SPECTATOR);
-                sendMessage(player, "change", "Spectator");
+                sendMessage(player, "change", null, "Spectator");
                 break;
             case "adventure":
             case "2":
+                if (player.getGameMode() == org.bukkit.GameMode.ADVENTURE) {
+                    sendMessage(player, "already-in-mode", null, "Adventure");
+                    return true;
+                }
                 player.setGameMode(org.bukkit.GameMode.ADVENTURE);
-                sendMessage(player, "change", "Adventure");
+                sendMessage(player, "change", null, "Adventure");
                 break;
             default:
                 sendMessage(player, "usage");
@@ -118,31 +139,47 @@ public class GamemodeCommand implements Listener, CommandExecutor, TabCompleter 
 
         String mode = args[1].toLowerCase();
         switch (mode) {
-            case "creative":
-            case "1":
-                target.setGameMode(org.bukkit.GameMode.CREATIVE);
-                sendMessage(sender, "change-other", target.getName(), "Creative");
-                break;
-            case "survival":
-            case "0":
-                target.setGameMode(org.bukkit.GameMode.SURVIVAL);
-                sendMessage(sender, "change-other", target.getName(), "Survival");
-                break;
-            case "spectator":
-            case "3":
-                target.setGameMode(org.bukkit.GameMode.SPECTATOR);
-                sendMessage(sender, "change-other", target.getName(), "Spectator");
-                break;
-            case "adventure":
-            case "2":
-                target.setGameMode(org.bukkit.GameMode.ADVENTURE);
-                sendMessage(sender, "change-other", target.getName(), "Adventure");
-                break;
-            default:
-                sendMessage(sender, "usage");
-                break;
-        }
-        return true;
+                case "creative":
+                case "1":
+                    if (target.getGameMode() == org.bukkit.GameMode.CREATIVE) {
+                        sendMessage(sender, "already-in-mode-other", target.getName(), "Creative");
+                        return true;
+                    }
+                    target.setGameMode(org.bukkit.GameMode.CREATIVE);
+                    sendMessage(sender, "change-other", target.getName(), "Creative");
+                    break;
+                case "survival":
+                case "0":
+                    if (target.getGameMode() == org.bukkit.GameMode.SURVIVAL) {
+                        sendMessage(sender, "already-in-mode-other", target.getName(), "Survival");
+                        return true;
+                    }
+                    target.setGameMode(org.bukkit.GameMode.SURVIVAL);
+                    sendMessage(sender, "change-other", target.getName(), "Survival");
+                    break;
+                case "spectator":
+                case "3":
+                    if (target.getGameMode() == org.bukkit.GameMode.SPECTATOR) {
+                        sendMessage(sender, "already-in-mode-other", target.getName(), "Spectator");
+                        return true;
+                    }
+                    target.setGameMode(org.bukkit.GameMode.SPECTATOR);
+                    sendMessage(sender, "change-other", target.getName(), "Spectator");
+                    break;
+                case "adventure":
+                case "2":
+                    if (target.getGameMode() == org.bukkit.GameMode.ADVENTURE) {
+                        sendMessage(sender, "already-in-mode-other", target.getName(), "Adventure");
+                        return true;
+                    }
+                    target.setGameMode(org.bukkit.GameMode.ADVENTURE);
+                    sendMessage(sender, "change-other", target.getName(), "Adventure");
+                    break;
+                default:
+                    sendMessage(sender, "usage");
+                    break;
+            }
+            return true;
     }
 
     @Override
@@ -176,12 +213,15 @@ public class GamemodeCommand implements Listener, CommandExecutor, TabCompleter 
 
     private void sendMessage(Player player, String messageKey, String... placeholders) {
         String message = getMessage(messageKey);
-        if (placeholders.length > 0) {
+
+        if (placeholders.length > 0 && placeholders[0] != null) {
             message = message.replace("{user}", placeholders[0]);
         }
-        if (placeholders.length > 1) {
+
+        if (placeholders.length > 1 && placeholders[1] != null) {
             message = message.replace("{mode}", placeholders[1]);
         }
+
         player.sendMessage(message);
     }
 

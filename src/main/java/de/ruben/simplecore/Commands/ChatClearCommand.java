@@ -7,10 +7,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class ChatClearCommand implements Listener, CommandExecutor {
+public class ChatClearCommand implements CommandExecutor {
 
     private final JavaPlugin plugin;
     private final FileConfiguration config;
@@ -53,117 +52,9 @@ public class ChatClearCommand implements Listener, CommandExecutor {
         String userName = sender instanceof Player ? sender.getName() : "Console";
         String infoMessage = ChatColor.translateAlternateColorCodes('&', config.getString("broadcastprefix") + config.getString("messages." + config.getString("language") + ".chatclear.info").replace("{user}", userName));
 
-        // Clears the chat by broadcasting empty lines
-        Bukkit.broadcastMessage(" \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                "\n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                "  \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                "\n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                "\n" +
-                "\n" +
-                " \n" +
-                " §e\n"); // Sendet leere Zeilen
-        Bukkit.broadcastMessage(" \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                "\n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                "  \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                "\n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                " \n" +
-                "\n" +
-                "\n" +
-                " \n" +
-                " §e\n"); // Sendet leere Zeilen
+        for (int i = 0; i < 100; i++) {
+            Bukkit.broadcastMessage(" ");
+        }
 
         // Broadcasts the info message after chat clearance
         Bukkit.broadcastMessage(infoMessage);
