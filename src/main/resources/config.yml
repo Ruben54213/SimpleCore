@@ -124,16 +124,17 @@ messages:
     teleport:
       success: "&7Du wurdest &aerfolgreich&7 teleportiert."
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      no-player: "&7Der Spieler &e{player}&7 wurde &cnicht&7 gefunden."
+      no-player: "&7Der Spieler &e{player}&7 wurde &cnicht&7 gefunden." #Placeholder: {player}
       invalid-coordinates: "&7Du hast &cUngültige Koordinaten &7angegeben."
       no-request: "&7Du hast &ckeine &eTeleportanfrage&7."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      teleportat-other: "&7Du hast &a{source}&7 zu &a{target}&7 teleportiert." #Placeholders: {player}, {source}
       override:
         usage: "&aKorrekte&7 Verwendung: &e/tpo &7<&eSpieler&7>."
     kill:
       usage: "&cFalsche&7 Benutzung: Benutze &e/kill &7(&eall&7/@a&7) oder &e/kill &7(&eSpieler&7)."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
-      success: "&7Du hast &e{player}&a erfolgreich&7 getötet."
+      success: "&7Du hast &e{player}&a erfolgreich&7 getötet." #Placeholder: {player}
       all-success: "&7Alle Spieler wurden &aerfolgreich&7 getötet."
     nearby:
       nearby-players: "&7Folgende &cSpieler&7 befinden sich in der &eNähe&7:"
@@ -224,16 +225,17 @@ messages:
     teleport:
       success: "&7You have been &asuccessfully&7 teleported."
       no-permission: "&7You do not have &cpermission&7 for this."
-      no-player: "&7The player &e{player}&7 was &cnot&7 found."
+      no-player: "&7The player &e{player}&7 was &cnot&7 found." #Placeholder: {player}
       invalid-coordinates: "&7You have entered &cinvalid coordinates&7."
       no-request: "&7You have &cno &eteleport request&7."
       only-players: "Only players can execute this command!"
+      teleport-other: "&7You have teleported &a{source}&7 to &a{target}&7." #Placeholders: {target}, {source}
       override:
         usage: "&aCorrect&7 usage: &e/tpo &7<&eplayer&7>."
     kill:
       usage: "&cWrong&7 usage: Use &e/kill &7(&eall&7/@a&7) or &e/kill &7(&ePlayer&7)."
       only-players: "Only players can execute this command!"
-      success: "&7You have killed &e{player}&a successfully&7."
+      success: "&7You have killed &e{player}&a successfully&7." #Placeholder: {player}
       all-success: "&7All players have been &asuccessfully&7 killed."
     nearby:
       nearby-players: "&7The following &cplayers&7 are in the &earea&7:"
