@@ -41,3 +41,11 @@ commands:
   lore:
     permission: simplecore.lore
     aliases: ["itemlore", "itembeschreibung"]
+  teleport:
+    aliases: ["tp"]
+    permission: simplecore.teleport
+  tpo:
+    aliases: ["to"]
+    permission: simplecore.tpo
+  kill:
+    permission: simplecore.kill

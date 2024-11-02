@@ -37,6 +37,8 @@ modules:
     active: true
   lore:
     active: true
+  teleport:
+    active: true
 messages:
   de:
     modules:
@@ -117,6 +119,20 @@ messages:
       set: "&7Lore auf Zeile &e{line}&7 gesetzt: &e{text}" #Placeholders: {text}, {line}
       invalid-line: "&cFehler&7 aufgetreten: &cUngültige&7 Zeilennummer."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+    teleport:
+      success: "&7Du wurdest &aerfolgreich&7 teleportiert."
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      no-player: "&7Der Spieler &e{player}&7 wurde &cnicht&7 gefunden."
+      invalid-coordinates: "&7Du hast &cUngültige Koordinaten &7angegeben."
+      no-request: "&7Du hast &ckeine &eTeleportanfrage&7."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      override:
+        usage: "&aKorrekte&7 Verwendung: &e/tpo &7<&eSpieler&7>."
+    kill:
+      usage: "&cFalsche&7 Benutzung: Benutze &e/kill &7(&eall&7/@a&7) oder &e/kill &7(&eSpieler&7)."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      success: "&7Du hast &e{player}&a erfolgreich&7 getötet."
+      all-success: "&7Alle Spieler wurden &aerfolgreich&7 getötet."
 ##############################################################################################################
       #ENGLISCH MESSAGES:
   en:
@@ -197,6 +213,20 @@ messages:
       set: "&7Lore set at line &e{line}&7: &e{text}" #Placeholders: {text}, {line}
       invalid-line: "&cError&7 occurred: &cInvalid&7 line number."
       only-players: "Only players can execute this command!"
+    teleport:
+      success: "&7You have been &asuccessfully&7 teleported."
+      no-permission: "&7You do not have &cpermission&7 for this."
+      no-player: "&7The player &e{player}&7 was &cnot&7 found."
+      invalid-coordinates: "&7You have entered &cinvalid coordinates&7."
+      no-request: "&7You have &cno &eteleport request&7."
+      only-players: "Only players can execute this command!"
+      override:
+        usage: "&aCorrect&7 usage: &e/tpo &7<&eplayer&7>."
+    kill:
+      usage: "&cWrong&7 usage: Use &e/kill &7(&eall&7/@a&7) or &e/kill &7(&ePlayer&7)."
+      only-players: "Only players can execute this command!"
+      success: "&7You have killed &e{player}&a successfully&7."
+      all-success: "&7All players have been &asuccessfully&7 killed."
 
 
 
