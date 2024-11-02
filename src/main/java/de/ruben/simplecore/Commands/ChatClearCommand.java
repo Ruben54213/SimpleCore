@@ -168,7 +168,7 @@ public class ChatClearCommand implements Listener, CommandExecutor {
         // Broadcasts the info message after chat clearance
         Bukkit.broadcastMessage(infoMessage);
 
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("broadcastprefix") + config.getString("messages." + config.getString("language") + ".chatclear.sender-info")));
+        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("prefix") + config.getString("messages." + config.getString("language") + ".chatclear.sender-info")));
         return true;
     }
 }
