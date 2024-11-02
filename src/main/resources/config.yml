@@ -53,6 +53,8 @@ modules:
     active: true
   stack:
     active: true
+  sign:
+    active: true
 messages:
   de:
     modules:
@@ -170,7 +172,7 @@ messages:
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
       success: "&7Deine &eEnderchest &7wurde geöffnet."
       success-other: "&7Du hast die &eEnderchest &7von &e{target} &7geöffnet."
-      player-not-found: "&7Der Spieler &e{target} &7wurde &cnicht&7 gefunden."
+      player-not-found: "&7Der Spieler &e{target} &7wurde &cnicht&7 gefunden." #Placeholder: {target}
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
     repair:
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
@@ -187,6 +189,13 @@ messages:
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
       success: "&7Alle gleichen Items wurden &egestapelt&7."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+    sign:
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      no-item: "&7Du hast &ckein&7 Item in der Hand."
+      success: "&7Das Item wurde erfolgreich signiert."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      lore:
+        sign: "&7Das Item wurde von &e{player}&7 am &e{date}&7 signiert." #Placeholders: {player}, {date}
 ###################################################################################################################
 #     ENGLISCH MESSAGES:                                                                                          #
 ###################################################################################################################
@@ -305,7 +314,7 @@ messages:
       no-permission: "&7You do not have &cpermission&7 to do that."
       success: "&7Your &eEnder Chest &7has been opened."
       success-other: "&7You have opened the &eEnder Chest &7of &e{target}&7."
-      player-not-found: "&7Player &e{target} &cnot&7 found."
+      player-not-found: "&7Player &e{target} &cnot&7 found." #Placeholder: {target}
       only-players: "Only players can execute this command!"
     repair:
       no-permission: "&7You do not have &cpermission&7 to do that."
@@ -322,6 +331,13 @@ messages:
       no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
       success: "&7All identical items have been &estacked&7."
       only-players: "Only players can execute this command!"
+    sign:
+      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
+      no-item: "&7You have &cno&7 item in your hand."
+      success: "&7The item has been successfully signed."
+      only-players: "Only players can execute this command!"
+      lore:
+        sign: "&7The item was signed by &e{player}&7 on &e{date}&7." #Placeholders: {player}, {date}
 
 
 

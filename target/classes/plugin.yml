@@ -77,3 +77,6 @@ commands:
   stack:
     permission: simplecore.stack
     aliases: ["itemstack"]
+  sign:
+    permission: simplecore.sign
+    aliases: ["signitem", "itemsign"]
