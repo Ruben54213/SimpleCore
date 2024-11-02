@@ -52,7 +52,7 @@ public class ChatClearCommand implements CommandExecutor {
         String userName = sender instanceof Player ? sender.getName() : "Console";
         String infoMessage = ChatColor.translateAlternateColorCodes('&', config.getString("broadcastprefix") + config.getString("messages." + config.getString("language") + ".chatclear.info").replace("{user}", userName));
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 300; i++) {
             Bukkit.broadcastMessage(" ");
         }
 
