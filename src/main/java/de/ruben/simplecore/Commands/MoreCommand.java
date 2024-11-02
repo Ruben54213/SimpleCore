@@ -81,9 +81,7 @@ public class MoreCommand implements CommandExecutor {
         }
 
         // Setze das Item in der Hand auf einen 64er Stack
-        // Überprüfe den aktuellen Stack-Wert
-        int maxStackSize = itemInHand.getMaxStackSize();
-        itemInHand.setAmount(Math.min(maxStackSize, 64)); // Maximal auf 64 setzen
+        itemInHand.setAmount(64);
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', getMessage("more.success")));
         return true;
     }
