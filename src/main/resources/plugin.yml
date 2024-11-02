@@ -65,3 +65,6 @@ commands:
   invclear:
     permission: simplecore.invclear
     aliases: [ "clear" ]
+  enderchest:
+    permission: simplecore.enderchest
+    aliases: ["ec"]

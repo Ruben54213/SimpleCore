@@ -42,6 +42,7 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("noon").setExecutor(new TimeCommand(this));
         getCommand("time").setExecutor(new TimeCommand(this));
         getCommand("time").setTabCompleter(new TimeCommand(this));
+        getCommand("enderchest").setExecutor(new EnderChestCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
