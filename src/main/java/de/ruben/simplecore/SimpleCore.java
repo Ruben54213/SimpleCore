@@ -35,6 +35,7 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("kill").setExecutor(new KillCommand(this));
         getCommand("kill").setTabCompleter(new KillCommand(this));
         getCommand("nearby").setExecutor(new NearbyCommand(this));
+        getCommand("invclear").setExecutor(new InvClearCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
@@ -48,15 +49,17 @@ public final class SimpleCore extends JavaPlugin {
         // Plugin shutdown logic
     }
 
-    // Methode zum Neuladen der Konfiguration
-    //public void reloadPluginConfig() {
-    //    reloadConfig();
-    //    getLogger().info("Config.yml wurde neu geladen.");
-    //}
+    /*
+    public void reloadPluginConfig() {
+        reloadConfig();
+        getLogger().info("Config.yml wurde neu geladen.");
+    }
+    */
 
-    // Beispielmethode, um einen Wert aus der Config zu holen
-    // public String getExampleSetting() {
-    //    return getConfig().getString("example-setting");
-    // }
+
+    /* Beispielmethode, um einen Wert aus der Config zu holen
+     public String getExampleSetting() {
+        return getConfig().getString("example-setting");
+     } */
 
 }

@@ -126,13 +126,21 @@ public class WeatherCommand implements CommandExecutor, TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
         List<String> completions = new ArrayList<>();
+        String language = config.getString("language", "de");
         if (args.length == 1) {
-            completions.add("sun");
-            completions.add("sonne");
-            completions.add("rain");
-            completions.add("regen");
-            completions.add("thunder");
-            completions.add("gewitter");
+            if (language.equals("de")) {
+                completions.add("sonne");
+                completions.add("regen");
+                completions.add("gewitter");
+
+                completions.add("sun");
+                completions.add("rain");
+                completions.add("thunder");
+            } else {
+                completions.add("sun");
+                completions.add("rain");
+                completions.add("thunder");
+            }
         }
         return completions;
     }

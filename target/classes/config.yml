@@ -39,6 +39,8 @@ modules:
     active: true
   teleport:
     active: true
+  colorsign:
+    active: true
   nearby:
     active: true
 messages:

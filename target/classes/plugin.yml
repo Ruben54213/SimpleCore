@@ -52,3 +52,6 @@ commands:
   nearby:
     permission: simplecore.nearby
     aliases: ["near"]
+  invclear:
+    permission: simplecore.invclear
+    aliases: [ "clear" ]
