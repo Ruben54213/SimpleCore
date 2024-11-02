@@ -21,4 +21,5 @@ de\ruben\simplecore\Listeners\SignChangeListener.class
 de\ruben\simplecore\Commands\TpaCommand.class
 de\ruben\simplecore\Commands\EnchantCommand.class
 de\ruben\simplecore\Commands\WorkBenchCommand.class
+de\ruben\simplecore\Commands\RepairCommand.class
 de\ruben\simplecore\Commands\WeatherCommand.class

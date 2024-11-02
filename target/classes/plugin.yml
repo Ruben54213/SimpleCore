@@ -68,3 +68,6 @@ commands:
   enderchest:
     permission: simplecore.enderchest
     aliases: ["ec"]
+  repair:
+    permission: simplecore.repair
+    aliases: ["fix", "reparieren"]

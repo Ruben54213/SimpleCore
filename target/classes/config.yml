@@ -47,6 +47,8 @@ modules:
     active: true
   enderchest:
     active: true
+  repair:
+    active: true
 messages:
   de:
     modules:
@@ -161,12 +163,18 @@ messages:
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
       no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
     enderchest:
-      enderchest:
-        no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-        success: "&7Deine &eEnderchest &7wurde geöffnet."
-        success-other: "&7Du hast die &eEnderchest &7von &e{target} &7geöffnet."
-        player-not-found: "&7Der Spieler &e{target} &7wurde &cnicht&7 gefunden."
-        only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      success: "&7Deine &eEnderchest &7wurde geöffnet."
+      success-other: "&7Du hast die &eEnderchest &7von &e{target} &7geöffnet."
+      player-not-found: "&7Der Spieler &e{target} &7wurde &cnicht&7 gefunden."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+    repair:
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      success: "&7Dein &eItem &7wurde &aerfolgreich&7 repariert."
+      success-all: "&7Alle &eItems &7in deinem Inventar wurden &arepariert&7."
+      no-item: "&7Du hast &ckein &7Item in der &eHand&7, das &arepariert&7 werden kann."
+      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+
       ##############################################################################################################
       #ENGLISCH MESSAGES:
   en:
@@ -285,6 +293,12 @@ messages:
       success: "&7Your &eEnder Chest &7has been opened."
       success-other: "&7You have opened the &eEnder Chest &7of &e{target}&7."
       player-not-found: "&7Player &e{target} &cnot&7 found."
+      only-players: "Only players can execute this command!"
+    repair:
+      no-permission: "&7You do not have &cpermission&7 to do that."
+      success: "&7Your &eitem &7has been &asuccessfully&7 &arepaired&7."
+      success-all: "&7All &eitems &7in your inventory have been &arepaired&7."
+      no-item: "&7You have &cno&7 item in your &ehand&7 to repair."
       only-players: "Only players can execute this command!"
 
 
