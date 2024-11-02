@@ -74,3 +74,6 @@ commands:
   more:
     permission: simplecore.more
     aliases: ["moreitem", "fullstack"]
+  stack:
+    permission: simplecore.stack
+    aliases: ["itemstack"]
