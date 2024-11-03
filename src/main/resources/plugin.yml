@@ -83,3 +83,9 @@ commands:
   removeblock:
     permission: simplecore.break
     aliases: ["break", "breakblock", "blockbreak"]
+  lightning:
+    permission: simplecore.lightning
+    aliases: ["blitz", "blitzeinschlag", "lightningbolt"]
+  fly:
+    permission: simplecore.fly
+    aliases: ["fliegen", "flieg"]

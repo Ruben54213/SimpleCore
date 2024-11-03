@@ -57,6 +57,10 @@ modules:
     active: true
   removeblock:
     active: true
+  lightning:
+    active: true
+  fly:
+    active: true
 messages:
   de:
     modules:
@@ -202,6 +206,15 @@ messages:
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
       no-target: "&7Du schaust auf &ckeinen&7 &eBlock&7."
       success: "&7Der Block wurde &aerfolgreich&7 entfernt."
+    lightning:
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      no-player: "&7Der angegebene Spieler existiert &cnicht&7."
+      success: "&7Ein &eBlitz&7 wurde bei &e{target}&7 gespawnt."
+    fly:
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      no-player: "&7Der angegebene Spieler existiert&c nicht&7."
+      enabled: "&7Der &eFlugmodus&7 wurde für &e{target}&7 aktiviert." #Placeholder: {target}
+      disabled: "&7Der &eFlugmodus&7 wurde für &e{target}&7 deaktiviert." #Placeholder: {target}
 ###################################################################################################################
 #     ENGLISCH MESSAGES:                                                                                          #
 ###################################################################################################################
@@ -348,6 +361,15 @@ messages:
       no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
       no-target: "&7You are &cnot&7 looking at any &eblock&7."
       success: "&7The block has been &asuccessfully&7 removed."
+    lightning:
+      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
+      no-player: "&7The specified player does &cnot&7 exist."
+      success: "&7A &elightning bolt&7 has been spawned at &e{target}&7."
+    fly:
+      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
+      no-player: "&7The specified player does &cnot&7 exist."
+      enabled: "&eFlight mode&7 enabled for &e{target}&7." #Placeholder: {target}
+      disabled: "&eFlight mode&7 disabled for &e{target}&7." #Placeholder: {target}
 
 
 
