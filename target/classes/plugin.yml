@@ -89,3 +89,6 @@ commands:
   fly:
     permission: simplecore.fly
     aliases: ["fliegen", "flieg"]
+  invsee:
+    permission: simplecore.invsee
+    aliases: ["inventory", "inventar", "seeinv"]

@@ -51,10 +51,12 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("removeblock").setExecutor(new BreakCommand(this));
         getCommand("lightning").setExecutor(new LightningCommand(this));
         getCommand("fly").setExecutor(new FlyCommand(this));
+        getCommand("invsee").setExecutor(new InvseeCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new JoinLeaveMessages(this), this);
+        pluginManager.registerEvents(new InvseeCommand(this), this);
         pluginManager.registerEvents(new SignChangeListener(this), this);
         //Anvil Command
     }

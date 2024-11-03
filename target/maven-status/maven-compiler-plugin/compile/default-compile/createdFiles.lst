@@ -18,6 +18,7 @@ de\ruben\simplecore\Commands\AnvilCommand.class
 de\ruben\simplecore\Commands\FlyCommand.class
 de\ruben\simplecore\Commands\StackCommand.class
 de\ruben\simplecore\SimpleCore.class
+de\ruben\simplecore\Commands\InvseeCommand.class
 de\ruben\simplecore\Commands\KillCommand.class
 de\ruben\simplecore\Commands\TimeCommand.class
 de\ruben\simplecore\Commands\FeedCommand.class

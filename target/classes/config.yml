@@ -4,6 +4,7 @@
 language: "de" #(de or en possible)
 prefix: "&bSimple&fCore &8» "
 broadcastprefix: "&b&lSimple&f&lCore &8» &f"
+invsee-prefix: "&bSimple&fCore &8» &7"
 
 modules:
   weather:
@@ -60,6 +61,8 @@ modules:
   lightning:
     active: true
   fly:
+    active: true
+  invsee:
     active: true
 messages:
   de:
@@ -215,6 +218,11 @@ messages:
       no-player: "&7Der angegebene Spieler existiert&c nicht&7."
       enabled: "&7Der &eFlugmodus&7 wurde für &e{target}&7 aktiviert." #Placeholder: {target}
       disabled: "&7Der &eFlugmodus&7 wurde für &e{target}&7 deaktiviert." #Placeholder: {target}
+    invsee:
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      no-player: "&7Der angegebene Spieler existiert&c nicht&7."
+      view-only: "&7Du siehst &anun&7 das Inventar von &e{target}&7."
+      edit-mode: "&7Du kannst &anun&7 das Inventar von &e{target}&7 bearbeiten."
 ###################################################################################################################
 #     ENGLISCH MESSAGES:                                                                                          #
 ###################################################################################################################
@@ -370,6 +378,11 @@ messages:
       no-player: "&7The specified player does &cnot&7 exist."
       enabled: "&eFlight mode&7 enabled for &e{target}&7." #Placeholder: {target}
       disabled: "&eFlight mode&7 disabled for &e{target}&7." #Placeholder: {target}
+    invsee:
+      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
+      no-player: "&7The specified player does &cnot&7 exist."
+      view-only: "&7You are viewing the inventory of &e{target}&7."
+      edit-mode: "&7You are in edit mode for &e{target}&7's inventory."
 
 
 
