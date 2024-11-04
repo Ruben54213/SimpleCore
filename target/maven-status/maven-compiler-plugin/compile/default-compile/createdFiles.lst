@@ -6,6 +6,7 @@ de\ruben\simplecore\Commands\BreakCommand.class
 de\ruben\simplecore\Commands\MessageCommand.class
 de\ruben\simplecore\Utility\ItemBuilder.class
 de\ruben\simplecore\Commands\NearbyCommand.class
+de\ruben\simplecore\Commands\GodModeCommand.class
 de\ruben\simplecore\Commands\ItemLoreCommand.class
 de\ruben\simplecore\Commands\GamemodeCommand.class
 de\ruben\simplecore\Commands\HealCommand.class
