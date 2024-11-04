@@ -64,7 +64,7 @@ commands:
     permission: simplecore.time
   invclear:
     permission: simplecore.invclear
-    aliases: [ "clear" ]
+    aliases: ["clear"]
   enderchest:
     permission: simplecore.enderchest
     aliases: ["ec"]
@@ -92,3 +92,6 @@ commands:
   invsee:
     permission: simplecore.invsee
     aliases: ["inventory", "inventar", "seeinv"]
+  godmode:
+    permission: simplecore.godmode
+    aliases: [ "god", "gott", "gottmode", "gottmodus" ]

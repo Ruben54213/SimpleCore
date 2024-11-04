@@ -223,6 +223,13 @@ messages:
       no-player: "&7Der angegebene Spieler existiert&c nicht&7."
       view-only: "&7Du siehst &anun&7 das Inventar von &e{target}&7."
       edit-mode: "&7Du kannst &anun&7 das Inventar von &e{target}&7 bearbeiten."
+    godmode:
+      enabled: "&7Der &eGodmode&7 wurde &aaktiviert&7."
+      disabled: "&7Der &eGodmode&7 wurde &cdeaktiviert&7."
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      no-player: "&7Der angegebene Spieler existiert&c nicht&7."
+      no-console: "&7Dieser Befehl kann nur von einem Spieler verwendet werden."
+      inactive: "&7Godmode ist derzeit &cdeaktiviert&7."
 ###################################################################################################################
 #     ENGLISCH MESSAGES:                                                                                          #
 ###################################################################################################################
@@ -383,6 +390,13 @@ messages:
       no-player: "&7The specified player does &cnot&7 exist."
       view-only: "&7You are viewing the inventory of &e{target}&7."
       edit-mode: "&7You are in edit mode for &e{target}&7's inventory."
+    godmode:
+      enabled: "&7The &egodmode&7 was &aenabled&7."
+      disabled: "&7The &egodmode&7 was &cdisabled&7."
+      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
+      no-player: "&7The specified player does &cnot&7 exist."
+      no-console: "&7This command can only be used by a player."
+      inactive: "&7Godmode is currently &cdisabled&7."
 
 
 
