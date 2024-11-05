@@ -57,6 +57,8 @@ modules:
     active: true
   removeblock:
     active: true
+  spawnmob:
+      active: true
 messages:
   de:
     modules:
@@ -124,7 +126,7 @@ messages:
       self: "&7Du hast deinen &eHunger &7gestillt."
       other: "&7Du hast &e{player}&7 gefüttert." #Placeholder: {player}
       no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
-      usage: "&cFalsche&7 Benutzung: Benutze &e/feed &7<&eSpieler&7>."
+      usage: "&cFalsche&7 Verwendung: Benutze &e/feed &7<&eSpieler&7>."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
     chatclear:
@@ -146,7 +148,7 @@ messages:
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       teleportat-other: "&7Du hast &a{source}&7 zu &a{target}&7 teleportiert." #Placeholders: {player}, {source}
       override:
-        usage: "&aKorrekte&7 Verwendung: &e/tpo &7<&eSpieler&7>."
+        usage: "&cFalsche&7 Verwendung: &e/tpo &7<&eSpieler&7>."
     kill:
       usage: "&cFalsche&7 Benutzung: Benutze &e/kill &7(&eall&7/@a&7) oder &e/kill &7(&eSpieler&7)."
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
@@ -202,6 +204,12 @@ messages:
       no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
       no-target: "&7Du schaust auf &ckeinen&7 &eBlock&7."
       success: "&7Der Block wurde &aerfolgreich&7 entfernt."
+    spawnmob:
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success: '&7Du hast erfolgreich &e{amount} {mob}&7 gespawnt.'
+      invalid-mob: '&7Der Mob &e{mob}&7 ist ungültig.'
+      only-players: 'Diesen Befehl dürfen nur Spieler ausführen!'
+      usage: '&cFalsche &7Verwendung: &e/spawnmob <mob> <anzahl>'
 ###################################################################################################################
 #     ENGLISCH MESSAGES:                                                                                          #
 ###################################################################################################################
@@ -292,7 +300,7 @@ messages:
       only-players: "Only players can execute this command!"
       teleport-other: "&7You have teleported &a{source}&7 to &a{target}&7." #Placeholders: {target}, {source}
       override:
-        usage: "&aCorrect&7 usage: &e/tpo &7<&eplayer&7>."
+        usage: "&cWrong&7 usage: &e/tpo &7<&eplayer&7>."
     kill:
       usage: "&cWrong&7 usage: Use &e/kill &7(&eall&7/@a&7) or &e/kill &7(&ePlayer&7)."
       only-players: "Only players can execute this command!"
@@ -348,8 +356,12 @@ messages:
       no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
       no-target: "&7You are &cnot&7 looking at any &eblock&7."
       success: "&7The block has been &asuccessfully&7 removed."
-
-
+    spawnmob:
+      no-permission: '&7You do not have &cpermission&7 to do that.'
+      success: '&7Successfully spawned &e{amount} {mob}&7.'
+      invalid-mob: '&7The mob &e{mob}&7 is invalid.'
+      only-players: 'Only players can execute this command!'
+      usage: '&cWrong &7usage: &e/spawnmob <mob> <amount>'
 
 
 

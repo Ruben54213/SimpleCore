@@ -83,3 +83,6 @@ commands:
   removeblock:
     permission: simplecore.break
     aliases: ["break", "breakblock", "blockbreak"]
+  spawnmob:
+    permission: simplecore.spawnmob
+    aliases: ["summon"]
