@@ -48,6 +48,9 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         if (!config.contains("messages.de.warp.success.set")) {
             config.set("messages.de.warp.success.set", "&7Warp &e{warp}&7 wurde gesetzt.");
         }
+        if (!config.contains("messages.de.warp.success.set.already-exists")) {
+            config.set("messages.de.warp.set.already-exists", "&7Warp &e{warp}&7 existiert bereits.");
+        }
         if (!config.contains("messages.de.warp.success.remove")) {
             config.set("messages.de.warp.success.remove", "&7Warp &e{warp}&7 wurde entfernt.");
         }
@@ -75,6 +78,9 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         }
         if (!config.contains("messages.en.warp.success.set")) {
             config.set("messages.en.warp.success.set", "&7Warp &e{warp}&7 has been set.");
+        }
+        if (!config.contains("messages.en.warp.success.set.already-exists")) {
+            config.set("messages.en.warp.set.already-exists", "&7Warp &e{warp}&7 already exists.");
         }
         if (!config.contains("messages.en.warp.success.remove")) {
             config.set("messages.en.warp.success.remove", "&7Warp &e{warp}&7 has been removed.");
@@ -128,7 +134,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
                     warpComponent.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/warp " + warp));
 
                     message.addExtra(warpComponent);
-                    message.addExtra("&8, ");
+                    message.addExtra("§8, ");
                 }
 
                 if (message.getExtra().size() > 0) {
@@ -162,6 +168,12 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
                 }
 
                 warpName = args[1];
+
+                if (warpManager.getWarp(warpName) != null) {
+                    player.sendMessage(getMessage("warp.set.already-exists").replace("{warp}", warpName));
+                    return true;
+                }
+
                 warpManager.setWarp(warpName, player.getLocation());
                 player.sendMessage(getMessage("warp.success.set").replace("{warp}", warpName));
                 break;
