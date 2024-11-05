@@ -169,11 +169,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
 
                 warpName = args[1];
 
-                if(warpName.equalsIgnoreCase("set") || warpName.equalsIgnoreCase("remove")) {
-                    player.sendMessage(getMessage("warp.set.already-exists").replace("{warp}", warpName));
-                }
-
-                if (warpManager.getWarp(warpName) != null) {
+                if (warpManager.getWarp(warpName) != null || warpName.equalsIgnoreCase("set") || warpName.equalsIgnoreCase("remove")) {
                     player.sendMessage(getMessage("warp.set.already-exists").replace("{warp}", warpName));
                     return true;
                 }
