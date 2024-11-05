@@ -66,6 +66,8 @@ modules:
     active: true
   spawnmob:
     active: true
+  warp:
+    active: true
 messages:
   de:
     modules:
@@ -232,6 +234,21 @@ messages:
       no-player: "&7Der angegebene Spieler existiert&c nicht&7."
       no-console: "&7Dieser Befehl kann nur von einem Spieler verwendet werden."
       inactive: "&7Godmode ist derzeit &cdeaktiviert&7."
+    spawnmob:
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success: '&7Du hast erfolgreich &e{amount} {mob}&7 gespawnt.'
+      invalid-mob: '&7Der Mob &e{mob}&7 ist ungültig.'
+      only-players: 'Diesen Befehl dürfen nur Spieler ausführen!'
+      usage: '&cFalsche &7Verwendung: &e/spawnmob <mob> <anzahl>'
+    warp:
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success:
+        set: '&7Warp &e{warp}&7 wurde gesetzt.'
+        remove: '&7Warp &e{warp}&7 wurde entfernt.'
+      not-found: '&7Warp &e{warp}&7 wurde nicht gefunden.'
+      usage: '&cFalsche &7Verwendung: &e/warp <name>'
+      list: '&7Warps &8(&e{count}&8) &8» &e{warps}'
+      list-none: '&7Es sind keine Warps gesetzt.'
 ###################################################################################################################
 #     ENGLISCH MESSAGES:                                                                                          #
 ###################################################################################################################
@@ -399,8 +416,21 @@ messages:
       no-player: "&7The specified player does &cnot&7 exist."
       no-console: "&7This command can only be used by a player."
       inactive: "&7Godmode is currently &cdisabled&7."
-
-
+    spawnmob:
+      no-permission: '&7You do not have &cpermission&7 to do that.'
+      success: '&7Successfully spawned &e{amount} {mob}&7.'
+      invalid-mob: '&7The mob &e{mob}&7 is invalid.'
+      only-players: 'Only players can execute this command!'
+      usage: '&cWrong &7usage: &e/spawnmob <mob> <amount>'
+    warp:
+      no-permission: '&7You do not have &cpermission&7 to do that.'
+      success:
+        set: '&7Warp &e{warp}&7 has been set.'
+        remove: '&7Warp &e{warp}&7 has been removed.'
+      not-found: '&7Warp &e{warp}&7 not found.'
+      usage: '&cWrong &7usage: &e/warp <name>'
+      list: '&7Warps &8(&e{count}&8) &8» &e{warps}'
+      list-none: '&7No warps are set.'
 
 
 

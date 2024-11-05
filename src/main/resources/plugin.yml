@@ -98,3 +98,6 @@ commands:
   spawnmob:
     permission: simplecore.spawnmob
     aliases: [ "summon" ]
+  warp:
+    permission: simplecore.warp.edit
+    aliases: [ "warps" ]

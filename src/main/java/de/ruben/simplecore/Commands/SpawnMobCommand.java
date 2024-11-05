@@ -127,8 +127,7 @@ public class SpawnMobCommand implements CommandExecutor, TabCompleter {
         String lang = config.getString("language", "de");
         String prefix = config.getString("prefix", "&bSimple&fCore &8» ");
         String message = config.getString("messages." + lang + "." + path,
-                "&cFehler: Nachricht nicht gefunden. Gesuchter Pfad: " + path);
-
+                "&7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: "+ path);
         return ChatColor.translateAlternateColorCodes('&', prefix + message);
     }
 
