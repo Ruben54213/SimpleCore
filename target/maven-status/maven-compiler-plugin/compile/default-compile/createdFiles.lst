@@ -7,6 +7,7 @@ de\ruben\simplecore\Commands\MessageCommand.class
 de\ruben\simplecore\Utility\ItemBuilder.class
 de\ruben\simplecore\Commands\NearbyCommand.class
 de\ruben\simplecore\Commands\GodModeCommand.class
+de\ruben\simplecore\Commands\WarpCommand.class
 de\ruben\simplecore\Commands\ItemLoreCommand.class
 de\ruben\simplecore\Commands\GamemodeCommand.class
 de\ruben\simplecore\Commands\HealCommand.class
@@ -18,6 +19,7 @@ de\ruben\simplecore\Commands\LightningCommand.class
 de\ruben\simplecore\Commands\AnvilCommand.class
 de\ruben\simplecore\Commands\FlyCommand.class
 de\ruben\simplecore\Commands\StackCommand.class
+de\ruben\simplecore\Utility\WarpManager.class
 de\ruben\simplecore\SimpleCore.class
 de\ruben\simplecore\Commands\InvseeCommand.class
 de\ruben\simplecore\Commands\KillCommand.class
