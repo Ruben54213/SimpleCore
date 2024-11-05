@@ -53,6 +53,8 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("fly").setExecutor(new FlyCommand(this));
         getCommand("invsee").setExecutor(new InvseeCommand(this));
         getCommand("godmode").setExecutor(new GodModeCommand(this));
+        getCommand("spawnmob").setExecutor(new SpawnMobCommand(this));
+        getCommand("spawnmob").setTabCompleter(new SpawnMobCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
