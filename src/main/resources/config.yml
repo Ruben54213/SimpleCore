@@ -64,6 +64,8 @@ modules:
     active: true
   invsee:
     active: true
+  spawnmob:
+    active: true
 messages:
   de:
     modules:
