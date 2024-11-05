@@ -9,6 +9,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
 
 public class HealCommand implements Listener, CommandExecutor {
 
@@ -74,6 +75,9 @@ public class HealCommand implements Listener, CommandExecutor {
         if (args.length == 0) {
             player.setHealth(player.getMaxHealth());
             player.setFireTicks(0);
+            for (PotionEffect effect : player.getActivePotionEffects()) {
+                player.removePotionEffect(effect.getType());
+            }
             sendMessage(player, "self");
         } else if (args.length == 1) {
             Player target = Bukkit.getPlayer(args[0]);
@@ -85,6 +89,9 @@ public class HealCommand implements Listener, CommandExecutor {
             if (player.hasPermission("simplecore.heal.other")) {
                 target.setHealth(target.getMaxHealth());
                 target.setFireTicks(0);
+                for (PotionEffect effect : target.getActivePotionEffects()) {
+                    target.removePotionEffect(effect.getType());
+                }
                 sendMessage(player, "other", target.getName());
             } else {
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', getMessage("messages." + config.getString("language") + ".heal.no-permission")));
