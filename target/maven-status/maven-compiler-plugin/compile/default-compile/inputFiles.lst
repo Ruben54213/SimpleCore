@@ -5,6 +5,7 @@ C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simpl
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\ChatClearCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\WeatherCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Utility\ItemBuilder.java
+C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\FlyCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\GamemodeCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\TimeCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Listeners\JoinLeaveMessages.java
@@ -19,11 +20,14 @@ C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simpl
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\AnvilCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\BroadcastCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\ItemRenameCommand.java
+C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\LightningCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\KillCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\LanguageCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\RepairCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\StackCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Listeners\SignChangeListener.java
+C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\InvseeCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\EnderChestCommand.java
+C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\GodModeCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\TeleportCommand.java
 C:\Users\Ruben\OneDrive\Main Server\bots\SimpleCore\src\main\java\de\ruben\simplecore\Commands\BreakCommand.java

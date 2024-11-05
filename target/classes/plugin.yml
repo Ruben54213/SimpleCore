@@ -64,7 +64,7 @@ commands:
     permission: simplecore.time
   invclear:
     permission: simplecore.invclear
-    aliases: [ "clear" ]
+    aliases: ["clear"]
   enderchest:
     permission: simplecore.enderchest
     aliases: ["ec"]
@@ -83,6 +83,15 @@ commands:
   removeblock:
     permission: simplecore.break
     aliases: ["break", "breakblock", "blockbreak"]
-  spawnmob:
-    permission: simplecore.spawnmob
-    aliases: ["summon"]
+  lightning:
+    permission: simplecore.lightning
+    aliases: ["blitz", "blitzeinschlag", "lightningbolt"]
+  fly:
+    permission: simplecore.fly
+    aliases: ["fliegen", "flieg"]
+  invsee:
+    permission: simplecore.invsee
+    aliases: ["inventory", "inventar", "seeinv"]
+  godmode:
+    permission: simplecore.godmode
+    aliases: [ "god", "gott", "gottmode", "gottmodus" ]
