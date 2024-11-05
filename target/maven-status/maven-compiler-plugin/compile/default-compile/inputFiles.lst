@@ -23,7 +23,10 @@ E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\SimpleCore.java
 E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Commands\RepairCommand.java
 E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Listeners\JoinLeaveMessages.java
 E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Commands\SignCommand.java
+E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Utility\VanishManager.java
 E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Commands\ItemLoreCommand.java
+E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Listeners\VanishListener.java
+E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Commands\VanishCommand.java
 E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Commands\MoreCommand.java
 E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Commands\BroadcastCommand.java
 E:\Dev\SimpleCore\src\main\java\de\ruben\simplecore\Commands\TpaCommand.java

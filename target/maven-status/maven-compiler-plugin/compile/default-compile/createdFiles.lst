@@ -10,6 +10,7 @@ de\ruben\simplecore\Commands\NearbyCommand.class
 de\ruben\simplecore\Commands\GodModeCommand.class
 de\ruben\simplecore\Commands\WarpCommand.class
 de\ruben\simplecore\Commands\ItemLoreCommand.class
+de\ruben\simplecore\Commands\VanishCommand.class
 de\ruben\simplecore\Commands\GamemodeCommand.class
 de\ruben\simplecore\Commands\HealCommand.class
 de\ruben\simplecore\Commands\InvClearCommand.class
@@ -21,10 +22,12 @@ de\ruben\simplecore\Commands\AnvilCommand.class
 de\ruben\simplecore\Commands\FlyCommand.class
 de\ruben\simplecore\Commands\StackCommand.class
 de\ruben\simplecore\Utility\WarpManager.class
+de\ruben\simplecore\Utility\VanishManager.class
 de\ruben\simplecore\SimpleCore.class
 de\ruben\simplecore\Commands\InvseeCommand.class
 de\ruben\simplecore\Commands\KillCommand.class
 de\ruben\simplecore\Commands\TimeCommand.class
+de\ruben\simplecore\Listeners\VanishListener.class
 de\ruben\simplecore\Commands\LanguageCommand.class
 de\ruben\simplecore\Commands\FeedCommand.class
 de\ruben\simplecore\Listeners\SignChangeListener.class

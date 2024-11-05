@@ -1,5 +1,6 @@
 package de.ruben.simplecore.Listeners;
 
+import de.ruben.simplecore.Utility.VanishManager;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
@@ -16,7 +17,6 @@ public class JoinLeaveMessages implements Listener {
         this.plugin = plugin;
         this.config = plugin.getConfig();
         setupDefaultConfig();
-        plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
     private void setupDefaultConfig() {
@@ -41,6 +41,8 @@ public class JoinLeaveMessages implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         if (!config.getBoolean("modules.joinleave.active")) return;
+        VanishManager vm = VanishManager.getMainManager();
+        if(vm.isVanished(event.getPlayer())) { event.setJoinMessage(null); return; }
 
         String joinMessage = config.getString("messages." + config.getString("language") + ".join", "&7[&a»&7] &f{name}");
         joinMessage = ChatColor.translateAlternateColorCodes('&', joinMessage.replace("{name}", event.getPlayer().getName()));
@@ -50,6 +52,8 @@ public class JoinLeaveMessages implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
         if (!config.getBoolean("modules.joinleave.active")) return;
+        VanishManager vm = VanishManager.getMainManager();
+        if(vm.isVanished(event.getPlayer())) { event.setQuitMessage(null); return; }
 
         String leaveMessage = config.getString("messages." + config.getString("language") + ".leave", "&7[&c«&7] &f{name}");
         leaveMessage = ChatColor.translateAlternateColorCodes('&', leaveMessage.replace("{name}", event.getPlayer().getName()));

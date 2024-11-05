@@ -22,7 +22,6 @@ public class InvClearCommand implements Listener, CommandExecutor {
         this.config = plugin.getConfig();
         setupDefaultConfig();
         Bukkit.getPluginManager().registerEvents(this, plugin);
-        plugin.getCommand("invclear").setExecutor(this);
         plugin.getCommand("invclear").setAliases(Arrays.asList("clear"));
     }
 

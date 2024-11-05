@@ -84,6 +84,8 @@ modules:
     active: true
   speed:
     active: true
+  vanish:
+    active: true
 messages:
   de:
     modules:
@@ -287,6 +289,12 @@ messages:
         ein.'
       success: '&7Geschwindigkeit auf &e{speed} &7gesetzt. &7(&e{type}&7) '
       only-players: '&cNur Spieler können diesen Befehl verwenden.'
+    vanish:
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success:
+        activated: '&7Vanish wurde &aaktiviert&7.'
+        deactivated: '&7Vanish wurde &cdeaktiviert&7.'
+      usage: '&cNutze &e/vanish&7.'
   en:
     modules:
       inactive: '&7This module is currently &cdisabled&7. Enable it in the &econfig&7.'
@@ -481,6 +489,12 @@ messages:
       invalid-speed: '&cPlease enter a speed between &e1 &cand &e10.'
       success: '&7Speed set to &e{speed} &7(&e{type}&7).'
       only-players: '&cOnly players can use this command.'
+    vanish:
+      no-permission: '&7You do not have &cpermission&7 to do that.'
+      success:
+        activated: '&7Vanish has been &aactivated&7.'
+        deactivated: '&7Vanish has been &cdeactivated&7.'
+      usage: '&cUse &e/vanish&7.'
 commands:
   msg:
     enabled: true

@@ -17,7 +17,6 @@ public class SignChangeListener implements Listener {
         this.plugin = plugin;
         this.config = plugin.getConfig();
         setupDefaultConfig();
-        plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
     private void setupDefaultConfig() {

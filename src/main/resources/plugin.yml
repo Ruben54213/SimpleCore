@@ -103,3 +103,5 @@ commands:
     aliases: [ "warps" ]
   speed:
     permission: simplecore.speed
+  vanish:
+    permission: simplecore.vanish
