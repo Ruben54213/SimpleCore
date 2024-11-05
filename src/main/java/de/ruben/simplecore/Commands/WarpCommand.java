@@ -28,6 +28,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         this.warpManager = warpManager;
         setupDefaultConfig();
         plugin.getCommand("warp").setAliases(Arrays.asList("warps"));
+        plugin.getCommand("warp").setTabCompleter(this);
     }
 
     private void setupDefaultConfig() {

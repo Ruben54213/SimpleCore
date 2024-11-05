@@ -1,4 +1,5 @@
 de\ruben\simplecore\Commands\EnderChestCommand.class
+de\ruben\simplecore\Commands\SpeedCommand.class
 de\ruben\simplecore\Commands\MoreCommand.class
 de\ruben\simplecore\Commands\ChatClearCommand.class
 de\ruben\simplecore\Commands\TeleportCommand.class

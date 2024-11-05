@@ -101,3 +101,5 @@ commands:
   warp:
     permission: simplecore.warp.edit
     aliases: [ "warps" ]
+  speed:
+    permission: simplecore.speed

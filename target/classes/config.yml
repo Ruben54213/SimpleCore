@@ -240,6 +240,15 @@ messages:
       invalid-mob: '&7Der Mob &e{mob}&7 ist ungültig.'
       only-players: 'Diesen Befehl dürfen nur Spieler ausführen!'
       usage: '&cFalsche &7Verwendung: &e/spawnmob <mob> <anzahl>'
+    warp:
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success:
+        set: '&7Warp &e{warp}&7 wurde gesetzt.'
+        remove: '&7Warp &e{warp}&7 wurde entfernt.'
+      not-found: '&7Warp &e{warp}&7 wurde nicht gefunden.'
+      usage: '&cFalsche &7Verwendung: &e/warp <name>'
+      list: '&7Warps &8(&e{count}&8) &8» &e{warps}'
+      list-none: '&7Es sind keine Warps gesetzt.'
 ###################################################################################################################
 #     ENGLISCH MESSAGES:                                                                                          #
 ###################################################################################################################
@@ -413,6 +422,15 @@ messages:
       invalid-mob: '&7The mob &e{mob}&7 is invalid.'
       only-players: 'Only players can execute this command!'
       usage: '&cWrong &7usage: &e/spawnmob <mob> <amount>'
+    warp:
+      no-permission: '&7You do not have &cpermission&7 to do that.'
+      success:
+        set: '&7Warp &e{warp}&7 has been set.'
+        remove: '&7Warp &e{warp}&7 has been removed.'
+      not-found: '&7Warp &e{warp}&7 not found.'
+      usage: '&cWrong &7usage: &e/warp <name>'
+      list: '&7Warps &8(&e{count}&8) &8» &e{warps}'
+      list-none: '&7No warps are set.'
 
 
 

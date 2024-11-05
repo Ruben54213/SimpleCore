@@ -58,7 +58,7 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("spawnmob").setExecutor(new SpawnMobCommand(this));
             getCommand("spawnmob").setTabCompleter(new SpawnMobCommand(this));
         getCommand("warp").setExecutor(new WarpCommand(this, warpManager));
-            getCommand("warp").setTabCompleter(new WarpCommand(this, warpManager));
+        getCommand("speed").setExecutor(new SpeedCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
