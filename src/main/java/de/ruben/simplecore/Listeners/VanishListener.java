@@ -90,20 +90,14 @@ public class VanishListener implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         VanishManager vm = VanishManager.getMainManager();
-        Bukkit.getLogger().info(player.getName() + " ist dem Server beigetreten.");
-        if (vm.isVanished(player)) {
-            Bukkit.getLogger().info(player.getName() + " ist im Vanish.");
-        }
 
         for (UUID vanishedUUID : vm.getVanished()) {
             Player vanishedPlayer = Bukkit.getPlayer(vanishedUUID);
             if (vanishedPlayer != null) {
                 if (!player.hasPermission("simplecore.vanish")) {
                     player.hidePlayer(vanishedPlayer);
-                    Bukkit.getLogger().info(vanishedPlayer.getName() + " ist für " + player.getName() + " unsichtbar.");
                 } else {
                     player.showPlayer(vanishedPlayer);
-                    Bukkit.getLogger().info(vanishedPlayer.getName() + " ist für " + player.getName() + " sichtbar.");
                 }
             }
         }
@@ -112,10 +106,8 @@ public class VanishListener implements Listener {
             if (vm.isVanished(onlinePlayer)) {
                 if (!onlinePlayer.hasPermission("simplecore.vanish")) {
                     onlinePlayer.hidePlayer(player);
-                    Bukkit.getLogger().info(player.getName() + " ist für " + onlinePlayer.getName() + " unsichtbar.");
                 } else {
                     onlinePlayer.showPlayer(player);
-                    Bukkit.getLogger().info(player.getName() + " ist für " + onlinePlayer.getName() + " sichtbar.");
                 }
             }
         }
