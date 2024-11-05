@@ -45,14 +45,14 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         if (!config.contains("messages.de.warp.success.teleport")) {
             config.set("messages.de.warp.success.teleport", "&7Du wurdest zu Warp &e{warp}&7 teleportiert.");
         }
-        if (!config.contains("messages.de.warp.success.set")) {
-            config.set("messages.de.warp.success.set", "&7Warp &e{warp}&7 wurde gesetzt.");
+        if (!config.contains("messages.de.warp.success.create")) {
+            config.set("messages.de.warp.success.create", "&7Warp &e{warp}&7 wurde gesetzt.");
         }
-        if (!config.contains("messages.de.warp.success.set.already-exists")) {
-            config.set("messages.de.warp.set.already-exists", "&7Warp &e{warp}&7 existiert bereits.");
+        if (!config.contains("messages.de.warp.success.create.already-exists")) {
+            config.set("messages.de.warp.create.already-exists", "&7Warp &e{warp}&7 existiert bereits.");
         }
-        if (!config.contains("messages.de.warp.success.remove")) {
-            config.set("messages.de.warp.success.remove", "&7Warp &e{warp}&7 wurde entfernt.");
+        if (!config.contains("messages.de.warp.success.delete")) {
+            config.set("messages.de.warp.success.delete", "&7Warp &e{warp}&7 wurde entfernt.");
         }
         if (!config.contains("messages.de.warp.not-found")) {
             config.set("messages.de.warp.not-found", "&7Warp &e{warp}&7 wurde nicht gefunden.");
@@ -76,14 +76,14 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         if (!config.contains("messages.en.warp.success.teleport")) {
             config.set("messages.en.warp.success.teleport", "&7You have been teleported to Warp &e{warp}&7.");
         }
-        if (!config.contains("messages.en.warp.success.set")) {
-            config.set("messages.en.warp.success.set", "&7Warp &e{warp}&7 has been set.");
+        if (!config.contains("messages.en.warp.success.create")) {
+            config.set("messages.en.warp.success.create", "&7Warp &e{warp}&7 has been set.");
         }
-        if (!config.contains("messages.en.warp.success.set.already-exists")) {
-            config.set("messages.en.warp.set.already-exists", "&7Warp &e{warp}&7 already exists.");
+        if (!config.contains("messages.en.warp.success.create.already-exists")) {
+            config.set("messages.en.warp.create.already-exists", "&7Warp &e{warp}&7 already exists.");
         }
-        if (!config.contains("messages.en.warp.success.remove")) {
-            config.set("messages.en.warp.success.remove", "&7Warp &e{warp}&7 has been removed.");
+        if (!config.contains("messages.en.warp.success.delete")) {
+            config.set("messages.en.warp.success.delete", "&7Warp &e{warp}&7 has been removed.");
         }
         if (!config.contains("messages.en.warp.not-found")) {
             config.set("messages.en.warp.not-found", "&7Warp &e{warp}&7 not found.");
@@ -156,7 +156,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         String warpName;
 
         switch (action.toLowerCase()) {
-            case "set":
+            case "create":
                 if (!player.hasPermission("simplecore.warp.edit")) {
                     player.sendMessage(getMessage("warp.no-permission"));
                     return true;
@@ -169,16 +169,16 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
 
                 warpName = args[1];
 
-                if (warpManager.getWarp(warpName) != null || warpName.equalsIgnoreCase("set") || warpName.equalsIgnoreCase("remove")) {
-                    player.sendMessage(getMessage("warp.set.already-exists").replace("{warp}", warpName));
+                if (warpManager.getWarp(warpName) != null || warpName.equalsIgnoreCase("create") || warpName.equalsIgnoreCase("delete")) {
+                    player.sendMessage(getMessage("warp.create.already-exists").replace("{warp}", warpName));
                     return true;
                 }
 
                 warpManager.setWarp(warpName, player.getLocation());
-                player.sendMessage(getMessage("warp.success.set").replace("{warp}", warpName));
+                player.sendMessage(getMessage("warp.success.create").replace("{warp}", warpName));
                 break;
 
-            case "remove":
+            case "delete":
                 if (!player.hasPermission("simplecore.warp.edit")) {
                     player.sendMessage(getMessage("warp.no-permission"));
                     return true;
@@ -191,7 +191,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
 
                 warpName = args[1];
                 if (warpManager.deleteWarp(warpName)) {
-                    player.sendMessage(getMessage("warp.success.remove").replace("{warp}", warpName));
+                    player.sendMessage(getMessage("warp.success.delete").replace("{warp}", warpName));
                 } else {
                     player.sendMessage(getMessage("warp.not-found").replace("{warp}", warpName));
                 }
@@ -230,8 +230,8 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
 
         if (args.length == 1) {
             if (sender.hasPermission("simplecore.warp.edit")) {
-                completions.add("set");
-                completions.add("remove");
+                completions.add("create");
+                completions.add("delete");
             }
             Set<String> warpNames = warpManager.getWarpNames();
             for (String warp : warpNames) {
