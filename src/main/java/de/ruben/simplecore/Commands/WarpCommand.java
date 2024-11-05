@@ -169,6 +169,10 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
 
                 warpName = args[1];
 
+                if(warpName.equalsIgnoreCase("set") || warpName.equalsIgnoreCase("remove")) {
+                    player.sendMessage(getMessage("warp.set.already-exists").replace("{warp}", warpName));
+                }
+
                 if (warpManager.getWarp(warpName) != null) {
                     player.sendMessage(getMessage("warp.set.already-exists").replace("{warp}", warpName));
                     return true;
@@ -227,14 +231,29 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         List<String> completions = new ArrayList<>();
+
         if (args.length == 1) {
             if (sender.hasPermission("simplecore.warp.edit")) {
                 completions.add("set");
                 completions.add("remove");
             }
             Set<String> warpNames = warpManager.getWarpNames();
-            completions.addAll(warpNames);
+            for (String warp : warpNames) {
+                if (warp.toLowerCase().startsWith(args[0].toLowerCase())) {
+                    completions.add(warp);
+                }
+            }
+        } else if (args.length == 2) {
+            if ("set".equalsIgnoreCase(args[0]) || "remove".equalsIgnoreCase(args[0])) {
+                Set<String> warpNames = warpManager.getWarpNames();
+                for (String warp : warpNames) {
+                    if (warp.toLowerCase().startsWith(args[1].toLowerCase())) {
+                        completions.add(warp);
+                    }
+                }
+            }
         }
+
         return completions;
     }
 }

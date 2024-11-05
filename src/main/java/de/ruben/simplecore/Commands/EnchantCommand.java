@@ -94,12 +94,15 @@ public class EnchantCommand implements CommandExecutor, TabCompleter {
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
         List<String> completions = new ArrayList<>();
 
-        // Check if the player is trying to complete the enchantment name
         if (args.length == 1) {
             for (Enchantment enchantment : Enchantment.values()) {
-                completions.add(enchantment.getName().toLowerCase());
+                String enchantmentName = enchantment.getName().toLowerCase();
+                if (enchantmentName.toLowerCase().startsWith(args[0].toLowerCase())) {
+                    completions.add(enchantmentName);
+                }
             }
         }
+
 
         // No completions for level numbers
         return completions;

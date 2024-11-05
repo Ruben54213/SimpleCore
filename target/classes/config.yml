@@ -276,6 +276,8 @@ messages:
       list: '&7Warps &8(&e{count}&8) &8» &e{warps}'
       list-none: '&7Es sind keine Warps gesetzt.'
       list-hover: '&8[&eTeleportieren&8]'
+      set:
+        already-exists: '&7Warp &e{warp}&7 existiert bereits.'
     only-players: Diesen Befehl dürfen nur Spieler ausführen!
     workbench-open: '&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!'
     speed:
@@ -469,6 +471,8 @@ messages:
       list: '&7Warps &8(&e{count}&8) &8» &e{warps}'
       list-none: '&7No warps are set.'
       list-hover: '&8[&eTeleport&8]'
+      set:
+        already-exists: '&7Warp &e{warp}&7 already exists.'
     only-players: Only players can execute this command!
     workbench-open: '&7The &eworkbench&7 has been &asuccessfully&7 opened!'
     speed:
