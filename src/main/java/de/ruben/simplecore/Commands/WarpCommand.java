@@ -1,6 +1,10 @@
 package de.ruben.simplecore.Commands;
 
 import de.ruben.simplecore.Utility.WarpManager;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -38,6 +42,9 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         if (!config.contains("messages.de.warp.no-permission")) {
             config.set("messages.de.warp.no-permission", "&7Dafür hast du &ckeine&7 Berechtigung.");
         }
+        if (!config.contains("messages.de.warp.success.teleport")) {
+            config.set("messages.de.warp.success.teleport", "&7Du wurdest zu Warp &e{warp}&7 teleportiert.");
+        }
         if (!config.contains("messages.de.warp.success.set")) {
             config.set("messages.de.warp.success.set", "&7Warp &e{warp}&7 wurde gesetzt.");
         }
@@ -53,12 +60,18 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         if (!config.contains("messages.de.warp.list")) {
             config.set("messages.de.warp.list", "&7Warps &8(&e{count}&8) &8» &e{warps}");
         }
+        if (!config.contains("messages.de.warp.list-hover")) {
+            config.set("messages.de.warp.list-hover", "&8[&eTeleportieren&8]");
+        }
         if (!config.contains("messages.de.warp.list-none")) {
             config.set("messages.de.warp.list-none", "&7Es sind keine Warps gesetzt.");
         }
 
         if (!config.contains("messages.en.warp.no-permission")) {
             config.set("messages.en.warp.no-permission", "&7You do not have &cpermission&7 to do that.");
+        }
+        if (!config.contains("messages.en.warp.success.teleport")) {
+            config.set("messages.en.warp.success.teleport", "&7You have been teleported to Warp &e{warp}&7.");
         }
         if (!config.contains("messages.en.warp.success.set")) {
             config.set("messages.en.warp.success.set", "&7Warp &e{warp}&7 has been set.");
@@ -74,6 +87,9 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         }
         if (!config.contains("messages.en.warp.list")) {
             config.set("messages.en.warp.list", "&7Warps &8(&e{count}&8) &8» &e{warps}");
+        }
+        if (!config.contains("messages.en.warp.list-hover")) {
+            config.set("messages.en.warp.list-hover", "&8[&eTeleport&8]");
         }
         if (!config.contains("messages.en.warp.list-none")) {
             config.set("messages.en.warp.list-none", "&7No warps are set.");
@@ -100,19 +116,26 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
                 player.sendMessage(getMessage("warp.list-none"));
             } else {
                 int warpCount = warpNames.size();
-                StringBuilder warpList = new StringBuilder();
+
+                TextComponent message = new TextComponent(getMessage("warp.list").replace("{count}", String.valueOf(warpCount)).replace("{warps}", ""));
 
                 for (String warp : warpNames) {
-                    warpList.append(ChatColor.YELLOW).append(warp).append(", ");
+                    TextComponent warpComponent = new TextComponent(ChatColor.YELLOW + warp);
+
+                    // Füge einen Hover-Text hinzu
+                    warpComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                            new ComponentBuilder(getRawMessage("warp.list-hover")).create()));
+                    warpComponent.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/warp " + warp));
+
+                    message.addExtra(warpComponent);
+                    message.addExtra("&8, ");
                 }
 
-                if (warpList.length() > 0) {
-                    warpList.setLength(warpList.length() - 2);
+                if (message.getExtra().size() > 0) {
+                    message.getExtra().remove(message.getExtra().size() - 1);
                 }
-                String message = getMessage("warp.list")
-                        .replace("{count}", String.valueOf(warpCount))
-                        .replace("{warps}", warpList.toString());
-                player.sendMessage(message);
+
+                player.spigot().sendMessage(message);
             }
             return true;
         }
@@ -167,13 +190,19 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
                 Location warpLocation = warpManager.getWarp(warpName);
                 if (warpLocation != null) {
                     player.teleport(warpLocation);
-                    player.sendMessage(getMessage("warp.success.set").replace("{warp}", warpName));
+                    player.sendMessage(getMessage("warp.success.teleport").replace("{warp}", warpName));
                 } else {
                     player.sendMessage(getMessage("warp.not-found").replace("{warp}", warpName));
                 }
                 break;
         }
         return true;
+    }
+
+    private String getRawMessage(String path) {
+        String lang = config.getString("language", "de");
+        return ChatColor.translateAlternateColorCodes('&', config.getString("messages." + lang + "." + path,
+                "&7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
     }
     private String getMessage(String path) {
         String lang = config.getString("language", "de");

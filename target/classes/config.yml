@@ -1,11 +1,9 @@
-###############################################################################################################################
+#
 # Plugin coded by Ruben with Love!                                                                                            #
-###############################################################################################################################
-language: "de" #(de or en possible)
-prefix: "&bSimple&fCore &8» "
-broadcastprefix: "&b&lSimple&f&lCore &8» &f"
-invsee-prefix: "&bSimple&fCore &8» &7"
-
+language: de
+prefix: '&bSimple&fCore &8» '
+broadcastprefix: '&b&lSimple&f&lCore &8» &f'
+invsee-prefix: '&bSimple&fCore &8» &7'
 modules:
   weather:
     active: true
@@ -14,7 +12,7 @@ modules:
   broadcast:
     active: true
     addlines: true
-    sound: "ENTITY_PLAYER_LEVELUP" #(In 1.9+ its called "ENTITY_PLAYER_LEVELUP" if "LEVEL_UP" is not working. You can also choose any other sound."
+    sound: ENTITY_PLAYER_LEVELUP
     sound_volume: 1.0
     sound_pitch: 1.0
     sound_active: true
@@ -68,370 +66,421 @@ modules:
     active: true
   warp:
     active: true
+  de:
+    custom-enchant:
+      active: true
+  en:
+    custom-enchant:
+      active: true
+  kill:
+    active: true
+  nearby-players:
+    active: true
+  invclear:
+    active: true
+  godmode:
+    active: true
+  warpp:
+    active: true
+  speed:
+    active: true
 messages:
   de:
     modules:
-      inactive: "&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in der &eConfig&7."
+      inactive: '&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in der &eConfig&7.'
     weather:
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
-      usage: "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7."
-      wrong-usage: "&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7, deine Angabe wurde &cnicht&7 erkannt."
-      weather-thunder: "&7Das Wetter wurde nun auf &eGewitter&7 umgestellt."
-      weather-sun: "&7Das Wetter wurde nun auf &eSonne&7 umgestellt."
-      weather-rain: "&7Das Wetter wurde nun auf &eRegen&7 umgestellt."
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
+      usage: '&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7.'
+      wrong-usage: '&cFalsche&7 Verwendung! Verwende &e/weather rain&7/&esun&7/&ethunder&7,
+        deine Angabe wurde &cnicht&7 erkannt.'
+      weather-thunder: '&7Das Wetter wurde nun auf &eGewitter&7 umgestellt.'
+      weather-sun: '&7Das Wetter wurde nun auf &eSonne&7 umgestellt.'
+      weather-rain: '&7Das Wetter wurde nun auf &eRegen&7 umgestellt.'
+      module-disabled: '&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in
+        der &eConfig&7.'
     workbench:
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
-      workbench-open: "&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!"
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
+      workbench-open: '&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!'
     broadcast:
-      usage: "&7Du &cmusst&7 eine Nachricht angeben!"
-      sound-error: "&7Der &eSound&7 konnte &cnicht&7 abgespielt werden! Bitte passe ihn in der &eConfig&7 an."
+      usage: '&7Du &cmusst&7 eine Nachricht angeben!'
+      sound-error: '&7Der &eSound&7 konnte &cnicht&7 abgespielt werden! Bitte passe
+        ihn in der &eConfig&7 an.'
     itemrename:
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
-      no-item: "&7Du hast &ckein&7 Item in der &eHand&7."
-      success: "&7Das &eItem&7 wurde &aErfolgreich&7 umbenannt!"
-      usage: "&7Du &cmusst&7 einen Namen angeben!"
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
+      no-item: '&7Du hast &ckein&7 Item in der &eHand&7.'
+      success: '&7Das &eItem&7 wurde &aErfolgreich&7 umbenannt!'
+      usage: '&7Du &cmusst&7 einen Namen angeben!'
     msg:
-      #Placeholders: {name}, {message}
-      no-player: "&7Der Spieler &e{name}&7 ist &cnicht&7 online."
-      self-message: "&7Du kannst dir &eselbst &ckeine &7Nachricht senden."
-      no-reply: "&7Es gibt &cniemanden&7, dem du antworten kannst."
-      usage: "&cFalsche&7 Verwendung! Verwende &e/msg &7(&eSpieler&7) (&eNachricht&7)."
-      sent: "&fDu &7» &f{name} &8| &f{message}"
-      received: "&e{name} &7» &eDir &8| &f{message}"
+      no-player: '&7Der Spieler &e{name}&7 ist &cnicht&7 online.'
+      self-message: '&7Du kannst dir &eselbst &ckeine &7Nachricht senden.'
+      no-reply: '&7Es gibt &cniemanden&7, dem du antworten kannst.'
+      usage: '&cFalsche&7 Verwendung! Verwende &e/msg &7(&eSpieler&7) (&eNachricht&7).'
+      sent: '&fDu &7» &f{name} &8| &f{message}'
+      received: '&e{name} &7» &eDir &8| &f{message}'
     joinleave:
-      #Placeholder: {name}
-      join: "&7[&a»&7] &f{name}"
-      leave: "&7[&c«&7] &f{name}"
+      join: '&7[&a»&7] &f{name}'
+      leave: '&7[&c«&7] &f{name}'
     custom-enchant:
-      #Placeholders: {enchantment}, {level}
-      failure: "&cFehler&7 Aufgetreten: &7Du &cmusst&7 ein Item in der &eHand &7halten und eine &agültige&7 Verzauberung und &eLevel&7 angeben!"
-      success: "&7Das &eItem&7 wurde &aerfolgreich&7 mit &e{enchantment}&7 auf Level &e{level} &7verzaubert!"
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      failure: '&cFehler&7 Aufgetreten: &7Du &cmusst&7 ein Item in der &eHand &7halten
+        und eine &agültige&7 Verzauberung und &eLevel&7 angeben!'
+      success: '&7Das &eItem&7 wurde &aerfolgreich&7 mit &e{enchantment}&7 auf Level
+        &e{level} &7verzaubert!'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
     language:
-      wrong-language: "&7Diese Sprache wird momentan &cnicht&7 Unterstützt!"
-      no-language: "&7Du &cmusst&7 eine Sprache angeben! (&ede&7/&een&7)"
-      success: "&7Die &eSprache&7 wurde nun &aErfolgreich&7 geändert!"
+      wrong-language: '&7Diese Sprache wird momentan &cnicht&7 Unterstützt!'
+      no-language: '&7Du &cmusst&7 eine Sprache angeben! (&ede&7/&een&7)'
+      success: '&7Die &eSprache&7 wurde nun &aErfolgreich&7 geändert!'
     anvil:
-      open: "&7Dein &eAmboss&7 wird nun &ageöffnet&7.."
-      title: "Amboss"
-      not-online: "&7Der Spieler &e{name}&7 ist &cnicht&7 online."
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      usage: "&cFalsche&7 Verwendung: Benutze &e/anvil &7(&eSpieler&7)."
-      open-other: "&7Du hast das &eAmboss&7 für &e{name}&7 geöffnet."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      open: '&7Dein &eAmboss&7 wird nun &ageöffnet&7..'
+      title: Amboss
+      not-online: '&7Der Spieler &e{name}&7 ist &cnicht&7 online.'
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      usage: '&cFalsche&7 Verwendung: Benutze &e/anvil &7(&eSpieler&7).'
+      open-other: '&7Du hast das &eAmboss&7 für &e{name}&7 geöffnet.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
     gamemode:
-      change: "&7Du hast deinen Spielmodus auf &e{mode}&7 geändert." #Placeholder: {mode}
-      usage: "&cFalsche&7 Verwendung: Benutze &e/gm &7<&emode&7>."
-      no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
-      change-other: "&7Du hast den &eSpielmodus&7 von &e{user} &7auf &e{mode}&7 geändert." #Placeholders: {mode}, {user}
+      change: '&7Du hast deinen Spielmodus auf &e{mode}&7 geändert.'
+      usage: '&cFalsche&7 Verwendung: Benutze &e/gm &7<&emode&7>.'
+      no-player: '&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!'
+      change-other: '&7Du hast den &eSpielmodus&7 von &e{user} &7auf &e{mode}&7 geändert.'
+      already-in-mode: '&7Du bist bereits im Spielmodus &e{mode}&7.'
+      already-in-mode-other: '&7{user} ist bereits im Spielmodus &e{mode}&7.'
     heal:
-      self: "&7Du hast dich selbst &egeheilt&7."
-      other: "&7Du hast &e{player}&7 geheilt." #Placeholder: {player}
-      no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
-      usage: "&cFalsche&7 Benutzung: Benutze &e/heal &7<&eSpieler&7>."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      self: '&7Du hast dich selbst &egeheilt&7.'
+      other: '&7Du hast &e{player}&7 geheilt.'
+      no-player: '&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!'
+      usage: '&cFalsche&7 Benutzung: Benutze &e/heal &7<&eSpieler&7>.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
     feed:
-      self: "&7Du hast deinen &eHunger &7gestillt."
-      other: "&7Du hast &e{player}&7 gefüttert." #Placeholder: {player}
-      no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
-      usage: "&cFalsche&7 Benutzung: Benutze &e/feed &7<&eSpieler&7>."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      self: '&7Du hast deinen &eHunger &7gestillt.'
+      other: '&7Du hast &e{player}&7 gefüttert.'
+      no-player: '&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!'
+      usage: '&cFalsche&7 Benutzung: Benutze &e/feed &7<&eSpieler&7>.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
     chatclear:
-      sender-info: "&7Du hast nun &aerfolgreich&7 den &eChat&7 gecleart."
-      info: "&7Der Chat wurde von &e{user}&7 geleert." #Placeholder: {user}
+      sender-info: '&7Du hast nun &aerfolgreich&7 den &eChat&7 gecleart.'
+      info: '&7Der Chat wurde von &e{user}&7 geleert.'
     lore:
-      usage: "&cFalsche&7 Benutzung: &e/lore add &7<&etext&7> oder &e/lore set &7<&ezeile&7> <&etext&7>."
-      not-held: "&7Du hältst &ckein&7 Item in der &eHand&7."
-      added: "&7Lore wurde &aerfolgreich&7 hinzugefügt: &e{text}" #Placeholder: {text}
-      set: "&7Lore auf Zeile &e{line}&7 gesetzt: &e{text}" #Placeholders: {text}, {line}
-      invalid-line: "&cFehler&7 aufgetreten: &cUngültige&7 Zeilennummer."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      usage: '&cFalsche&7 Benutzung: &e/lore add &7<&etext&7> oder &e/lore set &7<&ezeile&7>
+        <&etext&7>.'
+      not-held: '&7Du hältst &ckein&7 Item in der &eHand&7.'
+      added: '&7Lore wurde &aerfolgreich&7 hinzugefügt: &e{text}'
+      set: '&7Lore auf Zeile &e{line}&7 gesetzt: &e{text}'
+      invalid-line: '&cFehler&7 aufgetreten: &cUngültige&7 Zeilennummer.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
     teleport:
-      success: "&7Du wurdest &aerfolgreich&7 teleportiert."
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      no-player: "&7Der Spieler &e{player}&7 wurde &cnicht&7 gefunden." #Placeholder: {player}
-      invalid-coordinates: "&7Du hast &cUngültige Koordinaten &7angegeben."
-      no-request: "&7Du hast &ckeine &eTeleportanfrage&7."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
-      teleportat-other: "&7Du hast &a{source}&7 zu &a{target}&7 teleportiert." #Placeholders: {player}, {source}
+      success: '&7Du wurdest &aerfolgreich&7 teleportiert.'
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      no-player: '&7Der Spieler &e{player}&7 wurde &cnicht&7 gefunden.'
+      invalid-coordinates: '&7Du hast &cUngültige Koordinaten &7angegeben.'
+      no-request: '&7Du hast &ckeine &eTeleportanfrage&7.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
+      teleportat-other: '&7Du hast &a{source}&7 zu &a{target}&7 teleportiert.'
       override:
-        usage: "&aKorrekte&7 Verwendung: &e/tpo &7<&eSpieler&7>."
+        usage: '&aKorrekte&7 Verwendung: &e/tpo &7<&eSpieler&7>.'
+      teleport-other: '&7Du hast &a{source}&7 zu &a{target}&7 teleportiert.'
     kill:
-      usage: "&cFalsche&7 Benutzung: Benutze &e/kill &7(&eall&7/@a&7) oder &e/kill &7(&eSpieler&7)."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
-      success: "&7Du hast &e{player}&a erfolgreich&7 getötet." #Placeholder: {player}
-      all-success: "&7Alle Spieler wurden &aerfolgreich&7 getötet."
+      usage: '&cFalsche&7 Benutzung: Benutze &e/kill &7(&eall&7/@a&7) oder &e/kill
+        &7(&eSpieler&7).'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
+      success: '&7Du hast &e{player}&a erfolgreich&7 getötet.'
+      all-success: '&7Alle Spieler wurden &aerfolgreich&7 getötet.'
     nearby:
-      nearby-players: "&7Folgende &cSpieler&7 befinden sich in der &eNähe&7:"
-      no-players: "&7Es befinden sich &ckeine&7 Spieler in deiner &eNähe&7."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
-      distance-word: "&7, &cDistance&7:"
-      block-word: "&eBlöcke&7"
+      nearby-players: '&7Folgende &cSpieler&7 befinden sich in der &eNähe&7:'
+      no-players: '&7Es befinden sich &ckeine&7 Spieler in deiner &eNähe&7.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
+      distance-word: '&7, &cDistance&7:'
+      block-word: '&eBlöcke&7'
     time:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      success: "&7Die Zeit wurde auf &e{time}&7 gesetzt." #Placeholder {time}
-      only-players: "&cDiesen Befehl dürfen nur Spieler ausführen!"
-      usage: "&cFalsche&7 Verwendung: Benutze &e/time &7<&eday&7|&enight&7|&emidnight&7|&enoon&7>."
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success: '&7Die Zeit wurde auf &e{time}&7 gesetzt.'
+      only-players: '&cDiesen Befehl dürfen nur Spieler ausführen!'
+      usage: '&cFalsche&7 Verwendung: Benutze &e/time &7<&eday&7|&enight&7|&emidnight&7|&enoon&7>.'
     invclear:
-      self: "&7Dein &eInventar &7wurde geleert."
-      usage: "&cFalsche&7 Benutzung: Benutze &e/invclear &7<&eSpieler&7>."
-      other: "&7Das Inventar von &e{player}&7 wurde geleert." #Placeholder {player}
-      only-players: "&cDiesen Befehl dürfen nur Spieler ausführen!"
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      no-player: "&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!"
+      self: '&7Dein &eInventar &7wurde geleert.'
+      usage: '&cFalsche&7 Benutzung: Benutze &e/invclear &7<&eSpieler&7>.'
+      other: '&7Das Inventar von &e{player}&7 wurde geleert.'
+      only-players: '&cDiesen Befehl dürfen nur Spieler ausführen!'
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      no-player: '&7Dieser &eSpieler&7 wurde &cnicht&7 gefunden!'
     enderchest:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      success: "&7Deine &eEnderchest &7wurde geöffnet."
-      success-other: "&7Du hast die &eEnderchest &7von &e{target} &7geöffnet."
-      player-not-found: "&7Der Spieler &e{target} &7wurde &cnicht&7 gefunden." #Placeholder: {target}
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success: '&7Deine &eEnderchest &7wurde geöffnet.'
+      success-other: '&7Du hast die &eEnderchest &7von &e{target} &7geöffnet.'
+      player-not-found: '&7Der Spieler &e{target} &7wurde &cnicht&7 gefunden.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
     repair:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      success: "&7Dein &eItem &7wurde &aerfolgreich&7 repariert."
-      success-all: "&7Alle &eItems &7in deinem Inventar wurden &arepariert&7."
-      no-item: "&7Du hast &ckein &7Item in der &eHand&7, das &arepariert&7 werden kann."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success: '&7Dein &eItem &7wurde &aerfolgreich&7 repariert.'
+      success-all: '&7Alle &eItems &7in deinem Inventar wurden &arepariert&7.'
+      no-item: '&7Du hast &ckein &7Item in der &eHand&7, das &arepariert&7 werden
+        kann.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
     more:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      success: "&7Das Item wurde auf einen &e64er Stack &7gesetzt."
-      no-item: "&7Du hast &ckein &7Item in der &eHand&7."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success: '&7Das Item wurde auf einen &e64er Stack &7gesetzt.'
+      no-item: '&7Du hast &ckein &7Item in der &eHand&7.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
     stack:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      success: "&7Alle gleichen Items wurden &egestapelt&7."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      success: '&7Alle gleichen Items wurden &egestapelt&7.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
     sign:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      no-item: "&7Du hast &ckein&7 Item in der Hand."
-      success: "&7Das Item wurde erfolgreich signiert."
-      only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      no-item: '&7Du hast &ckein&7 Item in der Hand.'
+      success: '&7Das Item wurde erfolgreich signiert.'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
       lore:
-        sign: "&7Das Item wurde von &e{player}&7 am &e{date}&7 signiert." #Placeholders: {player}, {date}
+        sign: '&7Das Item wurde von &e{player}&7 am &e{date}&7 signiert.'
     removeblock:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      no-target: "&7Du schaust auf &ckeinen&7 &eBlock&7."
-      success: "&7Der Block wurde &aerfolgreich&7 entfernt."
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      no-target: '&7Du schaust auf &ckeinen&7 &eBlock&7.'
+      success: '&7Der Block wurde &aerfolgreich&7 entfernt.'
     lightning:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      no-player: "&7Der angegebene Spieler existiert &cnicht&7."
-      success: "&7Ein &eBlitz&7 wurde bei &e{target}&7 gespawnt."
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      no-player: '&7Der angegebene Spieler existiert &cnicht&7.'
+      success: '&7Ein &eBlitz&7 wurde bei &e{target}&7 gespawnt.'
     fly:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      no-player: "&7Der angegebene Spieler existiert&c nicht&7."
-      enabled: "&7Der &eFlugmodus&7 wurde für &e{target}&7 aktiviert." #Placeholder: {target}
-      disabled: "&7Der &eFlugmodus&7 wurde für &e{target}&7 deaktiviert." #Placeholder: {target}
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      no-player: '&7Der angegebene Spieler existiert&c nicht&7.'
+      enabled: '&7Der &eFlugmodus&7 wurde für &e{target}&7 aktiviert.'
+      disabled: '&7Der &eFlugmodus&7 wurde für &e{target}&7 deaktiviert.'
     invsee:
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      no-player: "&7Der angegebene Spieler existiert&c nicht&7."
-      view-only: "&7Du siehst &anun&7 das Inventar von &e{target}&7."
-      edit-mode: "&7Du kannst &anun&7 das Inventar von &e{target}&7 bearbeiten."
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      no-player: '&7Der angegebene Spieler existiert&c nicht&7.'
+      view-only: '&7Du siehst &anun&7 das Inventar von &e{target}&7.'
+      edit-mode: '&7Du kannst &anun&7 das Inventar von &e{target}&7 bearbeiten.'
     godmode:
-      enabled: "&7Der &eGodmode&7 wurde &aaktiviert&7."
-      disabled: "&7Der &eGodmode&7 wurde &cdeaktiviert&7."
-      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
-      no-player: "&7Der angegebene Spieler existiert&c nicht&7."
-      no-console: "&7Dieser Befehl kann nur von einem Spieler verwendet werden."
-      inactive: "&7Godmode ist derzeit &cdeaktiviert&7."
+      enabled: '&7Der &eGodmode&7 wurde &aaktiviert&7.'
+      disabled: '&7Der &eGodmode&7 wurde &cdeaktiviert&7.'
+      no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
+      no-player: '&7Der angegebene Spieler existiert&c nicht&7.'
+      no-console: '&7Dieser Befehl kann nur von einem Spieler verwendet werden.'
+      inactive: '&7Godmode ist derzeit &cdeaktiviert&7.'
     spawnmob:
       no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
       success: '&7Du hast erfolgreich &e{amount} {mob}&7 gespawnt.'
       invalid-mob: '&7Der Mob &e{mob}&7 ist ungültig.'
-      only-players: 'Diesen Befehl dürfen nur Spieler ausführen!'
+      only-players: Diesen Befehl dürfen nur Spieler ausführen!
       usage: '&cFalsche &7Verwendung: &e/spawnmob <mob> <anzahl>'
     warp:
       no-permission: '&7Dafür hast du &ckeine&7 Berechtigung.'
       success:
         set: '&7Warp &e{warp}&7 wurde gesetzt.'
         remove: '&7Warp &e{warp}&7 wurde entfernt.'
+        teleport: '&7Du wurdest zu Warp &e{warp}&7 teleportiert.'
       not-found: '&7Warp &e{warp}&7 wurde nicht gefunden.'
       usage: '&cFalsche &7Verwendung: &e/warp <name>'
       list: '&7Warps &8(&e{count}&8) &8» &e{warps}'
       list-none: '&7Es sind keine Warps gesetzt.'
-###################################################################################################################
-#     ENGLISCH MESSAGES:                                                                                          #
-###################################################################################################################
+      list-hover: '&8[&eTeleportieren&8]'
+    only-players: Diesen Befehl dürfen nur Spieler ausführen!
+    workbench-open: '&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!'
+    speed:
+      no-permission: '&7Du hast &ckeine&7 Berechtigung dazu.'
+      usage: '&cFalsche &7Verwendung: &e/speed <1-10> [walk|fly]'
+      invalid-speed: '&cBitte gib eine Geschwindigkeit zwischen &e1 &cund &e10 &c
+        ein.'
+      success: '&7Geschwindigkeit auf &e{speed} &7gesetzt. &7(&e{type}&7) '
+      only-players: '&cNur Spieler können diesen Befehl verwenden.'
   en:
     modules:
-      inactive: "&7This module is currently &cdisabled&7. Enable it in the &econfig&7."
+      inactive: '&7This module is currently &cdisabled&7. Enable it in the &econfig&7.'
     weather:
-      only-players: "Only players can execute this command!"
-      usage: "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7."
-      wrong-usage: "&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7, your input was &cnot&7 recognized."
-      weather-thunder: "&7The weather has been set to &ethunder&7."
-      weather-sun: "&7The weather has been set to &esunny&7."
-      weather-rain: "&7The weather has been set to &erainy&7."
+      only-players: Only players can execute this command!
+      usage: '&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7.'
+      wrong-usage: '&cIncorrect&7 usage! Use &e/weather rain&7/&esun&7/&ethunder&7,
+        your input was &cnot&7 recognized.'
+      weather-thunder: '&7The weather has been set to &ethunder&7.'
+      weather-sun: '&7The weather has been set to &esunny&7.'
+      weather-rain: '&7The weather has been set to &erainy&7.'
     workbench:
-      only-players: "Only players can execute this command!"
-      workbench-open: "&7The &eworkbench&7 has been &asuccessfully&7 opened!"
+      only-players: Only players can execute this command!
+      workbench-open: '&7The &eworkbench&7 has been &asuccessfully&7 opened!'
     broadcast:
-      usage: "&7You &cmust&7 provide a message!"
+      usage: '&7You &cmust&7 provide a message!'
     itemrename:
-      only-players: "Only players can execute this command!"
-      no-item: "&7You have &cno&7 item in your &ehand&7."
-      success: "&7The &eitem&7 has been &asuccessfully&7 renamed!"
-      usage: "&7You &cmust&7 specify a name!"
+      only-players: Only players can execute this command!
+      no-item: '&7You have &cno&7 item in your &ehand&7.'
+      success: '&7The &eitem&7 has been &asuccessfully&7 renamed!'
+      usage: '&7You &cmust&7 specify a name!'
     msg:
-      # Placeholders: {name}, {message}
-      no-player: "&7The player &e{name}&7 is &cnot&7 online."
-      self-message: "&7You &ccannot&7 send a message to &eyourself&7."
-      no-reply: "&7There is &cno one&7 to reply to."
-      usage: "&cIncorrect&7 usage! Use &e/msg &7(&eplayer&7) (&emessage&7)."
-      sent: "&fYou &7» &f{name} &8| &f{message}"
-      received: "&e{name} &7» &eYou &8| &f{message}"
+      no-player: '&7The player &e{name}&7 is &cnot&7 online.'
+      self-message: '&7You &ccannot&7 send a message to &eyourself&7.'
+      no-reply: '&7There is &cno one&7 to reply to.'
+      usage: '&cIncorrect&7 usage! Use &e/msg &7(&eplayer&7) (&emessage&7).'
+      sent: '&fYou &7» &f{name} &8| &f{message}'
+      received: '&e{name} &7» &eYou &8| &f{message}'
     joinleave:
-      #Placeholder: {name}
-      join: "&7[&a»&7] &f{name}"
-      leave: "&7[&c«&7] &f{name}"
+      join: '&7[&a»&7] &f{name}'
+      leave: '&7[&c«&7] &f{name}'
     custom-enchant:
-      #Placeholders: {enchantment}, {level}
-      failure: "&7An &cerror &7occurred: &7You &cmust&7 hold an item in your &ehand &7and specify a &avalid&7 enchantment and &elevel&7!"
-      success: "&7The &eitem&7 has been &asuccessfully&7 enchanted with &e{enchantment}&7 at level &e{level}&7!"
-      only-players: "Only players may execute this command!"
+      failure: '&7An &cerror &7occurred: &7You &cmust&7 hold an item in your &ehand
+        &7and specify a &avalid&7 enchantment and &elevel&7!'
+      success: '&7The &eitem&7 has been &asuccessfully&7 enchanted with &e{enchantment}&7
+        at level &e{level}&7!'
+      only-players: Only players may execute this command!
     language:
-      wrong-language: "&7This language is currently &cnot&7 supported!"
-      no-language: "&7You &cmust&7 specify a language! (&ede&7/&een&7)"
-      success: "&7The &elanguage&7 has been &asuccessfully&7 changed!"
+      wrong-language: '&7This language is currently &cnot&7 supported!'
+      no-language: '&7You &cmust&7 specify a language! (&ede&7/&een&7)'
+      success: '&7The &elanguage&7 has been &asuccessfully&7 changed!'
     anvil:
-      open: "&7Your &eAnvil&7 is now &aopening&7.."
-      title: "Anvil"
-      not-online: "&7The player &e{name}&7 is &cnot&7 online."
-      no-permission: "&7You do not have &cpermission&7 for that."
-      usage: "&cWrong&7 usage: Use &e/anvil &7(&ePlayer&7)."
-      open-other: "&7You opened the &eAnvil&7 for &e{name}&7." #Placeholder: {name}
-      only-players: "Only players may execute this command!"
+      open: '&7Your &eAnvil&7 is now &aopening&7..'
+      title: Anvil
+      not-online: '&7The player &e{name}&7 is &cnot&7 online.'
+      no-permission: '&7You do not have &cpermission&7 for that.'
+      usage: '&cWrong&7 usage: Use &e/anvil &7(&ePlayer&7).'
+      open-other: '&7You opened the &eAnvil&7 for &e{name}&7.'
+      only-players: Only players may execute this command!
     gamemode:
-      change: "&7You changed your game mode to &e{mode}&7." #Placeholder: {mode}
-      usage: "&cWrong&7 usage: Use &e/gm &7<&emode&7>."
-      change-other: "&7You changed {user}'s &egame mode&7 to &e{mode}&7." #Placeholders: {mode}, {user}
-      no-player: "&7This &eplayer&7 was &cnot&7 found!"
+      change: '&7You changed your game mode to &e{mode}&7.'
+      usage: '&cWrong&7 usage: Use &e/gm &7<&emode&7>.'
+      change-other: '&7You changed {user}''s &egame mode&7 to &e{mode}&7.'
+      no-player: '&7This &eplayer&7 was &cnot&7 found!'
+      already-in-mode: '&7You are already in &e{mode}&7 mode.'
+      already-in-mode-other: '&7{user} is already in &e{mode}&7 mode.'
     heal:
-      self: "&7You have &ehealed&7 yourself."
-      other: "&7You have healed &e{player}&7." #Placeholder: {player}
-      no-player: "&7This &eplayer&7 was &cnot&7 found!"
-      only-players: "Only players can execute this command!"
-      usage: "&cWrong&7 usage: Use &e/heal &7<&eplayer&7>."
-      no-permission: "&7You do not have &cpermission&7 for that."
+      self: '&7You have &ehealed&7 yourself.'
+      other: '&7You have healed &e{player}&7.'
+      no-player: '&7This &eplayer&7 was &cnot&7 found!'
+      only-players: Only players can execute this command!
+      usage: '&cWrong&7 usage: Use &e/heal &7<&eplayer&7>.'
+      no-permission: '&7You do not have &cpermission&7 for that.'
     feed:
-      self: "&7You have &erefreshed&7 yourself."
-      usage: "&cWrong&7 usage: Use &e/feed &7<&eplayer&7>."
-      other: "&7You have fed &e{player}&7."
-      only-players: "Only players can execute this command!"
-      no-permission: "&7You do not have &cpermission&7 for that."
-      no-player: "&7This &eplayer&7 was &cnot&7 found!"
+      self: '&7You have &erefreshed&7 yourself.'
+      usage: '&cWrong&7 usage: Use &e/feed &7<&eplayer&7>.'
+      other: '&7You have fed &e{player}&7.'
+      only-players: Only players can execute this command!
+      no-permission: '&7You do not have &cpermission&7 for that.'
+      no-player: '&7This &eplayer&7 was &cnot&7 found!'
     chatclear:
-      sender-info: "&7You have &asuccessfully&7 cleared the &echat&7."
-      info: "&7The chat has been cleared by &e{user}&7."
+      sender-info: '&7You have &asuccessfully&7 cleared the &echat&7.'
+      info: '&7The chat has been cleared by &e{user}&7.'
     lore:
-      usage: "&cWrong&7 usage: &e/lore add &7<&etext&7> or &e/lore set &7<&eline&7> <&etext&7>."
-      not-held: "&7You are &cnot&7 holding an &eitem&7."
-      added: "&7Lore was &asuccessfully&7 added: &e{text}" #Placeholder: {text}
-      set: "&7Lore set at line &e{line}&7: &e{text}" #Placeholders: {text}, {line}
-      invalid-line: "&cError&7 occurred: &cInvalid&7 line number."
-      only-players: "Only players can execute this command!"
+      usage: '&cWrong&7 usage: &e/lore add &7<&etext&7> or &e/lore set &7<&eline&7>
+        <&etext&7>.'
+      not-held: '&7You are &cnot&7 holding an &eitem&7.'
+      added: '&7Lore was &asuccessfully&7 added: &e{text}'
+      set: '&7Lore set at line &e{line}&7: &e{text}'
+      invalid-line: '&cError&7 occurred: &cInvalid&7 line number.'
+      only-players: Only players can execute this command!
     teleport:
-      success: "&7You have been &asuccessfully&7 teleported."
-      no-permission: "&7You do not have &cpermission&7 for this."
-      no-player: "&7The player &e{player}&7 was &cnot&7 found." #Placeholder: {player}
-      invalid-coordinates: "&7You have entered &cinvalid coordinates&7."
-      no-request: "&7You have &cno &eteleport request&7."
-      only-players: "Only players can execute this command!"
-      teleport-other: "&7You have teleported &a{source}&7 to &a{target}&7." #Placeholders: {target}, {source}
+      success: '&7You have been &asuccessfully&7 teleported.'
+      no-permission: '&7You do not have &cpermission&7 for this.'
+      no-player: '&7The player &e{player}&7 was &cnot&7 found.'
+      invalid-coordinates: '&7You have entered &cinvalid coordinates&7.'
+      no-request: '&7You have &cno &eteleport request&7.'
+      only-players: Only players can execute this command!
+      teleport-other: '&7You have teleported &a{source}&7 to &a{target}&7.'
       override:
-        usage: "&aCorrect&7 usage: &e/tpo &7<&eplayer&7>."
+        usage: '&aCorrect&7 usage: &e/tpo &7<&eplayer&7>.'
     kill:
-      usage: "&cWrong&7 usage: Use &e/kill &7(&eall&7/@a&7) or &e/kill &7(&ePlayer&7)."
-      only-players: "Only players can execute this command!"
-      success: "&7You have killed &e{player}&a successfully&7." #Placeholder: {player}
-      all-success: "&7All players have been &asuccessfully&7 killed."
+      usage: '&cWrong&7 usage: Use &e/kill &7(&eall&7/@a&7) or &e/kill &7(&ePlayer&7).'
+      only-players: Only players can execute this command!
+      success: '&7You have killed &e{player}&a successfully&7.'
+      all-success: '&7All players have been &asuccessfully&7 killed.'
     nearby:
-      nearby-players: "&7The following &cplayers&7 are in the &earea&7:"
-      no-players: "&7There are &cno&7 players in your &earea&7."
-      only-players: "Only players can execute this command!"
-      distance-word: "&7, &cDistance&7:"
-      block-word: "&eBlocks&7"
+      nearby-players: '&7The following &cplayers&7 are in the &earea&7:'
+      no-players: '&7There are &cno&7 players in your &earea&7.'
+      only-players: Only players can execute this command!
+      distance-word: '&7, &cDistance&7:'
+      block-word: '&eBlocks&7'
     time:
-      no-permission: "&7You do not have &cpermission&7 for this."
-      success: "&7The time has been set to &e{time}&7." #Placeholder {time}
-      only-players: "&cOnly players can execute this command!"
-      usage: "&cWrong&7 usage: Use &e/time &7<&eday&7|&enight&7|&emidnight&7|&enoon&7>."
+      no-permission: '&7You do not have &cpermission&7 for this.'
+      success: '&7The time has been set to &e{time}&7.'
+      only-players: '&cOnly players can execute this command!'
+      usage: '&cWrong&7 usage: Use &e/time &7<&eday&7|&enight&7|&emidnight&7|&enoon&7>.'
     invclear:
-      self: "&7Your inventory has been cleared."
-      usage: "&cWrong&7 usage: Use &e/invclear &7<&eplayer&7>."
-      other: "&7Cleared the inventory of &e{player}&7." #Placeholder {player}
-      only-players: "&cOnly players can execute this command!"
-      no-permission: "&7You do not have &cpermission&7 for that."
-      no-player: "&7This &eplayer&7 was &cnot&7 found!"
+      self: '&7Your inventory has been cleared.'
+      usage: '&cWrong&7 usage: Use &e/invclear &7<&eplayer&7>.'
+      other: '&7Cleared the inventory of &e{player}&7.'
+      only-players: '&cOnly players can execute this command!'
+      no-permission: '&7You do not have &cpermission&7 for that.'
+      no-player: '&7This &eplayer&7 was &cnot&7 found!'
     enderchest:
-      no-permission: "&7You do not have &cpermission&7 to do that."
-      success: "&7Your &eEnder Chest &7has been opened."
-      success-other: "&7You have opened the &eEnder Chest &7of &e{target}&7."
-      player-not-found: "&7Player &e{target} &cnot&7 found." #Placeholder: {target}
-      only-players: "Only players can execute this command!"
+      no-permission: '&7You do not have &cpermission&7 to do that.'
+      success: '&7Your &eEnder Chest &7has been opened.'
+      success-other: '&7You have opened the &eEnder Chest &7of &e{target}&7.'
+      player-not-found: '&7Player &e{target} &cnot&7 found.'
+      only-players: Only players can execute this command!
     repair:
-      no-permission: "&7You do not have &cpermission&7 to do that."
-      success: "&7Your &eitem &7has been &asuccessfully&7 &arepaired&7."
-      success-all: "&7All &eitems &7in your inventory have been &arepaired&7."
-      no-item: "&7You have &cno&7 item in your &ehand&7 to repair."
-      only-players: "Only players can execute this command!"
+      no-permission: '&7You do not have &cpermission&7 to do that.'
+      success: '&7Your &eitem &7has been &asuccessfully&7 &arepaired&7.'
+      success-all: '&7All &eitems &7in your inventory have been &arepaired&7.'
+      no-item: '&7You have &cno&7 item in your &ehand&7 to repair.'
+      only-players: Only players can execute this command!
     more:
-      no-permission: "&7You do not have &cpermission&7 to do that."
-      success: "&7The item has been set to a &e64 stack&7."
-      no-item: "&7You have &cno&7 item in your &ehand&7."
-      only-players: "Only players can execute this command!"
+      no-permission: '&7You do not have &cpermission&7 to do that.'
+      success: '&7The item has been set to a &e64 stack&7.'
+      no-item: '&7You have &cno&7 item in your &ehand&7.'
+      only-players: Only players can execute this command!
     stack:
-      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
-      success: "&7All identical items have been &estacked&7."
-      only-players: "Only players can execute this command!"
+      no-permission: '&7You do &cnot&7 have permission to do &ethat&7.'
+      success: '&7All identical items have been &estacked&7.'
+      only-players: Only players can execute this command!
     sign:
-      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
-      no-item: "&7You have &cno&7 item in your hand."
-      success: "&7The item has been successfully signed."
-      only-players: "Only players can execute this command!"
+      no-permission: '&7You do &cnot&7 have permission to do &ethat&7.'
+      no-item: '&7You have &cno&7 item in your hand.'
+      success: '&7The item has been successfully signed.'
+      only-players: Only players can execute this command!
       lore:
-        sign: "&7The item was signed by &e{player}&7 on &e{date}&7." #Placeholders: {player}, {date}
+        sign: '&7The item was signed by &e{player}&7 on &e{date}&7.'
     removeblock:
-      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
-      no-target: "&7You are &cnot&7 looking at any &eblock&7."
-      success: "&7The block has been &asuccessfully&7 removed."
+      no-permission: '&7You do &cnot&7 have permission to do &ethat&7.'
+      no-target: '&7You are &cnot&7 looking at any &eblock&7.'
+      success: '&7The block has been &asuccessfully&7 removed.'
     lightning:
-      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
-      no-player: "&7The specified player does &cnot&7 exist."
-      success: "&7A &elightning bolt&7 has been spawned at &e{target}&7."
+      no-permission: '&7You do &cnot&7 have permission to do &ethat&7.'
+      no-player: '&7The specified player does &cnot&7 exist.'
+      success: '&7A &elightning bolt&7 has been spawned at &e{target}&7.'
     fly:
-      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
-      no-player: "&7The specified player does &cnot&7 exist."
-      enabled: "&eFlight mode&7 enabled for &e{target}&7." #Placeholder: {target}
-      disabled: "&eFlight mode&7 disabled for &e{target}&7." #Placeholder: {target}
+      no-permission: '&7You do &cnot&7 have permission to do &ethat&7.'
+      no-player: '&7The specified player does &cnot&7 exist.'
+      enabled: '&eFlight mode&7 enabled for &e{target}&7.'
+      disabled: '&eFlight mode&7 disabled for &e{target}&7.'
     invsee:
-      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
-      no-player: "&7The specified player does &cnot&7 exist."
-      view-only: "&7You are viewing the inventory of &e{target}&7."
-      edit-mode: "&7You are in edit mode for &e{target}&7's inventory."
+      no-permission: '&7You do &cnot&7 have permission to do &ethat&7.'
+      no-player: '&7The specified player does &cnot&7 exist.'
+      view-only: '&7You are viewing the inventory of &e{target}&7.'
+      edit-mode: '&7You are in edit mode for &e{target}&7''s inventory.'
     godmode:
-      enabled: "&7The &egodmode&7 was &aenabled&7."
-      disabled: "&7The &egodmode&7 was &cdisabled&7."
-      no-permission: "&7You do &cnot&7 have permission to do &ethat&7."
-      no-player: "&7The specified player does &cnot&7 exist."
-      no-console: "&7This command can only be used by a player."
-      inactive: "&7Godmode is currently &cdisabled&7."
+      enabled: '&7The &egodmode&7 was &aenabled&7.'
+      disabled: '&7The &egodmode&7 was &cdisabled&7.'
+      no-permission: '&7You do &cnot&7 have permission to do &ethat&7.'
+      no-player: '&7The specified player does &cnot&7 exist.'
+      no-console: '&7This command can only be used by a player.'
+      inactive: '&7Godmode is currently &cdisabled&7.'
     spawnmob:
       no-permission: '&7You do not have &cpermission&7 to do that.'
       success: '&7Successfully spawned &e{amount} {mob}&7.'
       invalid-mob: '&7The mob &e{mob}&7 is invalid.'
-      only-players: 'Only players can execute this command!'
+      only-players: Only players can execute this command!
       usage: '&cWrong &7usage: &e/spawnmob <mob> <amount>'
     warp:
       no-permission: '&7You do not have &cpermission&7 to do that.'
       success:
         set: '&7Warp &e{warp}&7 has been set.'
         remove: '&7Warp &e{warp}&7 has been removed.'
+        teleport: '&7You have been teleported to Warp &e{warp}&7.'
       not-found: '&7Warp &e{warp}&7 not found.'
       usage: '&cWrong &7usage: &e/warp <name>'
       list: '&7Warps &8(&e{count}&8) &8» &e{warps}'
       list-none: '&7No warps are set.'
-
-
-
-
+      list-hover: '&8[&eTeleport&8]'
+    only-players: Only players can execute this command!
+    workbench-open: '&7The &eworkbench&7 has been &asuccessfully&7 opened!'
+    speed:
+      no-permission: '&7You do not have &cpermission&7 to do that.'
+      usage: '&cWrong &7usage: &e/speed <1-10> [walk|fly]'
+      invalid-speed: '&cPlease enter a speed between &e1 &cand &e10.'
+      success: '&7Speed set to &e{speed} &7(&e{type}&7).'
+      only-players: '&cOnly players can use this command.'
+commands:
+  msg:
+    enabled: true
+sign:
+  lore-template: '&7Signed by &e{player}&7 on &e{date}&7'
+godmode:
+  prefix: '&bSimple&fCore &8» '
