@@ -1,5 +1,6 @@
 package de.ruben.simplecore.Commands;
 
+import de.ruben.simplecore.SimpleCore;
 import de.ruben.simplecore.Utility.WarpManager;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
@@ -34,6 +35,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         plugin.getCommand("warp").setAliases(Arrays.asList("warps"));
         plugin.getCommand("warp").setTabCompleter(this);
     }
+
 
     private void setupDefaultConfig() {
         if (!config.contains("modules.warpp.active")) {
@@ -216,7 +218,6 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         return ChatColor.translateAlternateColorCodes('&', config.getString("messages." + lang + "." + path,
                 "&7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
     }
-
     private String getMessage(String path) {
         String lang = config.getString("language", "de");
         String prefix = config.getString("prefix", "&bSimple&fCore &8» ");
@@ -230,14 +231,24 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
         List<String> completions = new ArrayList<>();
 
         if (args.length == 1) {
-            Set<String> warpNames = warpManager.getWarpNames();
-            for (String warp : warpNames) {
-                completions.add(warp);
-            }
-
             if (sender.hasPermission("simplecore.warp.edit")) {
                 completions.add("create");
                 completions.add("delete");
+            }
+            Set<String> warpNames = warpManager.getWarpNames();
+            for (String warp : warpNames) {
+                if (warp.toLowerCase().startsWith(args[0].toLowerCase())) {
+                    completions.add(warp);
+                }
+            }
+        } else if (args.length == 2) {
+            if ("set".equalsIgnoreCase(args[0]) || "remove".equalsIgnoreCase(args[0])) {
+                Set<String> warpNames = warpManager.getWarpNames();
+                for (String warp : warpNames) {
+                    if (warp.toLowerCase().startsWith(args[1].toLowerCase())) {
+                        completions.add(warp);
+                    }
+                }
             }
         }
 

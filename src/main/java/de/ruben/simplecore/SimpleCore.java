@@ -3,9 +3,10 @@ package de.ruben.simplecore;
 import de.ruben.simplecore.Commands.*;
 import de.ruben.simplecore.Listeners.JoinLeaveMessages;
 import de.ruben.simplecore.Listeners.SignChangeListener;
+import de.ruben.simplecore.Utility.VanishManager;
+import org.bukkit.Bukkit;
 import de.ruben.simplecore.Listeners.VanishListener;
 import de.ruben.simplecore.Utility.WarpManager;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -22,12 +23,12 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("broadcast").setExecutor(new BroadcastCommand(this));
         getCommand("rename").setExecutor(new ItemRenameCommand(this));
         getCommand("msg").setExecutor(new MessageCommand(this));
-            getCommand("msg").setTabCompleter(new MessageCommand(this));
+        getCommand("msg").setTabCompleter(new MessageCommand(this));
         getCommand("r").setExecutor(new MessageCommand(this));
         getCommand("enchant").setExecutor(new EnchantCommand(this));
-            getCommand("enchant").setTabCompleter(new EnchantCommand(this));
+        getCommand("enchant").setTabCompleter(new EnchantCommand(this));
         getCommand("gamemode").setExecutor(new GamemodeCommand(this));
-            getCommand("gamemode").setTabCompleter(new GamemodeCommand(this));
+        getCommand("gamemode").setTabCompleter(new GamemodeCommand(this));
         getCommand("heal").setExecutor(new HealCommand(this));
         getCommand("feed").setExecutor(new FeedCommand(this));
         getCommand("chatclear").setExecutor(new ChatClearCommand(this));
@@ -36,7 +37,7 @@ public final class SimpleCore extends JavaPlugin {
             getCommand("teleport").setTabCompleter(new TeleportCommand(this));
             getCommand("tpo").setExecutor(new TeleportCommand(this));
         getCommand("kill").setExecutor(new KillCommand(this));
-            getCommand("kill").setTabCompleter(new KillCommand(this));
+        getCommand("kill").setTabCompleter(new KillCommand(this));
         getCommand("nearby").setExecutor(new NearbyCommand(this));
         getCommand("invclear").setExecutor(new InvClearCommand(this));
         getCommand("day").setExecutor(new TimeCommand(this));
@@ -44,10 +45,10 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("midnight").setExecutor(new TimeCommand(this));
         getCommand("noon").setExecutor(new TimeCommand(this));
         getCommand("time").setExecutor(new TimeCommand(this));
-            getCommand("time").setTabCompleter(new TimeCommand(this));
+        getCommand("time").setTabCompleter(new TimeCommand(this));
         getCommand("enderchest").setExecutor(new EnderChestCommand(this));
         getCommand("repair").setExecutor(new RepairCommand(this));
-            getCommand("repair").setTabCompleter(new RepairCommand(this));
+        getCommand("repair").setTabCompleter(new RepairCommand(this));
         getCommand("more").setExecutor(new MoreCommand(this));
         getCommand("stack").setExecutor(new StackCommand(this));
         getCommand("sign").setExecutor(new SignCommand(this));
@@ -56,11 +57,11 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("fly").setExecutor(new FlyCommand(this));
         getCommand("invsee").setExecutor(new InvseeCommand(this));
         getCommand("godmode").setExecutor(new GodModeCommand(this));
-        getCommand("spawnmob").setExecutor(new SpawnMobCommand(this));
-            getCommand("spawnmob").setTabCompleter(new SpawnMobCommand(this));
-        getCommand("warp").setExecutor(new WarpCommand(this, warpManager));
         getCommand("speed").setExecutor(new SpeedCommand(this));
         getCommand("vanish").setExecutor(new VanishCommand(this));
+        getCommand("warp").setExecutor(new WarpCommand(this, warpManager));
+        getCommand("spawnmob").setExecutor(new SpawnMobCommand(this));
+        getCommand("spawnmob").setTabCompleter(new SpawnMobCommand(this));
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
@@ -68,7 +69,7 @@ public final class SimpleCore extends JavaPlugin {
         pluginManager.registerEvents(new InvseeCommand(this), this);
         pluginManager.registerEvents(new SignChangeListener(this), this);
         pluginManager.registerEvents(new GodModeCommand(this), this);
-        pluginManager.registerEvents(new VanishListener(this), this);
+        pluginManager.registerEvents(new VanishManager(), this);
         //Anvil Command
     }
 

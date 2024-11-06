@@ -97,7 +97,7 @@ commands:
     aliases: [ "god", "gott", "gottmode", "gottmodus" ]
   spawnmob:
     permission: simplecore.spawnmob
-    aliases: [ "summon" ]
+    aliases: ["summon", "mobspawn"]
   warp:
     permission: simplecore.warp.edit
     aliases: [ "warps" ]
@@ -105,3 +105,4 @@ commands:
     permission: simplecore.speed
   vanish:
     permission: simplecore.vanish
+    aliases: ["v"]
