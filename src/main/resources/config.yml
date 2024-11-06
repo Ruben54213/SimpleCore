@@ -64,6 +64,14 @@ modules:
     active: true
   invsee:
     active: true
+  vanish:
+    active: true
+  speed:
+    active: true
+  spawnmob:
+    active: true
+  warp:
+    active: true
 messages:
   de:
     modules:
