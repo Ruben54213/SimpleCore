@@ -17,7 +17,6 @@ de\ruben\simplecore\Commands\InvClearCommand.class
 de\ruben\simplecore\Commands\BroadcastCommand.class
 de\ruben\simplecore\Commands\ItemRenameCommand.class
 de\ruben\simplecore\Commands\SignCommand.class
-de\ruben\simplecore\Commands\SignEditCommand.class
 de\ruben\simplecore\Commands\LightningCommand.class
 de\ruben\simplecore\Commands\AnvilCommand.class
 de\ruben\simplecore\Commands\FlyCommand.class

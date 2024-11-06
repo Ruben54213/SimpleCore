@@ -1,6 +1,5 @@
 package de.ruben.simplecore.Listeners;
 
-import com.sun.org.apache.bcel.internal.generic.ACONST_NULL;
 import de.ruben.simplecore.Utility.VanishManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
