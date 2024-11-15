@@ -6,6 +6,10 @@ prefix: "&bSimple&fCore &8» "
 broadcastprefix: "&b&lSimple&f&lCore &8» &f"
 invsee-prefix: "&bSimple&fCore &8» &7"
 
+motd:
+  line1: "&e&lYOURSEVER.NET&7 | &b&lJoin Us!"
+  line2: "&e&lWelcome&7 to our &a&lServer&7!"
+
 modules:
   weather:
     active: true
@@ -72,6 +76,8 @@ modules:
     active: true
   warp:
     active: true
+  motd:
+    active: false
 messages:
   de:
     modules:

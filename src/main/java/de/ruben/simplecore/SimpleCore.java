@@ -2,6 +2,7 @@ package de.ruben.simplecore;
 
 import de.ruben.simplecore.Commands.*;
 import de.ruben.simplecore.Listeners.JoinLeaveMessages;
+import de.ruben.simplecore.Listeners.MOTDListener;
 import de.ruben.simplecore.Listeners.SignChangeListener;
 import de.ruben.simplecore.Utility.VanishManager;
 import org.bukkit.Bukkit;
@@ -70,6 +71,7 @@ public final class SimpleCore extends JavaPlugin {
         pluginManager.registerEvents(new SignChangeListener(this), this);
         pluginManager.registerEvents(new GodModeCommand(this), this);
         pluginManager.registerEvents(new VanishManager(), this);
+        pluginManager.registerEvents(new MOTDListener(this), this);
         //Anvil Command
     }
 

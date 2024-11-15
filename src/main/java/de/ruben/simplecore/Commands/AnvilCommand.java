@@ -148,7 +148,7 @@ public class AnvilCommand implements Listener, CommandExecutor {
     private String getMessage(String key) {
         String language = config.getString("language", "de");
         String prefix = config.getString("prefix", "&bSimple&fCore &8» ");
-        String message = config.getString("messages." + language + ".anvil." + key, "Message not found");
+        String message = config.getString("messages." + language + ".anvil." + key, "&bSimple&fCore &8» &7Ein &cFehler&7 ist aufgetreten.");
 
         return ChatColor.translateAlternateColorCodes('&', prefix + message);
     }

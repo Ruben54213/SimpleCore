@@ -83,7 +83,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!isEnabled) {
-            sender.sendMessage(ChatColor.RED + "This command is currently disabled.");
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("messages."+ config.getString("language") + ".modules.inactive")));
             return true;
         }
 

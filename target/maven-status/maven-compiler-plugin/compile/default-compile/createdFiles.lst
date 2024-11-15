@@ -7,6 +7,7 @@ de\ruben\simplecore\Commands\BreakCommand.class
 de\ruben\simplecore\Commands\MessageCommand.class
 de\ruben\simplecore\Utility\ItemBuilder.class
 de\ruben\simplecore\Commands\NearbyCommand.class
+de\ruben\simplecore\Listeners\MOTDListener.class
 de\ruben\simplecore\Commands\GodModeCommand.class
 de\ruben\simplecore\Commands\WarpCommand.class
 de\ruben\simplecore\Commands\ItemLoreCommand.class
