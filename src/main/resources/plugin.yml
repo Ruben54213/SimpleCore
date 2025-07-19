@@ -106,3 +106,6 @@ commands:
   vanish:
     permission: simplecore.vanish
     aliases: ["v"]
+  trash:
+    permission: simplecore.trash
+    aliases: ["trashholtjeden"]

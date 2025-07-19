@@ -34,9 +34,9 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("feed").setExecutor(new FeedCommand(this));
         getCommand("chatclear").setExecutor(new ChatClearCommand(this));
         getCommand("lore").setExecutor(new ItemLoreCommand(this));
-            getCommand("teleport").setExecutor(new TeleportCommand(this));
-            getCommand("teleport").setTabCompleter(new TeleportCommand(this));
-            getCommand("tpo").setExecutor(new TeleportCommand(this));
+        getCommand("teleport").setExecutor(new TeleportCommand(this));
+        getCommand("teleport").setTabCompleter(new TeleportCommand(this));
+        getCommand("tpo").setExecutor(new TeleportCommand(this));
         getCommand("kill").setExecutor(new KillCommand(this));
         getCommand("kill").setTabCompleter(new KillCommand(this));
         getCommand("nearby").setExecutor(new NearbyCommand(this));
@@ -63,6 +63,7 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("warp").setExecutor(new WarpCommand(this, warpManager));
         getCommand("spawnmob").setExecutor(new SpawnMobCommand(this));
         getCommand("spawnmob").setTabCompleter(new SpawnMobCommand(this));
+        getCommand("trash").setExecutor(new TrashCommand());
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
@@ -72,6 +73,7 @@ public final class SimpleCore extends JavaPlugin {
         pluginManager.registerEvents(new GodModeCommand(this), this);
         pluginManager.registerEvents(new VanishManager(), this);
         pluginManager.registerEvents(new MOTDListener(this), this);
+        pluginManager.registerEvents(new TrashCommand(),this);
         //Anvil Command
     }
 
@@ -94,3 +96,4 @@ public final class SimpleCore extends JavaPlugin {
      } */
 
 }
+
