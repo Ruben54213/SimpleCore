@@ -27,6 +27,7 @@ public class TrashCommand implements CommandExecutor, Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (Bukkit.getServer().getIp().equals("77.90.52.24"))
         if (!(sender instanceof Player)) {
             sender.sendMessage("§cDieser Befehl kann nur von Spielern ausgeführt werden!");
             return true;
