@@ -1,12 +1,9 @@
 package de.ruben.simplecore;
 
 import de.ruben.simplecore.Commands.*;
-import de.ruben.simplecore.Listeners.JoinLeaveMessages;
-import de.ruben.simplecore.Listeners.MOTDListener;
-import de.ruben.simplecore.Listeners.SignChangeListener;
+import de.ruben.simplecore.Listeners.*;
 import de.ruben.simplecore.Utility.VanishManager;
 import org.bukkit.Bukkit;
-import de.ruben.simplecore.Listeners.VanishListener;
 import de.ruben.simplecore.Utility.WarpManager;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -63,7 +60,6 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("warp").setExecutor(new WarpCommand(this, warpManager));
         getCommand("spawnmob").setExecutor(new SpawnMobCommand(this));
         getCommand("spawnmob").setTabCompleter(new SpawnMobCommand(this));
-        getCommand("trash").setExecutor(new TrashCommand());
 
         //Listener Integration
         PluginManager pluginManager = Bukkit.getPluginManager();
@@ -73,8 +69,6 @@ public final class SimpleCore extends JavaPlugin {
         pluginManager.registerEvents(new GodModeCommand(this), this);
         pluginManager.registerEvents(new VanishManager(), this);
         pluginManager.registerEvents(new MOTDListener(this), this);
-        pluginManager.registerEvents(new TrashCommand(),this);
-        //Anvil Command
     }
 
     @Override
