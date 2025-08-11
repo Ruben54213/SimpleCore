@@ -36,8 +36,8 @@ public class GodModeCommand implements CommandExecutor, Listener {
         if (!config.contains("modules.godmode.active")) {
             config.set("modules.godmode.active", true);
         }
-        if (!config.contains("godmode.prefix")) {
-            config.set("godmode.prefix", "&bSimple&fCore &8» ");
+        if (!config.contains("prefix")) {
+            config.set("prefix", "&bSimple&fCore &8» ");
         }
         if (!config.contains("messages.de.godmode.enabled")) {
             config.set("messages.de.godmode.enabled", "&7Der &eGodmode&7 wurde &aaktiviert&7.");
