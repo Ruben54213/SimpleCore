@@ -78,6 +78,10 @@ modules:
     active: true
   motd:
     active: false
+  tph:
+    active: true
+  flyspeed:
+    active: true
 messages:
   de:
     modules:
@@ -89,6 +93,23 @@ messages:
       weather-thunder: "&7Das Wetter wurde nun auf &eGewitter&7 umgestellt."
       weather-sun: "&7Das Wetter wurde nun auf &eSonne&7 umgestellt."
       weather-rain: "&7Das Wetter wurde nun auf &eRegen&7 umgestellt."
+    flyspeed:
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      no-permission-other: "&7Dir fehlt die Berechtigung (&eanderen Spieler setzen&7)."
+      module-disabled: "&7Dieses Modul ist zurzeit &cdeaktiviert&7."
+      usage: "&cFalsche&7 Verwendung: &e/flyspeed &7<&e1-10&7> [&eSpieler&7]."
+      invalid-speed: "&7Bitte gib eine Zahl von &e1 &7bis &e10&7 an."
+      player-not-found: "&7Der Spieler &e{player}&7 wurde &cnicht&7 gefunden."
+      success-self: "&7Fluggeschwindigkeit auf &e{speed}&7 gesetzt."
+      success-other: "&7Fluggeschwindigkeit von &e{player}&7 auf &e{speed}&7 gesetzt."
+    tph:
+      only-players: "&7Diesen Befehl dürfen nur &eSpieler&7 ausführen."
+      no-permission: "&7Dafür hast du &ckeine&7 Berechtigung."
+      module-disabled: "&7Dieses Modul ist zurzeit &cDeaktiviert&7, aktiviere es in der &eConfig&7."
+      usage: "&aKorrekte&7 Verwendung: &e/tph &7<&eSpieler&7>."
+      no-player: "&7Der Spieler &e{player}&7 wurde &cnicht&7 gefunden."
+      success-self: "&7Du hast &a{player}&7 zu dir teleportiert."
+      target-info: "&7Du wurdest zu &a{sender}&7 teleportiert."
     workbench:
       only-players: "Diesen Befehl dürfen nur Spieler ausführen!"
       workbench-open: "&7Die &eWerkbank&7 wurde &aErfolgreich&7 geöffnet!"
@@ -289,6 +310,23 @@ messages:
       weather-thunder: "&7The weather has been set to &ethunder&7."
       weather-sun: "&7The weather has been set to &esunny&7."
       weather-rain: "&7The weather has been set to &erainy&7."
+    flyspeed:
+      no-permission: "&7You do not have &cpermission&7."
+      no-permission-other: "&7You lack permission to set &eother players'&7 speed."
+      module-disabled: "&7This module is currently &cdisabled&7."
+      usage: "&cWrong&7 usage: &e/flyspeed &7<&e1-10&7> [&eplayer&7]."
+      invalid-speed: "&7Please enter a number between &e1 &7and &e10&7."
+      player-not-found: "&7Player &e{player}&7 &cnot&7 found."
+      success-self: "&7Flight speed set to &e{speed}&7."
+      success-other: "&7Set &e{player}'s&7 flight speed to &e{speed}&7."
+    tph:
+      only-players: "&7Only &eplayers&7 can execute this command."
+      no-permission: "&7You do not have &cpermission&7 for that."
+      module-disabled: "&7This module is currently &cdisabled&7."
+      usage: "&aCorrect&7 usage: &e/tph &7<&eplayer&7>."
+      no-player: "&7The player &e{player}&7 was &cnot&7 found."
+      success-self: "&7You teleported &a{player}&7 to you."
+      target-info: "&7You were teleported to &a{sender}&7."
     workbench:
       only-players: "Only players can execute this command!"
       workbench-open: "&7The &eworkbench&7 has been &asuccessfully&7 opened!"

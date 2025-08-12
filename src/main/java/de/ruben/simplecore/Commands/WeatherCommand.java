@@ -70,25 +70,46 @@ public class WeatherCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        // Prüfen, ob das Modul aktiviert ist
         if (!config.getBoolean("modules.weather.active", true)) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".modules.inactive")));
+            sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.module-disabled"));
             return true;
         }
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(getConfigMessage(getConfigMessage("prefix") + "messages." + getConfigMessage("language") + ".weather.only-players"));
+            sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.only-players"));
             return true;
         }
 
+        Player player = (Player) sender;
+        String cmd = command.getName().toLowerCase();
+
+        // Direkter Command ohne Argumente (/sun etc.)
+        if (cmd.equals("sun") || cmd.equals("sonne")) {
+            player.getWorld().setStorm(false);
+            player.getWorld().setThundering(false);
+            player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.weather-sun"));
+            return true;
+        }
+        if (cmd.equals("rain") || cmd.equals("regen")) {
+            player.getWorld().setStorm(true);
+            player.getWorld().setThundering(false);
+            player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.weather-rain"));
+            return true;
+        }
+        if (cmd.equals("thunder") || cmd.equals("gewitter")) {
+            player.getWorld().setStorm(true);
+            player.getWorld().setThundering(true);
+            player.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.weather-thunder"));
+            return true;
+        }
+
+        // Normales /weather <arg>
         if (args.length != 1) {
             sender.sendMessage(getConfigMessage("prefix") + getConfigMessage("messages." + getConfigMessage("language") + ".weather.usage"));
             return false;
         }
 
-        Player player = (Player) sender;
         String weatherType = args[0].toLowerCase();
-
         switch (weatherType) {
             case "sun":
             case "sonne":
@@ -118,6 +139,7 @@ public class WeatherCommand implements CommandExecutor, TabCompleter {
 
         return true;
     }
+
 
     private String getConfigMessage(String path) {
         return ChatColor.translateAlternateColorCodes('&', config.getString(path, "&bSimple&fCore &8» &7Es ist ein &cFehler&7 aufgetreten, bitte melde dich im &eSupport&7. &cGesuchter Path&7: " + path));
