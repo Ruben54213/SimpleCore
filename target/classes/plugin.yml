@@ -5,6 +5,12 @@ commands:
   weather:
     aliases: ["wetter"]
     permission: simplecore.weather
+  sun:
+    permission: simplecore.weather
+  rain:
+    permission: simplecore.weather
+  thunder:
+    permission: simplecore.weather
   workbench:
     aliases: ["wb"]
     permission: simplecore.workbench
@@ -109,3 +115,11 @@ commands:
   trash:
     permission: simplecore.trash
     aliases: ["trashholtjeden"]
+  tph:
+    description: Teleportiert einen Spieler zu dir.
+    permission: simplecore.tph
+    aliases: ["teleporthere", "tphere"]
+  flyspeed:
+    description: Setzt einen Flyspeed
+    permission: simplecore.flys
+    aliases: ["flys"]

@@ -38,7 +38,7 @@ public class WarpCommand implements CommandExecutor, TabCompleter {
 
 
     private void setupDefaultConfig() {
-        if (!config.contains("modules.warpp.active")) {
+        if (!config.contains("modules.warp.active")) {
             config.set("modules.warpp.active", true);
         }
         if (!config.contains("messages.de.warp.no-permission")) {
