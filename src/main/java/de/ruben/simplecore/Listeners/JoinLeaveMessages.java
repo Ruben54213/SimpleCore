@@ -44,7 +44,7 @@ public class JoinLeaveMessages implements Listener {
         VanishManager vm = VanishManager.getMainManager();
         if(vm.isVanished(event.getPlayer())) { event.setJoinMessage(null); return; }
 
-        String joinMessage = config.getString("messages." + config.getString("language") + ".join", "&7[&a»&7] &f{name}");
+        String joinMessage = config.getString("messages." + config.getString("language") + ".join", "&7[&a»&7] &7{name}");
         joinMessage = ChatColor.translateAlternateColorCodes('&', joinMessage.replace("{name}", event.getPlayer().getName()));
         event.setJoinMessage(joinMessage);
     }
@@ -55,7 +55,7 @@ public class JoinLeaveMessages implements Listener {
         VanishManager vm = VanishManager.getMainManager();
         if(vm.isVanished(event.getPlayer())) { event.setQuitMessage(null); return; }
 
-        String leaveMessage = config.getString("messages." + config.getString("language") + ".leave", "&7[&c«&7] &f{name}");
+        String leaveMessage = config.getString("messages." + config.getString("language") + ".leave", "&7[&c«&7] &7{name}");
         leaveMessage = ChatColor.translateAlternateColorCodes('&', leaveMessage.replace("{name}", event.getPlayer().getName()));
         event.setQuitMessage(leaveMessage);
     }

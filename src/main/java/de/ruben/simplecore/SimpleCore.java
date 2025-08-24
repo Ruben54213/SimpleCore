@@ -60,7 +60,6 @@ public final class SimpleCore extends JavaPlugin {
         getCommand("warp").setExecutor(new WarpCommand(this, warpManager));
         getCommand("spawnmob").setExecutor(new SpawnMobCommand(this));
         getCommand("spawnmob").setTabCompleter(new SpawnMobCommand(this));
-        getCommand("anvil").setExecutor(new AnvilCommand(this));
         getCommand("tph").setExecutor(new TeleportHereCommand(this));
         getCommand("flyspeed").setExecutor(new FlyspeedCommand(this));
         getCommand("flyspeed").setTabCompleter(new FlyspeedCommand(this));
